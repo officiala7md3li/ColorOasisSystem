@@ -147,6 +147,11 @@ namespace ColorOasisSystem.Properties {
             }
             set {
                 this["EnableUC"] = value;
+=======
+        public string ConnnectionString {
+            get {
+                return ((string)(this["ConnnectionString"]));
+>>>>>>> 66a921bfa8b8277751568fc8147f388833b92a99
             }
         }
     }
