@@ -26,19 +26,6 @@ namespace ColorOasisSystem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-<<<<<<< HEAD
-        public string ConnnectionString {
-            get {
-                return ((string)(this["ConnnectionString"]));
-=========
-        public string ConnnectionString {
-            get {
-                return ((string)(this["ConnnectionString"]));
-=========
-        public string ConnnectionString {
-            get {
-                return ((string)(this["ConnnectionString"]));
-=========
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=A7MD\\A7MD;Initial Catalog=ColorOasisDB;Integrated Security=true")]
         public string ConnectionString {
             get {
@@ -142,13 +129,17 @@ namespace ColorOasisSystem.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Windows.Forms.UserControl PermissionNeededUC {
-            get {
+        public global::System.Windows.Forms.UserControl PermissionNeededUC
+        {
+            get
+            {
                 return ((global::System.Windows.Forms.UserControl)(this["PermissionNeededUC"]));
             }
-            set {
+            set
+            {
                 this["PermissionNeededUC"] = value;
->>>>>>>>> Temporary merge branch 2
+            }
+        }
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool EnableUC {
             get {
@@ -156,11 +147,6 @@ namespace ColorOasisSystem.Properties {
             }
             set {
                 this["EnableUC"] = value;
-=======
-        public string ConnnectionString {
-            get {
-                return ((string)(this["ConnnectionString"]));
->>>>>>> 66a921bfa8b8277751568fc8147f388833b92a99
             }
         }
     }
