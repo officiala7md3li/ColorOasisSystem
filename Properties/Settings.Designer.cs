@@ -26,6 +26,19 @@ namespace ColorOasisSystem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
+        public string ConnnectionString {
+            get {
+                return ((string)(this["ConnnectionString"]));
+=========
+        public string ConnnectionString {
+            get {
+                return ((string)(this["ConnnectionString"]));
+=========
+        public string ConnnectionString {
+            get {
+                return ((string)(this["ConnnectionString"]));
+=========
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=A7MD\\A7MD;Initial Catalog=ColorOasisDB;Integrated Security=true")]
         public string ConnectionString {
             get {
@@ -135,11 +148,7 @@ namespace ColorOasisSystem.Properties {
             }
             set {
                 this["PermissionNeededUC"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+>>>>>>>>> Temporary merge branch 2
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool EnableUC {
             get {
