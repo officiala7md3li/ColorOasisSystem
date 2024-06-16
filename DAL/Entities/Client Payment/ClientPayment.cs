@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ColorOasisSystem.Entities
 {
-    internal class ClientPayment
+    public class ClientPayment
     {
         public int Id { get; set; }
         public int ClientId { get; set; }

@@ -1,3 +1,4 @@
+using ColorOasisSystem.DAL.Entities;
 using ColorOasisSystem.Entities;
 using System;
 using System.Data.Entity;
@@ -16,17 +17,31 @@ namespace ColorOasisSystem
         public ApplicationDB()
             : base(Properties.Settings.Default.ConnectionString)
         {
+            this.Database.CommandTimeout = 180;
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
+            //todo:Uncomment
+            modelBuilder.Entity<Service>()
            .Property(p => p.Photo)
            .HasColumnType("image");
 
-            //base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<User> Users { get; set; }
         public DbSet<UserPermissions> UserPermissions { get; set; }
+        public DbSet<Quotation> Quotations { get; set; }
+        public DbSet<QuotationDetails> QuotationDetails { get; set;}
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<ServiceCategory> ServiceCategories {  get; set; }
+        public DbSet<ServiceType> ServiceTypes { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<ClientPayment> ClientPayments { get; set; }
+        public DbSet<Inspection> Inspections { get; set; }
+        public DbSet<InspectionDetails> InspectionDetails { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 

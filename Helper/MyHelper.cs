@@ -3,6 +3,7 @@ using ColorOasisSystem.Entities;
 using ColorOasisSystem.GUI;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,6 +120,27 @@ namespace ColorOasisSystem.Helper
         public static void SnackbarShow<T>(T FormOwner, BunifuSnackbar snackbar, string message, BunifuSnackbar.MessageTypes messageTypes = BunifuSnackbar.MessageTypes.Information, int messageDuration = 5, string Actionbtntxt = null, BunifuSnackbar.Positions positions = BunifuSnackbar.Positions.TopCenter) where T : Form, new()
         {
             snackbar.Show(FormOwner as Form, message, messageTypes, messageDuration*1000, Actionbtntxt, positions);
+        }
+        public static DataTable ConvertToDataTable(List<Dictionary<string, object>> list, string[] columns)
+        {
+            DataTable dataTable = new DataTable();
+
+            // Define the columns in the DataTable using AddRange
+            var dataColumns = columns.Select(column => new DataColumn(column, typeof(object))).ToArray();
+            dataTable.Columns.AddRange(dataColumns);
+
+            // Populate the rows in the DataTable
+            foreach (var dict in list)
+            {
+                var row = dataTable.NewRow();
+                foreach (var column in columns)
+                {
+                    row[column] = dict.ContainsKey(column) ? dict[column] ?? DBNull.Value : DBNull.Value;
+                }
+                dataTable.Rows.Add(row);
+            }
+
+            return dataTable;
         }
     }
 }

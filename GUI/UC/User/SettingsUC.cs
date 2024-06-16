@@ -14,5 +14,10 @@ namespace ColorOasisSystem.GUI.UC
         {
             InitializeComponent();
         }
+
+        private void SaveSettings_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

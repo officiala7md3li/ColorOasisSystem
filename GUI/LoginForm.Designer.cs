@@ -72,6 +72,7 @@
             this.Guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.Add_User_Password_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.Add_Username_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Username_Add_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.TabPage2.SuspendLayout();
             this.TabPage4.SuspendLayout();
             this.TabPage5.SuspendLayout();
@@ -138,7 +139,7 @@
             this.Add_New_User_Btn.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add_New_User_Btn.ForeColor = System.Drawing.Color.White;
             this.Add_New_User_Btn.IndicateFocus = true;
-            this.Add_New_User_Btn.Location = new System.Drawing.Point(72, 314);
+            this.Add_New_User_Btn.Location = new System.Drawing.Point(72, 350);
             this.Add_New_User_Btn.Name = "Add_New_User_Btn";
             this.Add_New_User_Btn.Size = new System.Drawing.Size(113, 35);
             this.Add_New_User_Btn.TabIndex = 3;
@@ -147,6 +148,7 @@
             this.Toltp.SetToolTipIcon(this.Add_New_User_Btn, null);
             this.Toltp.SetToolTipTitle(this.Add_New_User_Btn, "");
             this.Add_New_User_Btn.UseTransparentBackground = true;
+            this.Add_New_User_Btn.Click += new System.EventHandler(this.Add_New_User_Btn_Click);
             // 
             // Snackbar
             // 
@@ -353,6 +355,7 @@
             // TabPage5
             // 
             this.TabPage5.BackColor = System.Drawing.SystemColors.Control;
+            this.TabPage5.Controls.Add(this.Username_Add_TextBox);
             this.TabPage5.Controls.Add(this.Add_User_Recovery_TextBox);
             this.TabPage5.Controls.Add(this.Guna2Button2);
             this.TabPage5.Controls.Add(this.Add_New_User_Btn);
@@ -1014,7 +1017,7 @@
             this.Add_User_Recovery_TextBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.Add_User_Recovery_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
             this.Add_User_Recovery_TextBox.IconRightSize = new System.Drawing.Size(28, 28);
-            this.Add_User_Recovery_TextBox.Location = new System.Drawing.Point(28, 266);
+            this.Add_User_Recovery_TextBox.Location = new System.Drawing.Point(28, 301);
             this.Add_User_Recovery_TextBox.Name = "Add_User_Recovery_TextBox";
             this.Add_User_Recovery_TextBox.PasswordChar = '●';
             this.Add_User_Recovery_TextBox.PlaceholderText = "ادخل كلمه الاسترجاع";
@@ -1072,7 +1075,7 @@
             this.Add_User_Password_TextBox.IconLeftOffset = new System.Drawing.Point(4, 0);
             this.Add_User_Password_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Add_User_Password_TextBox.IconRight")));
             this.Add_User_Password_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Add_User_Password_TextBox.Location = new System.Drawing.Point(28, 213);
+            this.Add_User_Password_TextBox.Location = new System.Drawing.Point(28, 254);
             this.Add_User_Password_TextBox.Name = "Add_User_Password_TextBox";
             this.Add_User_Password_TextBox.PasswordChar = '●';
             this.Add_User_Password_TextBox.PlaceholderText = "ادخل كلمة المرور";
@@ -1115,6 +1118,36 @@
             this.Toltp.SetToolTip(this.Add_Username_TextBox, "");
             this.Toltp.SetToolTipIcon(this.Add_Username_TextBox, null);
             this.Toltp.SetToolTipTitle(this.Add_Username_TextBox, "");
+            // 
+            // Username_Add_TextBox
+            // 
+            this.Username_Add_TextBox.AutoRoundedCorners = true;
+            this.Username_Add_TextBox.BorderRadius = 17;
+            this.Username_Add_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Username_Add_TextBox.DefaultText = "";
+            this.Username_Add_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Username_Add_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Username_Add_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username_Add_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username_Add_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username_Add_TextBox.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username_Add_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username_Add_TextBox.IconLeftOffset = new System.Drawing.Point(3, 0);
+            this.Username_Add_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Username_Add_TextBox.IconRight")));
+            this.Username_Add_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Username_Add_TextBox.Location = new System.Drawing.Point(28, 207);
+            this.Username_Add_TextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Username_Add_TextBox.Name = "Username_Add_TextBox";
+            this.Username_Add_TextBox.PasswordChar = '\0';
+            this.Username_Add_TextBox.PlaceholderText = "ادخل اسم المستخدم";
+            this.Username_Add_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Username_Add_TextBox.SelectedText = "";
+            this.Username_Add_TextBox.Size = new System.Drawing.Size(200, 36);
+            this.Username_Add_TextBox.TabIndex = 5;
+            this.Username_Add_TextBox.TextOffset = new System.Drawing.Point(3, 0);
+            this.Toltp.SetToolTip(this.Username_Add_TextBox, "");
+            this.Toltp.SetToolTipIcon(this.Username_Add_TextBox, null);
+            this.Toltp.SetToolTipTitle(this.Username_Add_TextBox, "");
             // 
             // LoginForm
             // 
@@ -1188,5 +1221,6 @@
         internal Guna.UI2.WinForms.Guna2DragControl Drag_Ctrl;
         internal Bunifu.UI.WinForms.BunifuFormDock FormDock;
         private System.Windows.Forms.Panel panel1;
+        internal Guna.UI2.WinForms.Guna2TextBox Username_Add_TextBox;
     }
 }

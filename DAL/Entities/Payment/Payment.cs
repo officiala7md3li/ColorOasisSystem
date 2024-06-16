@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ColorOasisSystem.DAL.Entities
+namespace ColorOasisSystem.Entities
 {
-    internal class Payment
+    public class Payment
     {
         public int Id { get; set; }
         public int ClientId { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ColorOasisSystem.Entities
 {
-    internal class QuotationDetails
+    public class QuotationDetails
     {
         public int Id { get; set; }
         public int QuoteId { get; set; }

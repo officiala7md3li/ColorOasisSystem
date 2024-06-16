@@ -16,7 +16,7 @@ namespace ColorOasisSystem.GUI.Login
     public partial class LoginForm : Form
     {
 
-        UserRepo user = new UserRepo();
+        UserRepo user;
         public LoginForm()
         {            
             MainMenuForm mainMenuForm = new MainMenuForm();
@@ -25,11 +25,13 @@ namespace ColorOasisSystem.GUI.Login
             Banner_Image.BackColor = this.BackColor;            
             mainMenuForm.Visible = true;
             mainMenuForm.Visible = false;
+            user = new UserRepo();
+            this.BringToFront();
         }
 
 
 
-        private void Login_Btn_Click(object sender, EventArgs e)
+        private async void Login_Btn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Username_TxtBox.Text) || string.IsNullOrWhiteSpace(Username_TxtBox.Text))
             {
@@ -49,7 +51,7 @@ namespace ColorOasisSystem.GUI.Login
             try
             {
                
-                User TrueUser = user.ValidateUser(Username_TxtBox.Text, Pass_txt.Text);
+                User TrueUser =await user.ValidateUser(Username_TxtBox.Text, Pass_txt.Text);
                 //MainMenuForm mainMenu=new MainMenuForm(TrueUser);
                 //mainMenu.Show();
                 Username_TxtBox.Clear();
@@ -113,10 +115,10 @@ namespace ColorOasisSystem.GUI.Login
             Restore_Wrd_Txt.Clear();
         }
 
-        private void Restore_Btn_Click(object sender, EventArgs e)
+        private async void Restore_Btn_Click(object sender, EventArgs e)
         {   //BunifuPages2.SetPage("Password Recovered");
             BunifuPages2.SetPage("Login Page");
-            User recoveredUser = user.GetByRecoveryWord(Restore_Wrd_Txt.Text);
+            User recoveredUser =await user.GetByRecoveryWord(Restore_Wrd_Txt.Text);
             if (recoveredUser != null)
             {
                 MyHelper.OpenForm<MainMenuForm>(recoveredUser);
@@ -184,17 +186,33 @@ namespace ColorOasisSystem.GUI.Login
 
         private void bunifuLabel1_Click(object sender, EventArgs e)
         {
-            WaitLoaderForm waitLoader= new WaitLoaderForm(this,new CMessageBox("هل تريد حذف البيانات؟","نعم","لا"), 10);
-            if (waitLoader.DialogResult==DialogResult.Yes)
-            {
-                MessageBox.Show("Test");
-            }
+            WaitLoaderForm waitLoader= new WaitLoaderForm(this,new SetConnection(), 10);
         }
 
         private void LoginForm_Shown(object sender, EventArgs e)
         {
             MyHelper.CloseForm<Form1>();
 
+        }
+
+        private async void Add_New_User_Btn_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.Name = Username_Add_TextBox.Text;
+            user.UserName = Add_Username_TextBox.Text;
+            user.RecoverWord = Add_User_Recovery_TextBox.Text;
+            user.Password = Add_User_Password_TextBox.Text;
+            user.Phone = "00000000000";
+            user.IsActive=true;
+            user.IsDeleted = false;
+            bool IsSuccess= await this.user.Add(user);
+            if (IsSuccess)
+            {
+                User TrueUser = await this.user.ValidateUser(user.UserName, user.Password);
+
+                MyHelper.OpenForm<MainMenuForm>(TrueUser);
+                Hide();
+            }
         }
     }
 }

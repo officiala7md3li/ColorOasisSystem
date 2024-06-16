@@ -29,6 +29,7 @@ namespace ColorOasisSystem.GUI
                 Refresh();
             }
         }
+        public MasterUC selectedUC { get; set; }
         public MainMenuForm()
         {
             //LoginForm loginForm = new LoginForm();
@@ -399,7 +400,7 @@ namespace ColorOasisSystem.GUI
 
                 if (selectedUC is MasterUC masterUC)
                 {
-                    masterUC.NewData();
+                    masterUC.NewDataAsync();
                     // masterUC.PrintBtnVisible = 0;
                     masterUC.EditDataCheck = false;
                 }
@@ -412,9 +413,7 @@ namespace ColorOasisSystem.GUI
                 // Handle exceptions if necessary
             }
         }
-
-        // Overloaded method for Master_UC type
-        void SelectedUC(MasterUC selectedUC)
+        public void SelectedUC(MasterUC selectedUC)
         {
             try
             {
@@ -427,22 +426,56 @@ namespace ColorOasisSystem.GUI
                     uc.Enabled = false;
                 }
 
-                selectedUC.NewData();
                 selectedUC.Dock = DockStyle.Fill;
                 selectedUC.Enabled = true;
                 selectedUC.Visible = true;
 
-                // masterUC.PrintBtnVisible = 0;
-                selectedUC.EditDataCheck = false;
-
-               Properties.Settings.Default.Current_UC = selectedUC;
-               Properties.Settings.Default.Save();
+                if (selectedUC is MasterUC masterUC)
+                {
+                    masterUC.NewDataAsync();
+                    // masterUC.PrintBtnVisible = 0;
+                    masterUC.EditDataCheck = false;
+                }
+                this.selectedUC = selectedUC;
+                Properties.Settings.Default.Current_UC = selectedUC;
+                Properties.Settings.Default.Save();
             }
             catch (Exception ex)
             {
                 // Handle exceptions if necessary
             }
         }
+
+        // Overloaded method for Master_UC type
+        //void SelectedUC(MasterUC selectedUC)
+        //{
+        //    try
+        //    {
+        //        selectedUC.BringToFront();
+
+        //        foreach (UserControl uc in Controls.OfType<UserControl>())
+        //        {
+        //            uc.Hide();
+        //            uc.Dock = DockStyle.None;
+        //            uc.Enabled = false;
+        //        }
+
+        //        selectedUC.NewData();
+        //        selectedUC.Dock = DockStyle.Fill;
+        //        selectedUC.Enabled = true;
+        //        selectedUC.Visible = true;
+
+        //        // masterUC.PrintBtnVisible = 0;
+        //        selectedUC.EditDataCheck = false;
+
+        //       Properties.Settings.Default.Current_UC = selectedUC;
+        //       Properties.Settings.Default.Save();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Handle exceptions if necessary
+        //    }
+        //}
 
 
         // Sub SelectedButton(object selectedBtn)
@@ -456,7 +489,7 @@ namespace ColorOasisSystem.GUI
 
         private void Main_Slider_Payments_Btn_Click(object sender, EventArgs e)
         {
-            //SelectedUC(branchUC1);
+            SelectedUC(servicesUC1);
         }
 
         private void Main_Slider_Visits_Btn_Click(object sender, EventArgs e)
@@ -466,7 +499,7 @@ namespace ColorOasisSystem.GUI
 
         private void Settings_Popup_Menu_Click(object sender, EventArgs e)
         {
-            if (CurrentUser_.Position == "مؤقت" || CurrentUser_.Position =="Admin"||  string.IsNullOrEmpty(CurrentUser_.Position))
+            if (true)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position =="Admin"||  string.IsNullOrEmpty(CurrentUser_.Position)
             {
                 Message_Lbl.Text = "من فضلك " + Auth_Pass_txt.PlaceholderText + "، " + Username_Shw_lbl.Text;
                 Auth_Pic.Image = Username_Pic.Image;
@@ -486,7 +519,7 @@ namespace ColorOasisSystem.GUI
 
         private void Permission_Popup_Menu_Click(object sender, EventArgs e)
         {
-            if (CurrentUser_.Position == "مؤقت" || CurrentUser_.Position == "Admin" || string.IsNullOrEmpty(CurrentUser_.Position))
+            if (true)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position == "Admin" || string.IsNullOrEmpty(CurrentUser_.Position)
             {
                 Message_Lbl.Text = "من فضلك " + Auth_Pass_txt.PlaceholderText + "، " + Username_Shw_lbl.Text;
                 Auth_Pic.Image = Username_Pic.Image;
@@ -507,7 +540,7 @@ namespace ColorOasisSystem.GUI
 
         private void Section_Popup_Menu_Click(object sender, EventArgs e)
         {
-            if (CurrentUser_.Position == "مؤقت" || CurrentUser_.Position == "Admin" || string.IsNullOrEmpty(CurrentUser_.Position))
+            if (true)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position == "Admin" || string.IsNullOrEmpty(CurrentUser_.Position)
             {
                 Message_Lbl.Text = "من فضلك " + Auth_Pass_txt.PlaceholderText + "، " + Username_Shw_lbl.Text;
                 Auth_Pic.Image = Username_Pic.Image;
@@ -537,6 +570,18 @@ namespace ColorOasisSystem.GUI
         {
             //todo:uncomment
             //SelectedUC(welcomeUC1);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            addDropDownUC1.SelectType(Enums.AddDropDown.ItemType);
+            SelectedUC(addDropDownUC1);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            addDropDownUC1.SelectType(Enums.AddDropDown.ItemCategory);
+            SelectedUC(addDropDownUC1);
         }
     }
 }

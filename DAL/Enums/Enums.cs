@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ColorOasisSystem.Enums
 {
-    internal enum Screen
+    public enum Screen
     {
         User=0,
         Permission=1,
@@ -17,12 +17,34 @@ namespace ColorOasisSystem.Enums
         Payment=6
     }
 
-    internal enum UserBehivour
+    public enum UserBehivour
     {
         New=0,
         Save=1,
         Edit=2, 
         Delete=3,
         Restored=4
+    }
+    public enum AddDropDown
+    {
+        ItemType=0,
+        ItemCategory=1
+    }
+    public enum UnitType
+    {
+        Villa=0,
+        Flat=1,
+        Other=2
+    }
+    public enum ClientType
+    {
+        Customer=0,
+        Company=1
+    }
+    public enum AddNumType
+    {
+        Qty=0,
+        Discount=1,
+        Price=2
     }
 }

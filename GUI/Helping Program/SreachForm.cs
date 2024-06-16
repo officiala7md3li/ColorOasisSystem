@@ -1,4 +1,5 @@
 ﻿using ColorOasisSystem.Entities;
+using ColorOasisSystem.GUI.UC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +17,12 @@ namespace ColorOasisSystem.GUI.HelpingProgram
     public partial class SreachForm<T> : Form where T : new()
     {
         private List<T> Items { get; set; }
-        public SreachForm(List<T> items, List<HelpingSearchForm> helpingSearch)
+        public SreachForm(MasterUC masterUC,List<T> items, List<HelpingSearchForm> helpingSearch)
         {
             InitializeComponent();
             Items=items;
+            MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
+            frm.selectedUC= masterUC;
             // Create the DataGridViewButtonColumn for the first column.
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
             {
@@ -32,11 +35,26 @@ namespace ColorOasisSystem.GUI.HelpingProgram
                 UseColumnTextForButtonValue = true,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells,
                 FlatStyle = FlatStyle.Flat,
-            };
-
+                DefaultCellStyle = new DataGridViewCellStyle() { BackColor = System.Drawing.Color.LightSteelBlue,SelectionBackColor = Color.FromArgb(2, 188, 152) },
+        };
+            buttonColumn.CellTemplate.Style.BackColor = Color.LightSteelBlue;
             // Add the button column to the DataGridView.
             DGV_Search.Columns.Add(buttonColumn);
+            foreach (HelpingSearchForm HS in helpingSearch)
+            {
+                DataGridViewTextBoxColumn textBoxColumn = new DataGridViewTextBoxColumn
+                {
+                    Name = HS.Value,
+                    HeaderText = HS.Display,
+                    SortMode = DataGridViewColumnSortMode.Programmatic,
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                    DataPropertyName = HS.Value,
+                    ReadOnly = true
 
+                };
+                DGV_Search.Columns.Add(textBoxColumn);
+
+            }
 
             // Enable column header editing.
             DGV_Search.EnableHeadersVisualStyles = false;
@@ -59,7 +77,7 @@ namespace ColorOasisSystem.GUI.HelpingProgram
 
             // Hook up the event handler for column header editing.
 
-
+            DGV_Search.AutoGenerateColumns = false;
             Search_CmboBox.DataSource = helpingSearch;
             // Bind the generic list to the DataGridView.
             DGV_Search.DataSource = Items;
@@ -120,15 +138,16 @@ namespace ColorOasisSystem.GUI.HelpingProgram
             DGV_Search.DataSource = GetRecordByProperty(Items, Search_CmboBox.SelectedValue.ToString(), Search_TxtBox.Text);
         }
 
-        private void DGV_Search_MouseDoubleClick(object sender, MouseEventArgs e)
+        private async void DGV_Search_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
             // Allow editing of the column header text.
             //if (e.Buttoni >= 1) // Skip the first column (Button Column).
             //{
             //todo:uncomment
-           // frm.branchUC1.LoadData((int)DGV_Search.CurrentRow.Cells[1].Value);
-                Dispose();
+            //Properties.Settings.Default.Current_UC.LoadData((int)DGV_Search.CurrentRow.Cells[1].Value);
+            await frm.selectedUC.LoadData((int)DGV_Search.CurrentRow.Cells[1].Value);
+            Dispose();
             //}
         }
     }

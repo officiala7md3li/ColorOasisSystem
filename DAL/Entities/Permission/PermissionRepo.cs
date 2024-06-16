@@ -1,6 +1,7 @@
 ﻿using ColorOasisSystem.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
@@ -19,21 +20,21 @@ namespace ColorOasisSystem.Entities
         {
             this.db=db;
         }
-        public List<UserPermissions> GetAll()
+        public async Task<List<UserPermissions>> GetAll()
         {
-            var permissions =db.UserPermissions.ToList();
+            var permissions =await db.UserPermissions.ToListAsync();
             return permissions;
         }
-        public UserPermissions GetById(int id)
+        public async Task<UserPermissions> GetById(int id)
         {
-            var permissions = db.UserPermissions.Where(permission=>permission.Id==id).FirstOrDefault();
+            var permissions = await db.UserPermissions.Where(permission => permission.Id == id).FirstOrDefaultAsync();
             return permissions;
         }
-        public bool DeleteById(int id)
+        public async Task<bool> DeleteById(int id)
         {
             try
             {
-                if (IsEmpty())
+                if (await IsEmpty())
                 {
                     return false;
                     throw new Exception("No Record in Database");
@@ -42,7 +43,7 @@ namespace ColorOasisSystem.Entities
                 if (userPermissions!=null)
                 {
                     userPermissions.IsDeleted=true;
-                    db.SaveChangesAsync();
+                    await db.SaveChangesAsync();
                     return true;
                 }
                 else
@@ -58,33 +59,36 @@ namespace ColorOasisSystem.Entities
             }
 
         }
-        public bool Add(UserPermissions userPermission) 
+        public async Task<bool> Add(UserPermissions userPermission) 
         {
-            if (GetById(userPermission.Id)!=null)
+            if (await GetById(userPermission.Id)!=null)
             {
                 db.UserPermissions.AddOrUpdate(userPermission);
-                db.SaveChangesAsync();
+                await db.SaveChangesAsync();
                 return true;
             }
             return false;
         }
-        public bool Update(UserPermissions userPermission) 
+        public async Task<bool> Update(UserPermissions userPermission) 
         {
             db.UserPermissions.AddOrUpdate(userPermission);
+            await db.SaveChangesAsync();
             return true;
         }
-        public bool Delete(UserPermissions userPermission)
+        public async Task<bool> Delete(UserPermissions userPermission)
         {
-            if (GetById(userPermission.Id) != null)
+            if (await GetById(userPermission.Id) != null)
             {
                 db.UserPermissions.Remove(userPermission);
+                await db.SaveChangesAsync();
                 return true;
             }
             return false ;
         }
-        public bool IsEmpty()
+        public async Task<bool> IsEmpty()
         {
-            return !db.UserPermissions.Any(); //if true table is empty
+            bool result =await db.UserPermissions.AnyAsync();
+            return !result; //if true table is empty
         }
        
     }

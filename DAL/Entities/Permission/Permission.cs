@@ -9,11 +9,11 @@ namespace ColorOasisSystem.Entities
 {
     public class Permission : IPermissions
     {
-        public bool Lock { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool AddNew { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Edit { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Delete { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Retrive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool Lock { get; set; }
+        public bool AddNew { get; set; }
+        public bool Edit { get; set; }
+        public bool Delete { get; set; }
+        public bool Retrive { get; set; }
         public Permission() 
         {
             Lock = false;

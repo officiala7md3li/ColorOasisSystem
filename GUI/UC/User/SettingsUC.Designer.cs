@@ -36,7 +36,7 @@
             this.BunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.Authority_ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Item_Type_Lbl = new System.Windows.Forms.Label();
-            this.New_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.SaveSettings_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.BunifuGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +103,7 @@
             // 
             this.BunifuGroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BunifuGroupBox1.BackColor = System.Drawing.Color.White;
-            this.BunifuGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(188)))), ((int)(((byte)(152)))));
+            this.BunifuGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(163)))), ((int)(((byte)(103)))));
             this.BunifuGroupBox1.BorderRadius = 7;
             this.BunifuGroupBox1.BorderThickness = 1;
             this.BunifuGroupBox1.Controls.Add(this.Authority_ComboBox);
@@ -135,7 +135,7 @@
             this.Authority_ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.Authority_ComboBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
             this.Authority_ComboBox.ItemHeight = 30;
-            this.Authority_ComboBox.Location = new System.Drawing.Point(123, 36);
+            this.Authority_ComboBox.Location = new System.Drawing.Point(122, 36);
             this.Authority_ComboBox.Name = "Authority_ComboBox";
             this.Authority_ComboBox.Size = new System.Drawing.Size(200, 36);
             this.Authority_ComboBox.TabIndex = 270;
@@ -151,7 +151,7 @@
             this.Item_Type_Lbl.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.Item_Type_Lbl.ForeColor = System.Drawing.Color.Gray;
             this.Item_Type_Lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Item_Type_Lbl.Location = new System.Drawing.Point(203, 13);
+            this.Item_Type_Lbl.Location = new System.Drawing.Point(202, 13);
             this.Item_Type_Lbl.Name = "Item_Type_Lbl";
             this.Item_Type_Lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Item_Type_Lbl.Size = new System.Drawing.Size(103, 23);
@@ -159,27 +159,28 @@
             this.Item_Type_Lbl.Text = "صلاحية المستخدم";
             this.Item_Type_Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // New_Btn
+            // SaveSettings_Btn
             // 
-            this.New_Btn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.New_Btn.Animated = true;
-            this.New_Btn.AutoRoundedCorners = true;
-            this.New_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.New_Btn.BorderRadius = 16;
-            this.New_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.New_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(163)))), ((int)(((byte)(103)))));
-            this.New_Btn.Font = new System.Drawing.Font("Cairo", 8.999999F);
-            this.New_Btn.ForeColor = System.Drawing.Color.White;
-            this.New_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.New_Btn.ImageSize = new System.Drawing.Size(15, 15);
-            this.New_Btn.IndicateFocus = true;
-            this.New_Btn.Location = new System.Drawing.Point(332, 327);
-            this.New_Btn.Name = "New_Btn";
-            this.New_Btn.Size = new System.Drawing.Size(147, 35);
-            this.New_Btn.TabIndex = 380;
-            this.New_Btn.Text = "حفظ الاعدادات";
-            this.New_Btn.UseTransparentBackground = true;
-            this.New_Btn.Visible = false;
+            this.SaveSettings_Btn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.SaveSettings_Btn.Animated = true;
+            this.SaveSettings_Btn.AutoRoundedCorners = true;
+            this.SaveSettings_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.SaveSettings_Btn.BorderRadius = 16;
+            this.SaveSettings_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SaveSettings_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(163)))), ((int)(((byte)(103)))));
+            this.SaveSettings_Btn.Font = new System.Drawing.Font("Cairo", 8.999999F);
+            this.SaveSettings_Btn.ForeColor = System.Drawing.Color.White;
+            this.SaveSettings_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SaveSettings_Btn.ImageSize = new System.Drawing.Size(15, 15);
+            this.SaveSettings_Btn.IndicateFocus = true;
+            this.SaveSettings_Btn.Location = new System.Drawing.Point(332, 327);
+            this.SaveSettings_Btn.Name = "SaveSettings_Btn";
+            this.SaveSettings_Btn.Size = new System.Drawing.Size(147, 35);
+            this.SaveSettings_Btn.TabIndex = 380;
+            this.SaveSettings_Btn.Text = "حفظ الاعدادات";
+            this.SaveSettings_Btn.UseTransparentBackground = true;
+            this.SaveSettings_Btn.Visible = false;
+            this.SaveSettings_Btn.Click += new System.EventHandler(this.SaveSettings_Btn_Click);
             // 
             // SettingsUC
             // 
@@ -189,11 +190,11 @@
             this.Controls.Add(this.ASeperator1);
             this.Controls.Add(this.A2ColorChooser1);
             this.Controls.Add(this.BunifuGroupBox1);
-            this.Controls.Add(this.New_Btn);
+            this.Controls.Add(this.SaveSettings_Btn);
             this.Logoimage = ((System.Drawing.Image)(resources.GetObject("$this.Logoimage")));
             this.LogoLabel = "الاعدادات";
             this.Name = "SettingsUC";
-            this.Controls.SetChildIndex(this.New_Btn, 0);
+            this.Controls.SetChildIndex(this.SaveSettings_Btn, 0);
             this.Controls.SetChildIndex(this.BunifuGroupBox1, 0);
             this.Controls.SetChildIndex(this.A2ColorChooser1, 0);
             this.Controls.SetChildIndex(this.ASeperator1, 0);
@@ -214,6 +215,6 @@
         internal Bunifu.UI.WinForms.BunifuGroupBox BunifuGroupBox1;
         internal Guna.UI2.WinForms.Guna2ComboBox Authority_ComboBox;
         private System.Windows.Forms.Label Item_Type_Lbl;
-        internal Guna.UI2.WinForms.Guna2Button New_Btn;
+        internal Guna.UI2.WinForms.Guna2Button SaveSettings_Btn;
     }
 }

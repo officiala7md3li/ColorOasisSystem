@@ -1,4 +1,4 @@
-﻿namespace ColorOasisSystem.GUI.UC.Payment
+﻿namespace ColorOasisSystem.GUI.UC
 {
     partial class ClientTransactionsUC
     {

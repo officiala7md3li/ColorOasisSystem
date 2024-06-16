@@ -23,8 +23,7 @@ namespace ColorOasisSystem.GUI.UC
             Visible = false;
             Enabled = false;
             var mainMenuForm = Application.OpenForms.Cast<MainMenuForm>().Where(x => x.Name == "MainMenuForm").FirstOrDefault();
-            //todo:uncomment
-            //mainMenuForm.SelectedUC(mainMenuForm.welcomeUC1);
+            mainMenuForm.SelectedUC(mainMenuForm.welcomeUC1);
             if (!mainMenuForm.SidePanel.Visible)
             {
                 mainMenuForm.SidePanel.Show();

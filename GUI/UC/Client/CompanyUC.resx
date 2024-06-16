@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Department_Name_TxtBox.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Company_Name_TxtBox.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAACEZJREFUeF7t
         nQtsU2UUxzFKDL4STYwKigqKGqM8jIkgIgO0Ttairlch+AJ1i0hbJiPbWiAYIwLGRwgGhiiC4HDKBKcj
@@ -159,7 +159,7 @@
         KSkpKSlFqW7d/gMmhK1GCxjUjAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Manager_Phone_TxtBox.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Company_Phone_TxtBox.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAkVJREFUaEPt
         mc9KVFEAxudB0k2ED5Ax0jo1KZ0hKghCV6ZuKlpFkkEWVJtcaYvCP7gS8wVSqIdIyIUvEEq6bXE6R74r
@@ -174,7 +174,7 @@
         i8OHLaEcHtYHb19B1gs96D73E8v/MP6JZnzQ3aWLolb7By82CXNAGGxSAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Department_Phone_TxtBox.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Company_Address_TxtBox.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAA41JREFUaEPt
         mc1LFVEYxl/KKPraFNGiL2tVCS2EDBuvRmS5igJpVRRBSYUVRBQt2kT/QGCE0K5FRJv+gLQyo4IWZtQm

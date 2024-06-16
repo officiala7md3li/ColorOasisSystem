@@ -12,6 +12,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace ColorOasisSystem.GUI.UC
 {
@@ -138,50 +140,80 @@ namespace ColorOasisSystem.GUI.UC
         }
         #endregion
 
-        public virtual void BackAction() { }
+        public virtual async Task BackAction() { }
 
-        public virtual void NewData()
+        public virtual void NewDataAsync()
         {
             EditDataCheck = false;
+            foreach (Control ctrl in Controls)
+            {
+                if (ctrl is Guna.UI2.WinForms.Guna2TextBox)
+                {
+                    Guna.UI2.WinForms.Guna2TextBox txtbx = (Guna.UI2.WinForms.Guna2TextBox)ctrl;
+                    txtbx.Clear();
+                    txtbx.Refresh();
+                }
+                if (ctrl is Guna.UI2.WinForms.Guna2ComboBox)
+                {
+                    Guna.UI2.WinForms.Guna2ComboBox Cmbbx = (Guna.UI2.WinForms.Guna2ComboBox)ctrl;
+                    Cmbbx.SelectedIndex = -1;
+                    Cmbbx.Refresh();
+                }
+                if (ctrl is Guna.UI2.WinForms.Guna2DateTimePicker)
+                {
+                    Guna.UI2.WinForms.Guna2DateTimePicker txtbx = (Guna.UI2.WinForms.Guna2DateTimePicker)ctrl;
+                    txtbx.Value = DateTime.Now.AddDays(1);
+                    txtbx.MinDate = DateTime.Now;
+                    txtbx.Refresh();
+                }
+            }
+
         }
 
-        public virtual void LoadData(int ItemID) { }
-
-        public virtual void ZoomData() { }
-
-        public virtual void SetData() { }
-
-        public virtual void SaveData()
-        {
-            popMessage("تمت عملية حفظ البيانات بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5);
-            NewData();
+        public virtual async Task LoadData(int ItemID) 
+        { 
+            EditDataCheck = true;
         }
 
-        public virtual void EditData()
+        public virtual async Task ZoomData() { }
+
+        public virtual async Task SetData() { }
+
+        public virtual async Task SaveDataAsync()
         {
-            popMessage("تمت عملية التعديل على البيانات بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5);
+            //popMessage("تمت عملية حفظ البيانات بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5);
+            NewDataAsync();
+        }
+
+        public virtual async Task EditData()
+        {
+            //popMessage("تمت عملية التعديل على البيانات بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5);
             EditDataCheck = false;
-            NewData();
+            NewDataAsync();
         }
 
-        public virtual void DeleteData()
+        public virtual async Task DeleteData()
         {
-            popMessage("تمت عملية حذف البيانات بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5);
-            NewData();
+            //popMessage("تمت عملية حذف البيانات بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5);
+            NewDataAsync();
         }
 
-        public virtual void SaveAsData()
+        public virtual async Task SaveAsData()
         {
-            popMessage(  "تمت عملية حفظ البيانات خارجياً بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5);
+            //popMessage(  "تمت عملية حفظ البيانات خارجياً بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5);
         }
-        public virtual void Search_Data()
+        public virtual async Task Search_Data()
         {
            // Wait_Loader_Form.TransparentBG(Main_Menu, Search_Form, Main_Menu.Form_Dock.BorderRadius);
         }
 
-        public virtual void EnableChanged() { }
+        public virtual async Task EnableChanged() { }
 
-        public virtual void DisableChanged()
+        public virtual async Task DisableChanged()
+        {
+
+        }
+        public virtual async Task SizeChangedAsync()
         {
 
         }
@@ -296,14 +328,14 @@ namespace ColorOasisSystem.GUI.UC
         #region "Actions Buttons Click Properties"
         private void New_Btn_Click(object sender, EventArgs e)
         {
-            NewData();
+            NewDataAsync();
         }
 
         private void Save_Btn_Click(object sender, EventArgs e)
         {
             if (!edit_)
             {
-                SaveData();
+                SaveDataAsync();
             }
             else
             {
@@ -390,10 +422,11 @@ namespace ColorOasisSystem.GUI.UC
 
         #endregion
 
-        private void MasterUC_SizeChanged(object sender, EventArgs e)
+        private async void MasterUC_SizeChanged(object sender, EventArgs e)
         {
-            Option_Btn.Location = new Point(Option_Btn.Location.X, this.Size.Height - 39);
-            if (!(this.Size.Height> 540))
+            await SizeChangedAsync();
+            Option_Btn.Location = new Point(this.Size.Width-52,this.Size.Height-39);
+            if (!(this.Size.Height> 550))
             {
                 New_Btn.Location = new Point(New_Btn.Location.X, Option_Btn.Top - (Option_Btn.Height / 2));
                 Save_Btn.Location = new Point(Save_Btn.Location.X, Option_Btn.Top - (Option_Btn.Height / 2));
@@ -437,10 +470,52 @@ namespace ColorOasisSystem.GUI.UC
             }
             return true;
         }
+        public bool ValidateDropDown(Guna.UI2.WinForms.Guna2ComboBox comboBox, string ErrorCaption)
+        {
+            if (string.IsNullOrEmpty(comboBox.Text) || string.IsNullOrWhiteSpace(comboBox.Text)|| comboBox.SelectedValue==null || comboBox.SelectedIndex<0)
+            {
+
+                popMessage(ErrorCaption, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5);
+                comboBox.Focus();
+                comboBox.Select();
+                comboBox.DroppedDown = true;
+                return false;
+            }
+            return true;
+        }
+
         public virtual void popMessage(string Caption, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes messageTypes, int timerDelay=5)
         {
             MainMenuForm MainForm_Var= Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
             MyHelper.SnackbarShow(MainForm_Var, MainForm_Var.Snackbar, Caption, messageTypes, timerDelay);
         }
+        #region Picture Add to SQL
+
+        public static byte[] ImageToByteArray(Image image, ImageFormat format)
+        {
+            if (image == null)
+                throw new ArgumentNullException(nameof(image));
+            if (format == null)
+                throw new ArgumentNullException(nameof(format));
+
+            using (var ms = new MemoryStream())
+            {
+                image.Save(ms, format);
+                return ms.ToArray();
+            }
+        }
+
+        public static Image ByteArrayToImage(byte[] byteArray)
+        {
+            if (byteArray == null)
+                throw new ArgumentNullException(nameof(byteArray));
+
+            using (var ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        #endregion
     }
 }

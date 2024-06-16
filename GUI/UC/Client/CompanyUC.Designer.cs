@@ -1,4 +1,4 @@
-﻿namespace ColorOasisSystem.GUI.UC.Client
+﻿namespace ColorOasisSystem.GUI.UC
 {
     partial class CompanyUC
     {
@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyUC));
             this.label2 = new System.Windows.Forms.Label();
-            this.Section_ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.Dealer_ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Label3 = new System.Windows.Forms.Label();
-            this.Department_Name_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Manager_Phone_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Company_Name_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Company_Phone_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.Label4 = new System.Windows.Forms.Label();
-            this.Department_Phone_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Company_Address_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ID_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -56,29 +56,29 @@
             this.label2.Text = "الخاص بالتواصل";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Section_ComboBox
+            // Dealer_ComboBox
             // 
-            this.Section_ComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Section_ComboBox.Animated = true;
-            this.Section_ComboBox.AutoRoundedCorners = true;
-            this.Section_ComboBox.BackColor = System.Drawing.Color.Transparent;
-            this.Section_ComboBox.BorderColor = System.Drawing.Color.DarkGray;
-            this.Section_ComboBox.BorderRadius = 17;
-            this.Section_ComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Section_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Section_ComboBox.DropDownWidth = 106;
-            this.Section_ComboBox.FocusedColor = System.Drawing.Color.DodgerBlue;
-            this.Section_ComboBox.FocusedState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.Section_ComboBox.Font = new System.Drawing.Font("Cairo", 8F);
-            this.Section_ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.Section_ComboBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
-            this.Section_ComboBox.ItemHeight = 30;
-            this.Section_ComboBox.Location = new System.Drawing.Point(180, 172);
-            this.Section_ComboBox.Name = "Section_ComboBox";
-            this.Section_ComboBox.Size = new System.Drawing.Size(199, 36);
-            this.Section_ComboBox.TabIndex = 410;
-            this.Section_ComboBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Section_ComboBox.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.Dealer_ComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Dealer_ComboBox.Animated = true;
+            this.Dealer_ComboBox.AutoRoundedCorners = true;
+            this.Dealer_ComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.Dealer_ComboBox.BorderColor = System.Drawing.Color.DarkGray;
+            this.Dealer_ComboBox.BorderRadius = 17;
+            this.Dealer_ComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Dealer_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Dealer_ComboBox.DropDownWidth = 106;
+            this.Dealer_ComboBox.FocusedColor = System.Drawing.Color.DodgerBlue;
+            this.Dealer_ComboBox.FocusedState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.Dealer_ComboBox.Font = new System.Drawing.Font("Cairo", 8F);
+            this.Dealer_ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Dealer_ComboBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
+            this.Dealer_ComboBox.ItemHeight = 30;
+            this.Dealer_ComboBox.Location = new System.Drawing.Point(180, 172);
+            this.Dealer_ComboBox.Name = "Dealer_ComboBox";
+            this.Dealer_ComboBox.Size = new System.Drawing.Size(199, 36);
+            this.Dealer_ComboBox.TabIndex = 410;
+            this.Dealer_ComboBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Dealer_ComboBox.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
             // Label3
             // 
@@ -96,59 +96,59 @@
             this.Label3.Text = "رقم هاتف العميل\r\n";
             this.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Department_Name_TxtBox
+            // Company_Name_TxtBox
             // 
-            this.Department_Name_TxtBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Department_Name_TxtBox.AutoRoundedCorners = true;
-            this.Department_Name_TxtBox.BorderRadius = 17;
-            this.Department_Name_TxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Department_Name_TxtBox.DefaultText = "";
-            this.Department_Name_TxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Department_Name_TxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Department_Name_TxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Department_Name_TxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Department_Name_TxtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Department_Name_TxtBox.Font = new System.Drawing.Font("Cairo", 9F);
-            this.Department_Name_TxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Department_Name_TxtBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Department_Name_TxtBox.IconRight")));
-            this.Department_Name_TxtBox.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Department_Name_TxtBox.Location = new System.Drawing.Point(431, 172);
-            this.Department_Name_TxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Department_Name_TxtBox.Name = "Department_Name_TxtBox";
-            this.Department_Name_TxtBox.PasswordChar = '\0';
-            this.Department_Name_TxtBox.PlaceholderText = "ادخل اسم العميل";
-            this.Department_Name_TxtBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Department_Name_TxtBox.SelectedText = "";
-            this.Department_Name_TxtBox.Size = new System.Drawing.Size(200, 36);
-            this.Department_Name_TxtBox.TabIndex = 403;
-            this.Department_Name_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
+            this.Company_Name_TxtBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Company_Name_TxtBox.AutoRoundedCorners = true;
+            this.Company_Name_TxtBox.BorderRadius = 17;
+            this.Company_Name_TxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Company_Name_TxtBox.DefaultText = "";
+            this.Company_Name_TxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Company_Name_TxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Company_Name_TxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Company_Name_TxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Company_Name_TxtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Company_Name_TxtBox.Font = new System.Drawing.Font("Cairo", 9F);
+            this.Company_Name_TxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Company_Name_TxtBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Company_Name_TxtBox.IconRight")));
+            this.Company_Name_TxtBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Company_Name_TxtBox.Location = new System.Drawing.Point(431, 172);
+            this.Company_Name_TxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Company_Name_TxtBox.Name = "Company_Name_TxtBox";
+            this.Company_Name_TxtBox.PasswordChar = '\0';
+            this.Company_Name_TxtBox.PlaceholderText = "ادخل اسم العميل";
+            this.Company_Name_TxtBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Company_Name_TxtBox.SelectedText = "";
+            this.Company_Name_TxtBox.Size = new System.Drawing.Size(200, 36);
+            this.Company_Name_TxtBox.TabIndex = 403;
+            this.Company_Name_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
-            // Manager_Phone_TxtBox
+            // Company_Phone_TxtBox
             // 
-            this.Manager_Phone_TxtBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Manager_Phone_TxtBox.AutoRoundedCorners = true;
-            this.Manager_Phone_TxtBox.BorderRadius = 17;
-            this.Manager_Phone_TxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Manager_Phone_TxtBox.DefaultText = "";
-            this.Manager_Phone_TxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Manager_Phone_TxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Manager_Phone_TxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Manager_Phone_TxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Manager_Phone_TxtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Manager_Phone_TxtBox.Font = new System.Drawing.Font("Cairo", 9F);
-            this.Manager_Phone_TxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Manager_Phone_TxtBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Manager_Phone_TxtBox.IconRight")));
-            this.Manager_Phone_TxtBox.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Manager_Phone_TxtBox.Location = new System.Drawing.Point(431, 285);
-            this.Manager_Phone_TxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Manager_Phone_TxtBox.Name = "Manager_Phone_TxtBox";
-            this.Manager_Phone_TxtBox.PasswordChar = '\0';
-            this.Manager_Phone_TxtBox.PlaceholderText = "ادخل رقم هاتف العميل";
-            this.Manager_Phone_TxtBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Manager_Phone_TxtBox.SelectedText = "";
-            this.Manager_Phone_TxtBox.Size = new System.Drawing.Size(200, 36);
-            this.Manager_Phone_TxtBox.TabIndex = 405;
-            this.Manager_Phone_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
+            this.Company_Phone_TxtBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Company_Phone_TxtBox.AutoRoundedCorners = true;
+            this.Company_Phone_TxtBox.BorderRadius = 17;
+            this.Company_Phone_TxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Company_Phone_TxtBox.DefaultText = "";
+            this.Company_Phone_TxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Company_Phone_TxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Company_Phone_TxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Company_Phone_TxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Company_Phone_TxtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Company_Phone_TxtBox.Font = new System.Drawing.Font("Cairo", 9F);
+            this.Company_Phone_TxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Company_Phone_TxtBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Company_Phone_TxtBox.IconRight")));
+            this.Company_Phone_TxtBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Company_Phone_TxtBox.Location = new System.Drawing.Point(431, 285);
+            this.Company_Phone_TxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Company_Phone_TxtBox.Name = "Company_Phone_TxtBox";
+            this.Company_Phone_TxtBox.PasswordChar = '\0';
+            this.Company_Phone_TxtBox.PlaceholderText = "ادخل رقم هاتف العميل";
+            this.Company_Phone_TxtBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Company_Phone_TxtBox.SelectedText = "";
+            this.Company_Phone_TxtBox.Size = new System.Drawing.Size(200, 36);
+            this.Company_Phone_TxtBox.TabIndex = 405;
+            this.Company_Phone_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
             // Label4
             // 
@@ -166,32 +166,32 @@
             this.Label4.Text = "عنوان المورد";
             this.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Department_Phone_TxtBox
+            // Company_Address_TxtBox
             // 
-            this.Department_Phone_TxtBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Department_Phone_TxtBox.AutoRoundedCorners = true;
-            this.Department_Phone_TxtBox.BorderRadius = 17;
-            this.Department_Phone_TxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Department_Phone_TxtBox.DefaultText = "";
-            this.Department_Phone_TxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Department_Phone_TxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Department_Phone_TxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Department_Phone_TxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Department_Phone_TxtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Department_Phone_TxtBox.Font = new System.Drawing.Font("Cairo", 9F);
-            this.Department_Phone_TxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Department_Phone_TxtBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Department_Phone_TxtBox.IconRight")));
-            this.Department_Phone_TxtBox.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Department_Phone_TxtBox.Location = new System.Drawing.Point(180, 285);
-            this.Department_Phone_TxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Department_Phone_TxtBox.Name = "Department_Phone_TxtBox";
-            this.Department_Phone_TxtBox.PasswordChar = '\0';
-            this.Department_Phone_TxtBox.PlaceholderText = "ادخل عنوان العميل";
-            this.Department_Phone_TxtBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Department_Phone_TxtBox.SelectedText = "";
-            this.Department_Phone_TxtBox.Size = new System.Drawing.Size(199, 36);
-            this.Department_Phone_TxtBox.TabIndex = 404;
-            this.Department_Phone_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
+            this.Company_Address_TxtBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Company_Address_TxtBox.AutoRoundedCorners = true;
+            this.Company_Address_TxtBox.BorderRadius = 17;
+            this.Company_Address_TxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Company_Address_TxtBox.DefaultText = "";
+            this.Company_Address_TxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Company_Address_TxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Company_Address_TxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Company_Address_TxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Company_Address_TxtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Company_Address_TxtBox.Font = new System.Drawing.Font("Cairo", 9F);
+            this.Company_Address_TxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Company_Address_TxtBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Company_Address_TxtBox.IconRight")));
+            this.Company_Address_TxtBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Company_Address_TxtBox.Location = new System.Drawing.Point(180, 285);
+            this.Company_Address_TxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Company_Address_TxtBox.Name = "Company_Address_TxtBox";
+            this.Company_Address_TxtBox.PasswordChar = '\0';
+            this.Company_Address_TxtBox.PlaceholderText = "ادخل عنوان العميل";
+            this.Company_Address_TxtBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Company_Address_TxtBox.SelectedText = "";
+            this.Company_Address_TxtBox.Size = new System.Drawing.Size(199, 36);
+            this.Company_Address_TxtBox.TabIndex = 404;
+            this.Company_Address_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
             // ID_TxtBox
             // 
@@ -239,12 +239,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Section_ComboBox);
+            this.Controls.Add(this.Dealer_ComboBox);
             this.Controls.Add(this.Label3);
-            this.Controls.Add(this.Department_Name_TxtBox);
-            this.Controls.Add(this.Manager_Phone_TxtBox);
+            this.Controls.Add(this.Company_Name_TxtBox);
+            this.Controls.Add(this.Company_Phone_TxtBox);
             this.Controls.Add(this.Label4);
-            this.Controls.Add(this.Department_Phone_TxtBox);
+            this.Controls.Add(this.Company_Address_TxtBox);
             this.Controls.Add(this.ID_TxtBox);
             this.Controls.Add(this.Label1);
             this.Logoimage = ((System.Drawing.Image)(resources.GetObject("$this.Logoimage")));
@@ -253,12 +253,12 @@
             this.Name = "CompanyUC";
             this.Controls.SetChildIndex(this.Label1, 0);
             this.Controls.SetChildIndex(this.ID_TxtBox, 0);
-            this.Controls.SetChildIndex(this.Department_Phone_TxtBox, 0);
+            this.Controls.SetChildIndex(this.Company_Address_TxtBox, 0);
             this.Controls.SetChildIndex(this.Label4, 0);
-            this.Controls.SetChildIndex(this.Manager_Phone_TxtBox, 0);
-            this.Controls.SetChildIndex(this.Department_Name_TxtBox, 0);
+            this.Controls.SetChildIndex(this.Company_Phone_TxtBox, 0);
+            this.Controls.SetChildIndex(this.Company_Name_TxtBox, 0);
             this.Controls.SetChildIndex(this.Label3, 0);
-            this.Controls.SetChildIndex(this.Section_ComboBox, 0);
+            this.Controls.SetChildIndex(this.Dealer_ComboBox, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -268,12 +268,12 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        internal Guna.UI2.WinForms.Guna2ComboBox Section_ComboBox;
+        internal Guna.UI2.WinForms.Guna2ComboBox Dealer_ComboBox;
         private System.Windows.Forms.Label Label3;
-        internal Guna.UI2.WinForms.Guna2TextBox Department_Name_TxtBox;
-        internal Guna.UI2.WinForms.Guna2TextBox Manager_Phone_TxtBox;
+        internal Guna.UI2.WinForms.Guna2TextBox Company_Name_TxtBox;
+        internal Guna.UI2.WinForms.Guna2TextBox Company_Phone_TxtBox;
         private System.Windows.Forms.Label Label4;
-        internal Guna.UI2.WinForms.Guna2TextBox Department_Phone_TxtBox;
+        internal Guna.UI2.WinForms.Guna2TextBox Company_Address_TxtBox;
         internal Guna.UI2.WinForms.Guna2TextBox ID_TxtBox;
         private System.Windows.Forms.Label Label1;
     }

@@ -197,7 +197,8 @@ namespace ColorOasisSystem.GUI
                     IntegratedSecurity = Auth_Method,
                     UserID = SQL_login_Name,
                     Password = SQL_login_Password,
-                    ConnectTimeout = 120
+                    ConnectTimeout = 180,
+                    MultipleActiveResultSets = true
                 };
                 Properties.Settings.Default.Server_Name = Server_Name;
                 Properties.Settings.Default.DB_Name = DataBase_Name;

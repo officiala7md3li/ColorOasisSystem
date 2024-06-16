@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             this.Elli1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.Exit_PictureBox = new Bunifu.UI.WinForms.BunifuImageButton();
             this.TabPage1 = new System.Windows.Forms.TabPage();
             this.Message_Lbl = new System.Windows.Forms.Label();
             this.Proceed_to_Users_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -65,6 +64,21 @@
             this.Logout_Popup_Menu = new Guna.UI2.WinForms.Guna2TileButton();
             this.BunifuPages2 = new Bunifu.UI.WinForms.BunifuPages();
             this.Panel2 = new System.Windows.Forms.Panel();
+            this.welcomeUC1 = new ColorOasisSystem.GUI.UC.WelcomeUC();
+            this.userUC1 = new ColorOasisSystem.GUI.UC.UserUC();
+            this.settingsUC1 = new ColorOasisSystem.GUI.UC.SettingsUC();
+            this.servicesUC1 = new ColorOasisSystem.GUI.UC.ServicesUC();
+            this.serviceSecondUC1 = new ColorOasisSystem.GUI.UC.ServiceSecondUC();
+            this.quotationUC1 = new ColorOasisSystem.GUI.UC.QuotationUC();
+            this.permissionsUC1 = new ColorOasisSystem.GUI.UC.PermissionsUC();
+            this.paymentsUC1 = new ColorOasisSystem.GUI.UC.PaymentsUC();
+            this.clientTransactionsUC1 = new ColorOasisSystem.GUI.UC.ClientTransactionsUC();
+            this.inspectionUC1 = new ColorOasisSystem.GUI.UC.InspectionUC();
+            this.clientWorkSecondUC1 = new ColorOasisSystem.GUI.UC.ClientWorkSecondUC();
+            this.clientSecondUC1 = new ColorOasisSystem.GUI.UC.ClientSecondUC();
+            this.companyUC1 = new ColorOasisSystem.GUI.UC.CompanyUC();
+            this.clientUC1 = new ColorOasisSystem.GUI.UC.ClientUC();
+            this.addDropDownUC1 = new ColorOasisSystem.GUI.UC.AddDropDownUC();
             this.Form_Dock = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.Popup_Menu_TMR = new System.Windows.Forms.Timer(this.components);
             this.Support_pnl = new Guna.UI2.WinForms.Guna2Panel();
@@ -98,6 +112,7 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.FormDock = new Bunifu.UI.WinForms.BunifuFormDock();
             this.bunifuFormResizer1 = new Bunifu.UI.WinForms.BunifuFormResizer(this.components);
+            this.Exit_PictureBox = new Bunifu.UI.WinForms.BunifuImageButton();
             this.TabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Auth_Pic)).BeginInit();
             this.TabPage4.SuspendLayout();
@@ -106,6 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pic_View)).BeginInit();
             this.Popup_Menu.SuspendLayout();
             this.BunifuPages2.SuspendLayout();
+            this.Panel2.SuspendLayout();
             this.Support_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Insta_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fb_Icon)).BeginInit();
@@ -121,43 +137,6 @@
             // Elli1
             // 
             this.Elli1.BorderRadius = 9;
-            // 
-            // Exit_PictureBox
-            // 
-            this.Exit_PictureBox.ActiveImage = null;
-            this.Exit_PictureBox.AllowAnimations = true;
-            this.Exit_PictureBox.AllowBuffering = false;
-            this.Exit_PictureBox.AllowToggling = false;
-            this.Exit_PictureBox.AllowZooming = true;
-            this.Exit_PictureBox.AllowZoomingOnFocus = false;
-            this.Exit_PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Exit_PictureBox.BackColor = System.Drawing.SystemColors.Control;
-            this.Exit_PictureBox.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Exit_PictureBox.Enabled = false;
-            this.Exit_PictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Exit_PictureBox.ErrorImage")));
-            this.Exit_PictureBox.FadeWhenInactive = false;
-            this.Exit_PictureBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.Exit_PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("Exit_PictureBox.Image")));
-            this.Exit_PictureBox.ImageActive = null;
-            this.Exit_PictureBox.ImageLocation = null;
-            this.Exit_PictureBox.ImageMargin = 20;
-            this.Exit_PictureBox.ImageSize = new System.Drawing.Size(231, 204);
-            this.Exit_PictureBox.ImageZoomSize = new System.Drawing.Size(251, 224);
-            this.Exit_PictureBox.InitialImage = null;
-            this.Exit_PictureBox.Location = new System.Drawing.Point(154, 240);
-            this.Exit_PictureBox.Name = "Exit_PictureBox";
-            this.Exit_PictureBox.Rotation = 0;
-            this.Exit_PictureBox.ShowActiveImage = true;
-            this.Exit_PictureBox.ShowCursorChanges = true;
-            this.Exit_PictureBox.ShowImageBorders = true;
-            this.Exit_PictureBox.ShowSizeMarkers = false;
-            this.Exit_PictureBox.Size = new System.Drawing.Size(251, 224);
-            this.Exit_PictureBox.TabIndex = 254;
-            this.Exit_PictureBox.ToolTipText = "";
-            this.Exit_PictureBox.Visible = false;
-            this.Exit_PictureBox.WaitOnLoad = false;
-            this.Exit_PictureBox.Zoom = 20;
-            this.Exit_PictureBox.ZoomSpeed = 10;
             // 
             // TabPage1
             // 
@@ -810,11 +789,272 @@
             // 
             // Panel2
             // 
+            this.Panel2.Controls.Add(this.welcomeUC1);
+            this.Panel2.Controls.Add(this.userUC1);
+            this.Panel2.Controls.Add(this.settingsUC1);
+            this.Panel2.Controls.Add(this.servicesUC1);
+            this.Panel2.Controls.Add(this.serviceSecondUC1);
+            this.Panel2.Controls.Add(this.quotationUC1);
+            this.Panel2.Controls.Add(this.permissionsUC1);
+            this.Panel2.Controls.Add(this.paymentsUC1);
+            this.Panel2.Controls.Add(this.clientTransactionsUC1);
+            this.Panel2.Controls.Add(this.inspectionUC1);
+            this.Panel2.Controls.Add(this.clientWorkSecondUC1);
+            this.Panel2.Controls.Add(this.clientSecondUC1);
+            this.Panel2.Controls.Add(this.companyUC1);
+            this.Panel2.Controls.Add(this.clientUC1);
+            this.Panel2.Controls.Add(this.addDropDownUC1);
             this.Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel2.Location = new System.Drawing.Point(3, 100);
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(820, 546);
             this.Panel2.TabIndex = 249;
+            // 
+            // welcomeUC1
+            // 
+            this.welcomeUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.welcomeUC1.Location = new System.Drawing.Point(0, 0);
+            this.welcomeUC1.Name = "welcomeUC1";
+            this.welcomeUC1.Size = new System.Drawing.Size(820, 546);
+            this.welcomeUC1.TabIndex = 14;
+            // 
+            // userUC1
+            // 
+            this.userUC1.DeleteBtnVisible = false;
+            this.userUC1.EditBtnVisible = false;
+            this.userUC1.EditDataCheck = false;
+            this.userUC1.Enabled = false;
+            this.userUC1.Location = new System.Drawing.Point(-36, 37);
+            this.userUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("userUC1.Logoimage")));
+            this.userUC1.LogoLabel = "المستخدمين";
+            this.userUC1.MasterUCLock = false;
+            this.userUC1.Name = "userUC1";
+            this.userUC1.NewBtnVisible = true;
+            this.userUC1.PrintBtnVisible = false;
+            this.userUC1.SaveBtnVisible = false;
+            this.userUC1.SearchBtnVisible = false;
+            this.userUC1.Size = new System.Drawing.Size(810, 540);
+            this.userUC1.TabIndex = 13;
+            this.userUC1.Visible = false;
+            // 
+            // settingsUC1
+            // 
+            this.settingsUC1.Enabled = false;
+            this.settingsUC1.Location = new System.Drawing.Point(26, 37);
+            this.settingsUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("settingsUC1.Logoimage")));
+            this.settingsUC1.LogoLabel = "الاعدادات";
+            this.settingsUC1.Master_UC_Lock = false;
+            this.settingsUC1.Name = "settingsUC1";
+            this.settingsUC1.Size = new System.Drawing.Size(810, 468);
+            this.settingsUC1.TabIndex = 12;
+            this.settingsUC1.Visible = false;
+            // 
+            // servicesUC1
+            // 
+            this.servicesUC1.DeleteBtnVisible = true;
+            this.servicesUC1.EditBtnVisible = true;
+            this.servicesUC1.EditDataCheck = false;
+            this.servicesUC1.Enabled = false;
+            this.servicesUC1.Location = new System.Drawing.Point(79, 37);
+            this.servicesUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("servicesUC1.Logoimage")));
+            this.servicesUC1.LogoLabel = "الخدمات";
+            this.servicesUC1.MasterUCLock = false;
+            this.servicesUC1.Name = "servicesUC1";
+            this.servicesUC1.NewBtnVisible = true;
+            this.servicesUC1.PrintBtnVisible = false;
+            this.servicesUC1.SaveBtnVisible = true;
+            this.servicesUC1.SearchBtnVisible = true;
+            this.servicesUC1.Size = new System.Drawing.Size(810, 468);
+            this.servicesUC1.TabIndex = 11;
+            this.servicesUC1.Visible = false;
+            // 
+            // serviceSecondUC1
+            // 
+            this.serviceSecondUC1.Enabled = false;
+            this.serviceSecondUC1.Location = new System.Drawing.Point(-40, 37);
+            this.serviceSecondUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("serviceSecondUC1.Logoimage")));
+            this.serviceSecondUC1.LogoLabel = "الخدمات";
+            this.serviceSecondUC1.Master_UC_Lock = false;
+            this.serviceSecondUC1.Name = "serviceSecondUC1";
+            this.serviceSecondUC1.Size = new System.Drawing.Size(810, 468);
+            this.serviceSecondUC1.TabIndex = 10;
+            this.serviceSecondUC1.Visible = false;
+            // 
+            // quotationUC1
+            // 
+            this.quotationUC1.DeleteBtnVisible = false;
+            this.quotationUC1.EditBtnVisible = false;
+            this.quotationUC1.EditDataCheck = false;
+            this.quotationUC1.Enabled = false;
+            this.quotationUC1.Location = new System.Drawing.Point(-24, 37);
+            this.quotationUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("quotationUC1.Logoimage")));
+            this.quotationUC1.LogoLabel = "التسعير";
+            this.quotationUC1.MasterUCLock = false;
+            this.quotationUC1.Name = "quotationUC1";
+            this.quotationUC1.NewBtnVisible = true;
+            this.quotationUC1.PrintBtnVisible = false;
+            this.quotationUC1.SaveBtnVisible = false;
+            this.quotationUC1.SearchBtnVisible = false;
+            this.quotationUC1.Size = new System.Drawing.Size(810, 468);
+            this.quotationUC1.TabIndex = 9;
+            this.quotationUC1.Visible = false;
+            // 
+            // permissionsUC1
+            // 
+            this.permissionsUC1.DeleteBtnVisible = false;
+            this.permissionsUC1.EditBtnVisible = false;
+            this.permissionsUC1.EditDataCheck = false;
+            this.permissionsUC1.Enabled = false;
+            this.permissionsUC1.Location = new System.Drawing.Point(37, 37);
+            this.permissionsUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("permissionsUC1.Logoimage")));
+            this.permissionsUC1.LogoLabel = "الصلاحيات";
+            this.permissionsUC1.MasterUCLock = false;
+            this.permissionsUC1.Name = "permissionsUC1";
+            this.permissionsUC1.NewBtnVisible = true;
+            this.permissionsUC1.PrintBtnVisible = false;
+            this.permissionsUC1.SaveBtnVisible = false;
+            this.permissionsUC1.SearchBtnVisible = false;
+            this.permissionsUC1.Size = new System.Drawing.Size(810, 468);
+            this.permissionsUC1.TabIndex = 8;
+            this.permissionsUC1.Visible = false;
+            // 
+            // paymentsUC1
+            // 
+            this.paymentsUC1.DeleteBtnVisible = false;
+            this.paymentsUC1.EditBtnVisible = false;
+            this.paymentsUC1.EditDataCheck = false;
+            this.paymentsUC1.Enabled = false;
+            this.paymentsUC1.Location = new System.Drawing.Point(83, 37);
+            this.paymentsUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("paymentsUC1.Logoimage")));
+            this.paymentsUC1.LogoLabel = "المدفوعات";
+            this.paymentsUC1.MasterUCLock = false;
+            this.paymentsUC1.Name = "paymentsUC1";
+            this.paymentsUC1.NewBtnVisible = true;
+            this.paymentsUC1.PrintBtnVisible = false;
+            this.paymentsUC1.SaveBtnVisible = false;
+            this.paymentsUC1.SearchBtnVisible = false;
+            this.paymentsUC1.Size = new System.Drawing.Size(810, 468);
+            this.paymentsUC1.TabIndex = 7;
+            this.paymentsUC1.Visible = false;
+            // 
+            // clientTransactionsUC1
+            // 
+            this.clientTransactionsUC1.DeleteBtnVisible = false;
+            this.clientTransactionsUC1.EditBtnVisible = false;
+            this.clientTransactionsUC1.EditDataCheck = false;
+            this.clientTransactionsUC1.Enabled = false;
+            this.clientTransactionsUC1.Location = new System.Drawing.Point(-6, 37);
+            this.clientTransactionsUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("clientTransactionsUC1.Logoimage")));
+            this.clientTransactionsUC1.LogoLabel = "المعاملات";
+            this.clientTransactionsUC1.MasterUCLock = false;
+            this.clientTransactionsUC1.Name = "clientTransactionsUC1";
+            this.clientTransactionsUC1.NewBtnVisible = true;
+            this.clientTransactionsUC1.PrintBtnVisible = false;
+            this.clientTransactionsUC1.SaveBtnVisible = false;
+            this.clientTransactionsUC1.SearchBtnVisible = false;
+            this.clientTransactionsUC1.Size = new System.Drawing.Size(810, 468);
+            this.clientTransactionsUC1.TabIndex = 6;
+            this.clientTransactionsUC1.Visible = false;
+            // 
+            // inspectionUC1
+            // 
+            this.inspectionUC1.DeleteBtnVisible = false;
+            this.inspectionUC1.EditBtnVisible = false;
+            this.inspectionUC1.EditDataCheck = false;
+            this.inspectionUC1.Enabled = false;
+            this.inspectionUC1.Location = new System.Drawing.Point(-26, 37);
+            this.inspectionUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("inspectionUC1.Logoimage")));
+            this.inspectionUC1.LogoLabel = "التوصيف";
+            this.inspectionUC1.MasterUCLock = false;
+            this.inspectionUC1.Name = "inspectionUC1";
+            this.inspectionUC1.NewBtnVisible = true;
+            this.inspectionUC1.PrintBtnVisible = false;
+            this.inspectionUC1.SaveBtnVisible = false;
+            this.inspectionUC1.SearchBtnVisible = false;
+            this.inspectionUC1.Size = new System.Drawing.Size(810, 544);
+            this.inspectionUC1.TabIndex = 5;
+            this.inspectionUC1.Visible = false;
+            // 
+            // clientWorkSecondUC1
+            // 
+            this.clientWorkSecondUC1.Enabled = false;
+            this.clientWorkSecondUC1.Location = new System.Drawing.Point(-13, 37);
+            this.clientWorkSecondUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("clientWorkSecondUC1.Logoimage")));
+            this.clientWorkSecondUC1.LogoLabel = "الادويه";
+            this.clientWorkSecondUC1.Master_UC_Lock = false;
+            this.clientWorkSecondUC1.Name = "clientWorkSecondUC1";
+            this.clientWorkSecondUC1.Size = new System.Drawing.Size(810, 468);
+            this.clientWorkSecondUC1.TabIndex = 4;
+            this.clientWorkSecondUC1.Visible = false;
+            // 
+            // clientSecondUC1
+            // 
+            this.clientSecondUC1.Enabled = false;
+            this.clientSecondUC1.Location = new System.Drawing.Point(34, 37);
+            this.clientSecondUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("clientSecondUC1.Logoimage")));
+            this.clientSecondUC1.LogoLabel = "العملاء";
+            this.clientSecondUC1.Master_UC_Lock = false;
+            this.clientSecondUC1.Name = "clientSecondUC1";
+            this.clientSecondUC1.Size = new System.Drawing.Size(810, 468);
+            this.clientSecondUC1.TabIndex = 3;
+            this.clientSecondUC1.Visible = false;
+            // 
+            // companyUC1
+            // 
+            this.companyUC1.DeleteBtnVisible = true;
+            this.companyUC1.EditBtnVisible = true;
+            this.companyUC1.EditDataCheck = false;
+            this.companyUC1.Enabled = false;
+            this.companyUC1.Location = new System.Drawing.Point(1, 37);
+            this.companyUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("companyUC1.Logoimage")));
+            this.companyUC1.LogoLabel = "الشركات";
+            this.companyUC1.MasterUCLock = false;
+            this.companyUC1.Name = "companyUC1";
+            this.companyUC1.NewBtnVisible = true;
+            this.companyUC1.PrintBtnVisible = false;
+            this.companyUC1.SaveBtnVisible = true;
+            this.companyUC1.SearchBtnVisible = true;
+            this.companyUC1.Size = new System.Drawing.Size(810, 468);
+            this.companyUC1.TabIndex = 2;
+            this.companyUC1.Visible = false;
+            // 
+            // clientUC1
+            // 
+            this.clientUC1.DeleteBtnVisible = false;
+            this.clientUC1.EditBtnVisible = false;
+            this.clientUC1.EditDataCheck = false;
+            this.clientUC1.Enabled = false;
+            this.clientUC1.Location = new System.Drawing.Point(77, 37);
+            this.clientUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("clientUC1.Logoimage")));
+            this.clientUC1.LogoLabel = "العملاء";
+            this.clientUC1.MasterUCLock = false;
+            this.clientUC1.Name = "clientUC1";
+            this.clientUC1.NewBtnVisible = true;
+            this.clientUC1.PrintBtnVisible = true;
+            this.clientUC1.SaveBtnVisible = true;
+            this.clientUC1.SearchBtnVisible = true;
+            this.clientUC1.Size = new System.Drawing.Size(810, 468);
+            this.clientUC1.TabIndex = 1;
+            this.clientUC1.Visible = false;
+            // 
+            // addDropDownUC1
+            // 
+            this.addDropDownUC1.DeleteBtnVisible = true;
+            this.addDropDownUC1.EditBtnVisible = true;
+            this.addDropDownUC1.EditDataCheck = false;
+            this.addDropDownUC1.Enabled = false;
+            this.addDropDownUC1.Location = new System.Drawing.Point(-53, 37);
+            this.addDropDownUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("addDropDownUC1.Logoimage")));
+            this.addDropDownUC1.LogoLabel = "النوع";
+            this.addDropDownUC1.MasterUCLock = false;
+            this.addDropDownUC1.Name = "addDropDownUC1";
+            this.addDropDownUC1.NewBtnVisible = true;
+            this.addDropDownUC1.PrintBtnVisible = false;
+            this.addDropDownUC1.SaveBtnVisible = true;
+            this.addDropDownUC1.SearchBtnVisible = true;
+            this.addDropDownUC1.Size = new System.Drawing.Size(810, 468);
+            this.addDropDownUC1.TabIndex = 0;
+            this.addDropDownUC1.Visible = false;
             // 
             // Form_Dock
             // 
@@ -1187,6 +1427,7 @@
             this.guna2Button1.Text = "الزيارة والفاتورة";
             this.guna2Button1.TextOffset = new System.Drawing.Point(-12, 0);
             this.guna2Button1.UseTransparentBackground = true;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
             // 
@@ -1213,6 +1454,7 @@
             this.guna2Button2.TabIndex = 79;
             this.guna2Button2.Text = "المدفوعات";
             this.guna2Button2.UseTransparentBackground = true;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button3
             // 
@@ -1438,6 +1680,43 @@
             this.bunifuFormResizer1.ParentForm = this;
             this.bunifuFormResizer1.ResizeHandlesWidth = 6;
             // 
+            // Exit_PictureBox
+            // 
+            this.Exit_PictureBox.ActiveImage = null;
+            this.Exit_PictureBox.AllowAnimations = true;
+            this.Exit_PictureBox.AllowBuffering = false;
+            this.Exit_PictureBox.AllowToggling = false;
+            this.Exit_PictureBox.AllowZooming = true;
+            this.Exit_PictureBox.AllowZoomingOnFocus = false;
+            this.Exit_PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Exit_PictureBox.BackColor = System.Drawing.SystemColors.Control;
+            this.Exit_PictureBox.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Exit_PictureBox.Enabled = false;
+            this.Exit_PictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Exit_PictureBox.ErrorImage")));
+            this.Exit_PictureBox.FadeWhenInactive = false;
+            this.Exit_PictureBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.Exit_PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("Exit_PictureBox.Image")));
+            this.Exit_PictureBox.ImageActive = null;
+            this.Exit_PictureBox.ImageLocation = null;
+            this.Exit_PictureBox.ImageMargin = 20;
+            this.Exit_PictureBox.ImageSize = new System.Drawing.Size(231, 204);
+            this.Exit_PictureBox.ImageZoomSize = new System.Drawing.Size(251, 224);
+            this.Exit_PictureBox.InitialImage = null;
+            this.Exit_PictureBox.Location = new System.Drawing.Point(154, 240);
+            this.Exit_PictureBox.Name = "Exit_PictureBox";
+            this.Exit_PictureBox.Rotation = 0;
+            this.Exit_PictureBox.ShowActiveImage = true;
+            this.Exit_PictureBox.ShowCursorChanges = true;
+            this.Exit_PictureBox.ShowImageBorders = true;
+            this.Exit_PictureBox.ShowSizeMarkers = false;
+            this.Exit_PictureBox.Size = new System.Drawing.Size(251, 224);
+            this.Exit_PictureBox.TabIndex = 254;
+            this.Exit_PictureBox.ToolTipText = "";
+            this.Exit_PictureBox.Visible = false;
+            this.Exit_PictureBox.WaitOnLoad = false;
+            this.Exit_PictureBox.Zoom = 20;
+            this.Exit_PictureBox.ZoomSpeed = 10;
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1465,6 +1744,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pic_View)).EndInit();
             this.Popup_Menu.ResumeLayout(false);
             this.BunifuPages2.ResumeLayout(false);
+            this.Panel2.ResumeLayout(false);
             this.Support_pnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Insta_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fb_Icon)).EndInit();
@@ -1548,5 +1828,20 @@
         internal Guna.UI2.WinForms.Guna2Button guna2Button1;
         internal Guna.UI2.WinForms.Guna2Button guna2Button2;
         internal Guna.UI2.WinForms.Guna2Button guna2Button3;
+        public UC.CompanyUC companyUC1;
+        public UC.ClientUC clientUC1;
+        public UC.AddDropDownUC addDropDownUC1;
+        public UC.UserUC userUC1;
+        public UC.SettingsUC settingsUC1;
+        public UC.ServicesUC servicesUC1;
+        public UC.ServiceSecondUC serviceSecondUC1;
+        public UC.QuotationUC quotationUC1;
+        public UC.PermissionsUC permissionsUC1;
+        public UC.PaymentsUC paymentsUC1;
+        public UC.ClientTransactionsUC clientTransactionsUC1;
+        public UC.InspectionUC inspectionUC1;
+        public UC.ClientWorkSecondUC clientWorkSecondUC1;
+        public UC.ClientSecondUC clientSecondUC1;
+        public UC.WelcomeUC welcomeUC1;
     }
 }

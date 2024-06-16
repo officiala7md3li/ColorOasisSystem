@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ColorOasisSystem.Entities
 {
-    internal class Quotation
+    public class Quotation
     {
         public int Id { get; set; }
         public string Code { get; set; }
@@ -29,5 +29,6 @@ namespace ColorOasisSystem.Entities
         public string AddedBy { get; set; }
         public string EditedBy { get; set; }
         public string DeletedBy { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

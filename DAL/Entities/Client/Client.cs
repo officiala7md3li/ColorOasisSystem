@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace ColorOasisSystem.Entities
 {
-    internal class Client
+    public class Client
     {
         public int Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

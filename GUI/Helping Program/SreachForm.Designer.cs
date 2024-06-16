@@ -291,7 +291,7 @@ namespace ColorOasisSystem.GUI.HelpingProgram
             this.Name = "SreachForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SreachForm";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Search)).EndInit();

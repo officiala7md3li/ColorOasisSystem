@@ -1,4 +1,4 @@
-﻿namespace ColorOasisSystem.GUI.UC.Qoutation
+﻿namespace ColorOasisSystem.GUI.UC
 {
     partial class QuotationUC
     {
@@ -38,6 +38,7 @@
             this.LogoLabel = "التسعير";
             this.MasterUCLock = false;
             this.Name = "QuotationUC";
+            this.Size = new System.Drawing.Size(820, 546);
             this.ResumeLayout(false);
             this.PerformLayout();
 

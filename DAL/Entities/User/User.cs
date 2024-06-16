@@ -24,17 +24,17 @@ namespace ColorOasisSystem.Entities
         public string Name { get; set; }
         [MinLength(3, ErrorMessage = "Recovery Word can't be less than 3 chars")]
         public string RecoverWord { get; set; }
-        public string Position { get; set; }
+        //public string Position { get; set; }
         [StringLength(11, ErrorMessage = "Number must be 11 digits", MinimumLength = 11)]
         public string Phone { get; set; }
         //[ForeignKey("branch")]
-        public int BranchID { get; set; }
+        //public int BranchID { get; set; }
         //public Branch branch { get; set; }
-        [ForeignKey("UserPermission")]
-        public int UserPermissionId { get; set; }
-        public UserPermissions UserPermission { get; set; }
+        //[ForeignKey("UserPermission")]
+        //public int UserPermissionId { get; set; }
+        //public UserPermissions UserPermission { get; set; }
         public string Password { get; set; }
-        public byte[] Photo { get; set; }
+        //public byte[] Photo { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }
 

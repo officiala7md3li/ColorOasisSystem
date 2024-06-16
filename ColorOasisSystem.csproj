@@ -276,16 +276,33 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\CustomTag.cs" />
     <Compile Include="DAL\Entities\Client Payment\ClientPayment.cs" />
+    <Compile Include="DAL\Entities\Client Payment\ClientPaymentRepo.cs" />
     <Compile Include="DAL\Entities\Client\Client.cs" />
+    <Compile Include="DAL\Entities\Client\ClientRepo.cs" />
     <Compile Include="DAL\Entities\Client\Company.cs" />
+    <Compile Include="DAL\Entities\Client\CompanyRepo.cs" />
     <Compile Include="DAL\Entities\HelpingSearchForm.cs" />
     <Compile Include="DAL\Entities\Inspection\Inspection.cs" />
     <Compile Include="DAL\Entities\Inspection\InspectionDetails.cs" />
+    <Compile Include="DAL\Entities\Inspection\InspectionDetailsRepo.cs" />
+    <Compile Include="DAL\Entities\Inspection\InspectionRepo.cs" />
     <Compile Include="DAL\Entities\Interfaces\IPermission.cs" />
     <Compile Include="DAL\Entities\Interfaces\IPerson.cs" />
     <Compile Include="DAL\Entities\Interfaces\IRepo.cs" />
-    <Compile Include="DAL\Payment\Payment.cs" />
+    <Compile Include="DAL\Entities\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="DAL\Entities\Interfaces\IUser.cs" />
+    <Compile Include="DAL\Entities\Quotation\QuotationDetailsRepo.cs" />
+    <Compile Include="DAL\Entities\Quotation\QuotationRepo.cs" />
+    <Compile Include="DAL\Entities\Service\ServiceTypeRepo.cs" />
+    <Compile Include="DAL\Entities\Service\ServiceCategoryRepo.cs" />
+    <Compile Include="DAL\Entities\Service\Service.cs" />
+    <Compile Include="DAL\Entities\Service\ServiceCategory.cs" />
+    <Compile Include="DAL\Entities\Service\ServiceRepo.cs" />
+    <Compile Include="DAL\Entities\Service\ServiceType.cs" />
+    <Compile Include="DAL\Entities\UnitOfWork.cs" />
+    <Compile Include="DAL\Entities\Payment\Payment.cs" />
     <Compile Include="DAL\Entities\Permission\Permission.cs" />
     <Compile Include="DAL\Entities\Permission\PermissionRepo.cs" />
     <Compile Include="DAL\Entities\Quotation\Quotation.cs" />
@@ -301,6 +318,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\ApplicationDB.cs" />
+    <Compile Include="GUI\Helping Program\AddNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Helping Program\AddNumber.Designer.cs">
+      <DependentUpon>AddNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Helping Program\CustomMessageBox\CMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +359,18 @@
     </Compile>
     <Compile Include="GUI\SetConnection.Designer.cs">
       <DependentUpon>SetConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\SecondUC\ClientWorkSecondUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\SecondUC\ClientWorkSecondUC.Designer.cs">
+      <DependentUpon>ClientWorkSecondUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\SecondUC\ClientSecondUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\SecondUC\ClientSecondUC.Designer.cs">
+      <DependentUpon>ClientSecondUC.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\Client\ClientUC.cs">
       <SubType>UserControl</SubType>
@@ -379,6 +414,24 @@
     <Compile Include="GUI\UC\Payment\PaymentsUC.Designer.cs">
       <DependentUpon>PaymentsUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\SecondUC\ServiceSecondUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\SecondUC\ServiceSecondUC.Designer.cs">
+      <DependentUpon>ServiceSecondUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Service\AddDropDownUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Service\AddDropDownUC.Designer.cs">
+      <DependentUpon>AddDropDownUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Service\ServicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Service\ServicesUC.Designer.cs">
+      <DependentUpon>ServicesUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UC\User\PermissionsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -403,14 +456,39 @@
     <Compile Include="GUI\UC\User\UserUC.Designer.cs">
       <DependentUpon>UserUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\SecondUC\WelcomeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\SecondUC\WelcomeUC.Designer.cs">
+      <DependentUpon>WelcomeUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\MyHelper.cs" />
     <Compile Include="Migrations\202405042125199_ColorOasisDB.cs" />
     <Compile Include="Migrations\202405042125199_ColorOasisDB.Designer.cs">
       <DependentUpon>202405042125199_ColorOasisDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405181239362_DBUpdate.cs" />
+    <Compile Include="Migrations\202405181239362_DBUpdate.Designer.cs">
+      <DependentUpon>202405181239362_DBUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405190119043_NewUpdate.cs" />
+    <Compile Include="Migrations\202405190119043_NewUpdate.Designer.cs">
+      <DependentUpon>202405190119043_NewUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406080148339_ColorOasisDB1.cs" />
+    <Compile Include="Migrations\202406080148339_ColorOasisDB1.Designer.cs">
+      <DependentUpon>202406080148339_ColorOasisDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406150254029_InspectionModified.cs" />
+    <Compile Include="Migrations\202406150254029_InspectionModified.Designer.cs">
+      <DependentUpon>202406150254029_InspectionModified.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Helping Program\AddNumber.resx">
+      <DependentUpon>AddNumber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Helping Program\CustomMessageBox\CMessageBox.resx">
       <DependentUpon>CMessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -428,6 +506,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SetConnection.resx">
       <DependentUpon>SetConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\SecondUC\ClientWorkSecondUC.resx">
+      <DependentUpon>ClientWorkSecondUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\SecondUC\ClientSecondUC.resx">
+      <DependentUpon>ClientSecondUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Client\ClientUC.resx">
       <DependentUpon>ClientUC.cs</DependentUpon>
@@ -450,6 +534,15 @@
     <EmbeddedResource Include="GUI\UC\Payment\PaymentsUC.resx">
       <DependentUpon>PaymentsUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\SecondUC\ServiceSecondUC.resx">
+      <DependentUpon>ServiceSecondUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Service\AddDropDownUC.resx">
+      <DependentUpon>AddDropDownUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Service\ServicesUC.resx">
+      <DependentUpon>ServicesUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\User\PermissionsUC.resx">
       <DependentUpon>PermissionsUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -462,8 +555,23 @@
     <EmbeddedResource Include="GUI\UC\User\UserUC.resx">
       <DependentUpon>UserUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\SecondUC\WelcomeUC.resx">
+      <DependentUpon>WelcomeUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405042125199_ColorOasisDB.resx">
       <DependentUpon>202405042125199_ColorOasisDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405181239362_DBUpdate.resx">
+      <DependentUpon>202405181239362_DBUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405190119043_NewUpdate.resx">
+      <DependentUpon>202405190119043_NewUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406080148339_ColorOasisDB1.resx">
+      <DependentUpon>202406080148339_ColorOasisDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406150254029_InspectionModified.resx">
+      <DependentUpon>202406150254029_InspectionModified.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

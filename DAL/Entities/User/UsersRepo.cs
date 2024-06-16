@@ -1,4 +1,6 @@
-﻿using ColorOasisSystem.Entities.Interfaces;
+﻿using ColorOasisSystem.DAL.Entities.Interfaces;
+using ColorOasisSystem.Entities.Interfaces;
+using Microsoft.SqlServer.Management.Smo;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ColorOasisSystem.Entities
 {
-    internal class UserRepo:IRepo<User>
+    internal class UserRepo: IRepo<User>
     {
         ApplicationDB db;
         public UserRepo()
@@ -19,31 +21,35 @@ namespace ColorOasisSystem.Entities
             db = new ApplicationDB();
         }
         
-        public List<User> GetAll()
+        public async Task<List<User>> GetAll()
         {
             
-            var Useres = db.Users.AsNoTracking().ToList();
+            var Useres = await db.Users.Where(user => user.IsDeleted == false).AsNoTracking().ToListAsync();
             return Useres;
         }
-        public User GetById(int id)
+        public async Task<User> GetById(int id)
         {
-            var User = db.Users.Find(id);
-            return User;
+            var User =await db.Users.Where(user => user.IsDeleted == false && user.Id==id).FirstOrDefaultAsync();
+            if (User != null)
+            {
+                return User;
+            }
+            return null;
         }
-        public bool DeleteById(int id)
+        public async Task<bool> DeleteById(int id)
         {
             try
             {
-                if (IsEmpty())
+                if (await IsEmpty())
                 {
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                User User = db.Users.AsNoTracking().Where(user=>user.Id==id).FirstOrDefault();
+                User User =await db.Users.AsNoTracking().Where(user=>user.Id==id).FirstOrDefaultAsync();
                 if (User != null)
                 {
                     User.IsDeleted = true;
-                    db.SaveChangesAsync();
+                    await db.SaveChangesAsync();
                     return true;
                 }
                 else
@@ -58,42 +64,46 @@ namespace ColorOasisSystem.Entities
                 throw exception;
             }
         }
-        public bool Add(User Item)
+        public async Task<bool> Add(User Item)
         {
-            if (GetById(Item.Id) != null)
+            if (Item != null)
             {
                 db.Users.Add(Item);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
             }
             return false;
         }
 
-        public bool Update(User Item)
+        public async Task<bool> Update(User Item)
         {
-            db.Users.AddOrUpdate(Item);
-            db.SaveChanges();
-            return true;
-        }
-        public bool Delete(User _Item)
-        {
-            if (GetById(_Item.Id) != null)
+            if (Item != null)
             {
-                User brnach = db.Users.Find(_Item.Id);
-                brnach.IsDeleted = true;
-                db.SaveChanges();
+                db.Users.AddOrUpdate(Item);
+                await db.SaveChangesAsync();
                 return true;
             }
             return false;
         }
-        public User ValidateUser(string _userName , string _password)
+        public async Task<bool> Delete(User _Item)
         {
-            if (IsEmpty())
+            User user = await GetById(_Item.Id);
+            if (user != null)
+            {
+                user.IsDeleted = true;
+                await db.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+        public async Task<User> ValidateUser(string _userName , string _password)
+        {
+            if (await IsEmpty())
             {
                 throw new Exception("No Record in Database");
             }
-            var user = (from u in db.Users
+            User user =await (from u in db.Users
                         where u.UserName == _userName && u.Password == _password
-                        select u).AsNoTracking().FirstOrDefault();
+                        select u).AsNoTracking().FirstOrDefaultAsync();
             if (user != null)
             {
                 return user;
@@ -103,20 +113,31 @@ namespace ColorOasisSystem.Entities
                 throw new Exception("User Not Found");
             }
         }
-        public bool IsEmpty()
+        public async Task<bool> IsEmpty()
         {
-            return !db.Users.AsNoTracking().Any(); //if true table is empty
+            List<User> users = await GetAll();
+            bool user = users.Any();
+            return !user; //if true table is empty
         }
-        public User GetByRecoveryWord(string _recoverWord)
+        public async Task<User> GetByRecoveryWord(string _recoverWord)
         {
-            return db.Users.AsNoTracking().Where(x => x.RecoverWord == _recoverWord).FirstOrDefault();
+            User user= await db.Users.AsNoTracking().Where(x => x.RecoverWord == _recoverWord).FirstOrDefaultAsync();
+            if (user != null) return user;
+            return null;
         }
-        public void ChangePassword(int _id, string _password)
+        public async Task ChangePassword(int _id, string _password)
         {
-            var user = db.Users.Find(_id);
-            user.Password = _password;
-            db.SaveChanges();
+            var user =await db.Users.FindAsync(_id);
+            if (user != null) 
+            {
+                user.Password = _password;
+                await db.SaveChangesAsync();
+            }
         }
+        //public async Task AddTempUser()
+        //{
+
+        //}
 
     }
 }
