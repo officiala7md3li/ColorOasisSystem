@@ -21,6 +21,8 @@ namespace ColorOasisSystem.GUI.UC
         {
             InitializeComponent();
             ClassRepo = new CompanyRepo();
+            TRNTxtBox.AllowOnlyNumbers();
+            Company_Phone_TxtBox.AllowOnlyNumbers();
         }
         public override async void NewDataAsync()
         {
@@ -36,11 +38,13 @@ namespace ColorOasisSystem.GUI.UC
             if (!ValidateString(Company_Name_TxtBox, "يرجى إدخال اسم الشركه")) return;
             if (!ValidateString(Company_Phone_TxtBox, "يرجى إدخال رقم هاتف الشركه")) return;
             if (!ValidateString(Company_Address_TxtBox, "يرجى إدخال عنوان الشركه")) return;
-            if (!ValidateDropDown(Dealer_ComboBox, "يرجى إدخال مندوب الشركه")) return;
+            if (!ValidateString(Dealer_ComboBox, "يرجى إدخال مندوب الشركه")) return;
             try
             {
                 Company Company = new Company();
                 Company.Name = Company_Name_TxtBox.Text;
+                Company.CompanyTRN= TRNTxtBox.Text;
+                Company.NameEn = Company_NameEn_TxtBox.Text;
                 Company.Phone = Company_Phone_TxtBox.Text;
                 Company.Address = Company_Address_TxtBox.Text;
                 Company.DealerId = Convert.ToInt32(Dealer_ComboBox.SelectedValue);
@@ -48,6 +52,7 @@ namespace ColorOasisSystem.GUI.UC
                 if (isSuccess)
                 {
                     popMessage($"تمت اضافه شركه {Company.Name}", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success);
+                    await base.SaveDataAsync();
                 }
 
             }
@@ -67,19 +72,20 @@ namespace ColorOasisSystem.GUI.UC
 
                 throw;
             }
-            await base.SaveDataAsync();
         }
         public override async Task EditData()
         {
             if (!ValidateString(Company_Name_TxtBox, "يرجى إدخال اسم الشركه")) return;
             if (!ValidateString(Company_Phone_TxtBox, "يرجى إدخال رقم هاتف الشركه")) return;
             if (!ValidateString(Company_Address_TxtBox, "يرجى إدخال عنوان الشركه")) return;
-            if (!ValidateDropDown(Dealer_ComboBox, "يرجى إدخال مندوب الشركه")) return;
+            if (!ValidateString(Dealer_ComboBox, "يرجى إدخال مندوب الشركه")) return;
             try
             {
                 Company Company = new Company();
                 Company.Id = Convert.ToInt32(ID_TxtBox.Text);
                 Company.Name = Company_Name_TxtBox.Text;
+                Company.CompanyTRN = TRNTxtBox.Text;
+                Company.NameEn = Company_NameEn_TxtBox.Text;
                 Company.Phone = Company_Phone_TxtBox.Text;
                 Company.Address = Company_Address_TxtBox.Text;
                 Company.DealerId = Convert.ToInt32(Dealer_ComboBox.SelectedValue);
@@ -122,6 +128,8 @@ namespace ColorOasisSystem.GUI.UC
                         Company Company = new Company();
                         Company.Id = Convert.ToInt32(ID_TxtBox.Text);
                         Company.Name = Company_Name_TxtBox.Text;
+                        Company.CompanyTRN = TRNTxtBox.Text;
+                        Company.NameEn = Company_NameEn_TxtBox.Text;
                         Company.Phone = Company_Phone_TxtBox.Text;
                         Company.Address = Company_Address_TxtBox.Text;
                         Company.DealerId = Convert.ToInt32(Dealer_ComboBox.SelectedValue);
@@ -143,6 +151,8 @@ namespace ColorOasisSystem.GUI.UC
             Company ChosenClient =await ClassRepo.GetById(ItemID); 
             ID_TxtBox.Text = ChosenClient.Id.ToString();
             Company_Name_TxtBox.Text = ChosenClient.Name.ToString();
+            TRNTxtBox.Text = ChosenClient.CompanyTRN;
+            Company_NameEn_TxtBox.Text= ChosenClient.NameEn;
             Company_Phone_TxtBox.Text = ChosenClient.Phone.ToString();
             Company_Address_TxtBox.Text = ChosenClient.Address.ToString();
             Dealer_ComboBox.SelectedValue=ChosenClient.DealerId;
@@ -152,8 +162,8 @@ namespace ColorOasisSystem.GUI.UC
 
         public override async Task Search_Data()
         {
-            List<string> list = new List<string>() { "#", "الاسم", "العنوان", "رقم الهاتف" };
-            List<string> Properties = new List<string>() { "ID", "Name", "Address", "Phone" };
+            List<string> list = new List<string>() { "#", "الاسم","الاسم ج", "العنوان", "رقم الهاتف" };
+            List<string> Properties = new List<string>() { "ID", "Name","NameEn", "Address", "Phone" };
 
             List<HelpingSearchForm> dataSource = new List<HelpingSearchForm>();
             for (int i = 0; i < Properties.Count; i++)//DisplayAvailableProperties<Model.Branch>()

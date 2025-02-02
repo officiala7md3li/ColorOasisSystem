@@ -22,12 +22,12 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<List<UserPermissions>> GetAll()
         {
-            var permissions =await db.UserPermissions.ToListAsync();
+            var permissions =await db.UserPermissions.Where(permission=> permission.IsDeleted == false && permission.IsLocked == false).ToListAsync();
             return permissions;
         }
         public async Task<UserPermissions> GetById(int id)
         {
-            var permissions = await db.UserPermissions.Where(permission => permission.Id == id).FirstOrDefaultAsync();
+            var permissions = await db.UserPermissions.Where(permission => permission.Id == id&& permission.IsDeleted == false && permission.IsLocked == false).FirstOrDefaultAsync();
             return permissions;
         }
         public async Task<bool> DeleteById(int id)
@@ -39,7 +39,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                UserPermissions userPermissions=db.UserPermissions.Where(permission => permission.Id == id).FirstOrDefault();
+                UserPermissions userPermissions=await db.UserPermissions.Where(permission => permission.Id == id && permission.IsDeleted == false &&permission.IsLocked==false).FirstOrDefaultAsync();
                 if (userPermissions!=null)
                 {
                     userPermissions.IsDeleted=true;
@@ -61,7 +61,7 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<bool> Add(UserPermissions userPermission) 
         {
-            if (await GetById(userPermission.Id)!=null)
+            if (userPermission!=null)
             {
                 db.UserPermissions.AddOrUpdate(userPermission);
                 await db.SaveChangesAsync();
@@ -71,13 +71,17 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<bool> Update(UserPermissions userPermission) 
         {
-            db.UserPermissions.AddOrUpdate(userPermission);
-            await db.SaveChangesAsync();
-            return true;
+            if (userPermission != null)
+            {
+                db.UserPermissions.AddOrUpdate(userPermission);
+                await db.SaveChangesAsync();
+                return true;
+            }
+            return false;
         }
         public async Task<bool> Delete(UserPermissions userPermission)
         {
-            if (await GetById(userPermission.Id) != null)
+            if (userPermission != null)
             {
                 db.UserPermissions.Remove(userPermission);
                 await db.SaveChangesAsync();
@@ -87,9 +91,13 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<bool> IsEmpty()
         {
-            bool result =await db.UserPermissions.AnyAsync();
+            List<UserPermissions> permissions= await GetAll();
+            bool result = permissions.Any();
             return !result; //if true table is empty
         }
-       
+        public int GetFirstAdmin()
+        {
+            return db.UserPermissions.Where(x=>x.IsAdmin==true&&x.IsDeleted==false).FirstOrDefault().Id;
+        }
     }
 }

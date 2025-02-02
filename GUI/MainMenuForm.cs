@@ -13,6 +13,9 @@ using System.Windows.Forms;
 using static Guna.UI2.Native.WinApi;
 using ColorOasisSystem.GUI.HelpingProgram;
 using ColorOasisSystem.GUI.UC;
+using ColorOasisSystem.Entities.Interfaces;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Guna.UI2.WinForms;
 
 namespace ColorOasisSystem.GUI
 {
@@ -25,16 +28,26 @@ namespace ColorOasisSystem.GUI
             set
             {
                 CurrentUser_ = value;
+                UserPermissions = CurrentUser_.UserPermission;
                 Invalidate();
                 Refresh();
             }
         }
+        public UserPermissions UserPermissions { get; set; }
+
         public MasterUC selectedUC { get; set; }
         public MainMenuForm()
         {
             //LoginForm loginForm = new LoginForm();
             //loginForm.Show();
             InitializeComponent();
+            Color color = Properties.Settings.Default.BGColor;
+            inspectionUC1.SiticonePanel1.PrimerColor = color;
+            inspectionUC1.SiticonePanel1.TopLeft = color;
+            inspectionUC1.SiticonePanel1.BottomLeft = color;
+            inspectionUC1.SiticonePanel1.BottomRight = color;
+            inspectionUC1.SiticonePanel1.TopRight = color;
+            BackColor = color;
             LoadFormAsync();
         }
 
@@ -48,6 +61,7 @@ namespace ColorOasisSystem.GUI
                 await Task.Run(() =>
                 {
                     // Load heavy GUI components or perform other time-consuming tasks here
+                    
                     // For example:
                     System.Threading.Thread.Sleep(5000); // Simulating heavy work
                 });
@@ -319,15 +333,15 @@ namespace ColorOasisSystem.GUI
         #region Proceed to Users
         private void Proceed_to_Users_Btn_Click(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(Auth_Pass_txt.Text) || string.IsNullOrWhiteSpace(Auth_Pass_txt.Text))
-            //{
-            //    Messages.SnackbarShow(Snackbar, this, "ادخل كلمة المرور", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5);
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(Auth_Pass_txt.Text) || string.IsNullOrWhiteSpace(Auth_Pass_txt.Text))
+            {
+                MyHelper.SnackbarShow(this, this.Snackbar, "ادخل كلمة المرور", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning);
+                return;
+            }
             //todo: Uncomment it
 
-            //if (Auth_Pass_txt.Text == CurrentUser_.Password)
-            //{
+            if (Hasher.Verify(Auth_Pass_txt.Text,CurrentUser_.Password))
+            {
                 SelectedUC(Properties.Settings.Default.PermissionNeededUC);
                 Invalidate();
                 Showing_Page_On_Screen(true, true);
@@ -335,11 +349,11 @@ namespace ColorOasisSystem.GUI
                 Auth_Pass_txt.IconLeft = Fb_Icon.ErrorImage;
                 Auth_Pass_txt.UseSystemPasswordChar = true;
                 Auth_Pass_txt.Clear();
-            //}
-            //else
-            //{
-            //    Messages.SnackbarShow(Snackbar, this, "ادخل كلمة المرور بطريقة صحيحه", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5);
-            //}
+            }
+            else
+            {
+                MyHelper.SnackbarShow(this, this.Snackbar, "ادخل كلمة المرور بطريقة صحيحه", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+            }
         }
 
         private void Auth_Pass_txt_IconLeftClick(object sender, EventArgs e)
@@ -400,7 +414,8 @@ namespace ColorOasisSystem.GUI
 
                 if (selectedUC is MasterUC masterUC)
                 {
-                    masterUC.NewDataAsync();
+                    if (selectedUC is CompanyInfoUC companyInfo) companyInfo.LoadData();
+                    if (Properties.Settings.Default.BeforeOpen)masterUC.NewDataAsync();
                     // masterUC.PrintBtnVisible = 0;
                     masterUC.EditDataCheck = false;
                 }
@@ -417,7 +432,6 @@ namespace ColorOasisSystem.GUI
         {
             try
             {
-                selectedUC.BringToFront();
 
                 foreach (UserControl uc in Controls.OfType<UserControl>())
                 {
@@ -429,10 +443,12 @@ namespace ColorOasisSystem.GUI
                 selectedUC.Dock = DockStyle.Fill;
                 selectedUC.Enabled = true;
                 selectedUC.Visible = true;
+                selectedUC.BringToFront();
 
+                if (selectedUC is CompanyInfoUC companyInfo)  companyInfo.LoadData();
                 if (selectedUC is MasterUC masterUC)
                 {
-                    masterUC.NewDataAsync();
+                    if (Properties.Settings.Default.BeforeOpen)masterUC.NewDataAsync();
                     // masterUC.PrintBtnVisible = 0;
                     masterUC.EditDataCheck = false;
                 }
@@ -445,7 +461,32 @@ namespace ColorOasisSystem.GUI
                 // Handle exceptions if necessary
             }
         }
-
+        public void AssignPermission(MasterUC masterUC,Permission permission)
+        {
+            if (permission.Lock) 
+            {
+                SelectedUC(masterUC);
+                masterUC.SetPermissions(permission);
+            }
+            else
+            {
+                MyHelper.SnackbarShow(this, this.Snackbar, "انت لاتملك الصلاحيه الكافيه للدخول لتلك الصفحه", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning);
+                Main_Menu_Home_Btn.PerformClick();
+            }
+        }
+        public void AssignPermission(MasterSecondMenu masterUC, Permission permission)
+        {
+            if (permission.Lock)
+            {
+                SelectedUC(masterUC);
+                masterUC.SetPermissions(permission);
+            }
+            else
+            {
+                MyHelper.SnackbarShow(this, this.Snackbar, "انت لاتملك الصلاحيه الكافيه للدخول لتلك الصفحه", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning);
+                Main_Menu_Home_Btn.PerformClick();
+            }
+        }
         // Overloaded method for Master_UC type
         //void SelectedUC(MasterUC selectedUC)
         //{
@@ -477,38 +518,27 @@ namespace ColorOasisSystem.GUI
         //    }
         //}
 
-
-        // Sub SelectedButton(object selectedBtn)
-        // {
-        //     // SidePanel.Visible = False;
-        //     // SidePanel.Top = selectedBtn.Top;
-        //     // SidePanel.Height = selectedBtn.Height;
-        //     // SidePanel.Show();
-        // }
+        private void SelectedButton(Guna2Button selectedBtn)
+        {
+            SidePanel.Hide();
+            SidePanel.Top = selectedBtn.Top;
+            SidePanel.Height = selectedBtn.Height;
+            SidePanel.Show();
+        }
         #endregion
-
-        private void Main_Slider_Payments_Btn_Click(object sender, EventArgs e)
-        {
-            SelectedUC(servicesUC1);
-        }
-
-        private void Main_Slider_Visits_Btn_Click(object sender, EventArgs e)
-        {
-            //SelectedUC(medicationUC1);
-        }
 
         private void Settings_Popup_Menu_Click(object sender, EventArgs e)
         {
-            if (true)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position =="Admin"||  string.IsNullOrEmpty(CurrentUser_.Position)
+            if (UserPermissions.SettingsSecondUCPermission.Lock)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position =="Admin"||  string.IsNullOrEmpty(CurrentUser_.Position)
             {
                 Message_Lbl.Text = "من فضلك " + Auth_Pass_txt.PlaceholderText + "، " + Username_Shw_lbl.Text;
                 Auth_Pic.Image = Username_Pic.Image;
-                //todo:Uncomment
-                //Properties.Settings.Default.PermissionNeededUC = settingsUC1;
+                Properties.Settings.Default.PermissionNeededUC = settingsUC1;
                 Properties.Settings.Default.Save();
                 Showing_Page_On_Screen(false, true, "Auth_For_Account");
                 Change_Check_Popup_Menu(false);
                 HidePnlCheck();
+                settingsUC1.SetPermissions(UserPermissions.SettingsSecondUCPermission);
             }
             else
             {
@@ -519,16 +549,17 @@ namespace ColorOasisSystem.GUI
 
         private void Permission_Popup_Menu_Click(object sender, EventArgs e)
         {
-            if (true)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position == "Admin" || string.IsNullOrEmpty(CurrentUser_.Position)
+            if (UserPermissions.PermissionUCPermission.Lock)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position == "Admin" || string.IsNullOrEmpty(CurrentUser_.Position)
             {
                 Message_Lbl.Text = "من فضلك " + Auth_Pass_txt.PlaceholderText + "، " + Username_Shw_lbl.Text;
                 Auth_Pic.Image = Username_Pic.Image;
                 //todo:uncomment
-                //Properties.Settings.Default.PermissionNeededUC = userUC1;
+                Properties.Settings.Default.PermissionNeededUC = permissionsUC1;
                 Properties.Settings.Default.Save();
                 Showing_Page_On_Screen(false, true, "Auth_For_Account");
                 Change_Check_Popup_Menu(false);
                 HidePnlCheck();
+                permissionsUC1.SetPermissions(UserPermissions.PermissionUCPermission);
             }
             else
             {
@@ -540,16 +571,17 @@ namespace ColorOasisSystem.GUI
 
         private void Section_Popup_Menu_Click(object sender, EventArgs e)
         {
-            if (true)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position == "Admin" || string.IsNullOrEmpty(CurrentUser_.Position)
+            if (UserPermissions.CompanyInfoUCPermission.Lock)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position == "Admin" || string.IsNullOrEmpty(CurrentUser_.Position)
             {
                 Message_Lbl.Text = "من فضلك " + Auth_Pass_txt.PlaceholderText + "، " + Username_Shw_lbl.Text;
                 Auth_Pic.Image = Username_Pic.Image;
                 //todo:uncomment
-                //Properties.Settings.Default.PermissionNeededUC = branchUC1;
+                Properties.Settings.Default.PermissionNeededUC = companyInfoUC1;
                 Properties.Settings.Default.Save();
                 Showing_Page_On_Screen(false, true, "Auth_For_Account");
                 Change_Check_Popup_Menu(false);
                 HidePnlCheck();
+                companyInfoUC1.SetPermissions(UserPermissions.CompanyInfoUCPermission);
             }
             else
             {
@@ -561,27 +593,52 @@ namespace ColorOasisSystem.GUI
 
         private void Main_Menu_Home_Btn_Click(object sender, EventArgs e)
         {
-            //todo:uncomment
-            //SelectedUC(welcomeUC1);
-
+            SelectedButton(Main_Menu_Home_Btn);
+            SelectedUC(welcomeUC1);
         }
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-            //todo:uncomment
-            //SelectedUC(welcomeUC1);
+            SelectedUC(welcomeUC1);
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void ClientMainSliderBtn_Click(object sender, EventArgs e)
         {
-            addDropDownUC1.SelectType(Enums.AddDropDown.ItemType);
-            SelectedUC(addDropDownUC1);
+            SelectedButton(ClientMainSliderBtn);
+            AssignPermission(clientSecondUC1, UserPermissions.ClientSecondUCPermission);
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void ServicesMainSliderBtn_Click(object sender, EventArgs e)
         {
-            addDropDownUC1.SelectType(Enums.AddDropDown.ItemCategory);
-            SelectedUC(addDropDownUC1);
+            SelectedButton(ServicesMainSliderBtn);
+            AssignPermission(serviceSecondUC1,UserPermissions.ServiceSecondUCPermission);
+        }
+
+        private void ClientWorksMainSliderBtn_Click(object sender, EventArgs e)
+        {
+            SelectedButton(ClientWorksMainSliderBtn);
+            AssignPermission(clientWorkSecondUC1,UserPermissions.ClientWorkUCPermission);
+        }
+
+        private void Users_Popup_Menu_Click(object sender, EventArgs e)
+        {
+            if (UserPermissions.UserUCPermission.Lock)//CurrentUser_.Position == "مؤقت" || CurrentUser_.Position == "Admin" || string.IsNullOrEmpty(CurrentUser_.Position)
+            {
+                Message_Lbl.Text = "من فضلك " + Auth_Pass_txt.PlaceholderText + "، " + Username_Shw_lbl.Text;
+                Auth_Pic.Image = Username_Pic.Image;
+                Properties.Settings.Default.PermissionNeededUC = userUC1;
+                Properties.Settings.Default.Save();
+                Showing_Page_On_Screen(false, true, "Auth_For_Account");
+                Change_Check_Popup_Menu(false);
+                HidePnlCheck();
+                userUC1.SetPermissions(UserPermissions.UserUCPermission);
+            }
+            else
+            {
+                MyHelper.SnackbarShow(this, this.Snackbar, "انت لاتملك الصلاحيه الكافيه للدخول لتلك الصفحه", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning);
+                Main_Menu_Home_Btn.PerformClick();
+            }
+
         }
     }
 }

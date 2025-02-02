@@ -13,10 +13,11 @@ namespace ColorOasisSystem.Entities
         public string Code { get; set; }
         public byte[] Photo { get; set; }
         public string Name { get; set; }
+        public string NameEn { get; set; }
         public decimal MinimumPrice { get; set; }
         public decimal MaximumPrice { get; set; }
         public string Barcode { get; set; }
-        public decimal Dicount { get; set; }
+        public decimal Discount { get; set; }
         [ForeignKey("ServiceType")]
         public int ServiceTypeId { get; set; }
         public ServiceType ServiceType { get; set; }

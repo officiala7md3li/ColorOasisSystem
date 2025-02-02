@@ -14,6 +14,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.IO;
+using static System.Net.WebRequestMethods;
+using ColorOasisSystem.Entities;
 
 namespace ColorOasisSystem.GUI.UC
 {
@@ -21,9 +23,22 @@ namespace ColorOasisSystem.GUI.UC
     {
 
         public MasterUC()
-        {
+        { 
             InitializeComponent();
         }
+        public void SetPermissions(Permission permission)
+        {
+            MasterUCLock=!permission.Lock;
+            NewBtnVisible = permission.AddNew;
+            SaveBtnVisible= permission.AddNew;
+            EditBtnVisible=permission.Edit;
+            DeleteBtnVisible=permission.Delete;
+            SearchBtnVisible=permission.Retrive;
+            SaveAsBtnVisible = permission.Additional;
+            Refresh();
+            Invalidate();
+        }
+        public bool Modified { get; set; } = false;
         private bool masterUCLockValue = true;
         public bool MasterUCLock
         {
@@ -60,7 +75,16 @@ namespace ColorOasisSystem.GUI.UC
                 Invalidate();
             }
         }
-
+        public string SaveAsLabel
+        {
+            get { return Save_As_Btn.Text; }
+            set
+            {
+                //logoLabel = value;
+                Save_As_Btn.Text = value;
+                Invalidate();
+            }
+        }
         private bool edit_ = false;
         public bool EditDataCheck
         {
@@ -129,7 +153,7 @@ namespace ColorOasisSystem.GUI.UC
         }
 
         private bool saveAsVisible_ = false;
-        public bool PrintBtnVisible
+        public bool SaveAsBtnVisible
         {
             get { return saveAsVisible_; }
             set
@@ -140,7 +164,10 @@ namespace ColorOasisSystem.GUI.UC
         }
         #endregion
 
-        public virtual async Task BackAction() { }
+        public virtual async Task BackAction() 
+        {
+            if (Properties.Settings.Default.AfterClose) NewDataAsync();
+        }
 
         public virtual void NewDataAsync()
         {
@@ -233,6 +260,7 @@ namespace ColorOasisSystem.GUI.UC
             {
                 Save_Btn.Enabled = EditBtnVisible;
             }
+            Save_As_Btn.Enabled = saveAsVisible_;
             if (edit_)
             {
                 Delete_Btn.Enabled = DeleteBtnVisible;
@@ -244,31 +272,29 @@ namespace ColorOasisSystem.GUI.UC
         {
             New_Btn.Visible = NewBtnVisible;
             Save_Btn.Visible = SaveBtnVisible;
-            if (edit_)
-            {
-                Save_Btn.Visible = EditBtnVisible;
-            }
-            if (edit_)
-            {
-                Delete_Btn.Visible = DeleteBtnVisible;
-            }
+            if (edit_) Save_Btn.Visible = EditBtnVisible;
+            if (edit_) Delete_Btn.Visible = DeleteBtnVisible;
             Delete_Btn.Location = Guna2Button3.Location;
+            Save_As_Btn.Location = Guna2Button2.Location;
             Search_Btn.Location = Guna2Button1.Location;
             if (!edit_)
             {
+                Save_As_Btn.Location = Search_Btn.Location;
                 Search_Btn.Location = Delete_Btn.Location;
                 if (!deleteBtnVisible_)
                 {
+                    Save_As_Btn.Location = Search_Btn.Location;
                     Search_Btn.Location = Delete_Btn.Location;
                 }
             }
             else if (edit_ && !editBtnVisible_)
             {
+                Save_As_Btn.Location = Guna2Button1.Location;
                 Search_Btn.Location = Guna2Button3.Location;
                 Delete_Btn.Location = Save_Btn.Location;
             }
             Search_Btn.Visible = SearchBtnVisible;
-
+            if (edit_) Save_As_Btn.Visible = saveAsVisible_;
         }
         #endregion
         #region Showing Action Buttons
@@ -276,11 +302,13 @@ namespace ColorOasisSystem.GUI.UC
         {
             try
             {
+                BringFront();
                 ChangeVisibilityOptions();
                 A2SAnimator1.StandardAnimate(New_Btn, A7MD_Library.NewComponent.A2SAnimator.StandardAnimation.SlideUp, 15);
                 A2SAnimator1.StandardAnimate(Save_Btn, A7MD_Library.NewComponent.A2SAnimator.StandardAnimation.SlideUp, 15);
                 A2SAnimator1.StandardAnimate(Delete_Btn, A7MD_Library.NewComponent.A2SAnimator.StandardAnimation.SlideUp, 15);
                 A2SAnimator1.StandardAnimate(Search_Btn, A7MD_Library.NewComponent.A2SAnimator.StandardAnimation.SlideUp, 15);
+                A2SAnimator1.StandardAnimate(Save_As_Btn, A7MD_Library.NewComponent.A2SAnimator.StandardAnimation.SlideUp, 15);
                 Options_Tmr.Start();
                 Refresh();
                 //Cursor.Position = new Point((Main_Menu.DesktopLocation.X) + (Location.X) + (New_Btn.Location.X) + (New_Btn.Size.Width / 2), (Main_Menu.DesktopLocation.Y) + (Location.Y) + (New_Btn.Location.Y) + (New_Btn.Size.Height / 2));
@@ -290,7 +318,14 @@ namespace ColorOasisSystem.GUI.UC
             {
             }
         }
-
+        private void BringFront()
+        {
+            New_Btn.BringToFront();
+            Save_Btn.BringToFront();
+            Save_As_Btn.BringToFront();
+            Delete_Btn.BringToFront();
+            Search_Btn.BringToFront();
+        }
         private void Options_Tmr_Tick(object sender, EventArgs e)
         {
             try
@@ -300,6 +335,8 @@ namespace ColorOasisSystem.GUI.UC
                 New_Btn.Visible = false;
                 A2SAnimator1.StandardAnimate(Save_Btn, A7MD_Library.NewComponent.A2SAnimator.StandardAnimation.SlideUp, 15);
                 Save_Btn.Visible = false;
+                A2SAnimator1.StandardAnimate(Save_As_Btn, A7MD_Library.NewComponent.A2SAnimator.StandardAnimation.SlideUp, 15);
+                Save_As_Btn.Visible = false;
                 A2SAnimator1.StandardAnimate(Delete_Btn, A7MD_Library.NewComponent.A2SAnimator.StandardAnimation.SlideUp, 15);
                 Delete_Btn.Visible = false;
                 A2SAnimator1.StandardAnimate(Search_Btn, A7MD_Library.NewComponent.A2SAnimator.StandardAnimation.SlideUp, 15);
@@ -309,6 +346,7 @@ namespace ColorOasisSystem.GUI.UC
             {
                 New_Btn.Visible = false;
                 Save_Btn.Visible = false;
+                Save_As_Btn.Visible = false;
                 Delete_Btn.Visible = false;
                 Search_Btn.Visible = false;
             }
@@ -331,29 +369,32 @@ namespace ColorOasisSystem.GUI.UC
             NewDataAsync();
         }
 
-        private void Save_Btn_Click(object sender, EventArgs e)
+        private async void Save_Btn_Click(object sender, EventArgs e)
         {
             if (!edit_)
             {
-                SaveDataAsync();
+                await SaveDataAsync();
             }
             else
             {
-                EditData();
+                await EditData();
                 EditDataCheck = false;
             }
         }
 
-        private void Delete_Btn_Click(object sender, EventArgs e)
+        private async void Delete_Btn_Click(object sender, EventArgs e)
         {
-            DeleteData();
+            await DeleteData();
         }
 
-        private void Search_Btn_Click(object sender, EventArgs e)
+        private async void Search_Btn_Click(object sender, EventArgs e)
         {
-            Search_Data();
+            await Search_Data();
         }
-
+        private async void Save_As_Btn_Click(object sender, EventArgs e)
+        {
+            await SaveAsData();
+        }
         private void Back_Button_Click(object sender, EventArgs e)
         {
             Visible = false;
@@ -361,7 +402,7 @@ namespace ColorOasisSystem.GUI.UC
             //My.Settings.Previous_UC = this;
             //My.MySettings.Default.Previous_UC = this;
             //My.Settings.Save();
-            //BackAction();
+            BackAction();
         }
 
         private void Master_UC_KeyDown(object sender, KeyEventArgs e)
@@ -391,6 +432,10 @@ namespace ColorOasisSystem.GUI.UC
                 {
                     Search_Btn.PerformClick();
                 }
+            }
+            else if (e.KeyCode==Keys.F5)
+            {
+                if (Save_As_Btn.Enabled) Save_As_Btn.PerformClick();
             }
             else if (e.KeyCode == Keys.Escape)
             {
@@ -424,6 +469,12 @@ namespace ColorOasisSystem.GUI.UC
 
         private async void MasterUC_SizeChanged(object sender, EventArgs e)
         {
+            if (masterUCLockValue)
+            {
+                DisableLockBtn.Dock = DockStyle.Fill;
+                DisableLockBtn.BringToFront();
+                Back_Button.BringToFront();
+            }
             await SizeChangedAsync();
             Option_Btn.Location = new Point(this.Size.Width-52,this.Size.Height-39);
             if (!(this.Size.Height> 550))
@@ -434,6 +485,8 @@ namespace ColorOasisSystem.GUI.UC
                 Search_Btn.Location = new Point(Search_Btn.Location.X, Option_Btn.Top - (Option_Btn.Height / 2));
                 Guna2Button1.Location = new Point(Guna2Button1.Location.X, Option_Btn.Top - (Option_Btn.Height / 2));
                 Guna2Button3.Location = new Point(Guna2Button3.Location.X, Option_Btn.Top - (Option_Btn.Height / 2));
+                Guna2Button2.Location = new Point(Guna2Button2.Location.X, Option_Btn.Top - (Option_Btn.Height / 2));
+                Save_As_Btn.Location = new Point(Save_As_Btn.Location.X, Option_Btn.Top - (Option_Btn.Height / 2));
             }
         }
         public List<T> SearchByProperty<T>(List<T> sourceList, string searchProperty, string searchValue)
@@ -470,7 +523,7 @@ namespace ColorOasisSystem.GUI.UC
             }
             return true;
         }
-        public bool ValidateDropDown(Guna.UI2.WinForms.Guna2ComboBox comboBox, string ErrorCaption)
+        public bool ValidateString(Guna.UI2.WinForms.Guna2ComboBox comboBox, string ErrorCaption)
         {
             if (string.IsNullOrEmpty(comboBox.Text) || string.IsNullOrWhiteSpace(comboBox.Text)|| comboBox.SelectedValue==null || comboBox.SelectedIndex<0)
             {
@@ -483,7 +536,19 @@ namespace ColorOasisSystem.GUI.UC
             }
             return true;
         }
+        public bool ValidateStringD(Guna.UI2.WinForms.Guna2ComboBox comboBox, string ErrorCaption)
+        {
+            if (string.IsNullOrEmpty(comboBox.Text) || string.IsNullOrWhiteSpace(comboBox.Text) || comboBox.SelectedIndex < 0)
+            {
 
+                popMessage(ErrorCaption, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5);
+                comboBox.Focus();
+                comboBox.Select();
+                comboBox.DroppedDown = true;
+                return false;
+            }
+            return true;
+        }
         public virtual void popMessage(string Caption, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes messageTypes, int timerDelay=5)
         {
             MainMenuForm MainForm_Var= Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
@@ -517,5 +582,11 @@ namespace ColorOasisSystem.GUI.UC
         }
 
         #endregion
+
+        private void MasterUC_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

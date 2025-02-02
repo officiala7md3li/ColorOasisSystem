@@ -22,6 +22,9 @@ namespace ColorOasisSystem.Entities
         [MaxLength(30, ErrorMessage = "Maximum length can't exceed 30 chars")]
         [MinLength(7, ErrorMessage = "Minimum length can't be less than 7 chars")]
         public string Name { get; set; }
+        [MaxLength(30, ErrorMessage = "Maximum length can't exceed 30 chars")]
+        [MinLength(7, ErrorMessage = "Minimum length can't be less than 7 chars")]
+        public string NameEn { get; set; }
         [MinLength(3, ErrorMessage = "Recovery Word can't be less than 3 chars")]
         public string RecoverWord { get; set; }
         //public string Position { get; set; }
@@ -30,11 +33,11 @@ namespace ColorOasisSystem.Entities
         //[ForeignKey("branch")]
         //public int BranchID { get; set; }
         //public Branch branch { get; set; }
-        //[ForeignKey("UserPermission")]
-        //public int UserPermissionId { get; set; }
-        //public UserPermissions UserPermission { get; set; }
+        [ForeignKey("UserPermission")]
+        public int UserPermissionId { get; set; }
+        public UserPermissions UserPermission { get; set; }
         public string Password { get; set; }
-        //public byte[] Photo { get; set; }
+        public byte[] Photo { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }
 

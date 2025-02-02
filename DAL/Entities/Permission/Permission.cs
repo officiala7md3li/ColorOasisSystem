@@ -1,4 +1,5 @@
-﻿using ColorOasisSystem.Entities.Interfaces;
+﻿using ColorOasisSystem.DAL.Enums;
+using ColorOasisSystem.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace ColorOasisSystem.Entities
         public bool Edit { get; set; }
         public bool Delete { get; set; }
         public bool Retrive { get; set; }
+        public bool Additional { get; set; }
+        //public int ScreenId { get; set; }
         public Permission() 
         {
             Lock = false;
@@ -21,7 +24,7 @@ namespace ColorOasisSystem.Entities
             Edit = false;
             Delete = false;
             Retrive = false;
-
+            Additional = false;
         }
         public Permission(bool isAll) 
         {
@@ -30,17 +33,23 @@ namespace ColorOasisSystem.Entities
             Edit= isAll;
             Delete= isAll;
             Retrive= isAll;
+            Additional = isAll;
         }
-        public Permission(bool _lock,bool _addnew,bool _edit,bool _delete,bool _retrive)
+        public Permission(bool _lock,bool _addnew,bool _edit,bool _delete,bool _retrive, bool _additional)
         {
             Lock = _lock;
             AddNew = _addnew;
             Edit = _edit;
             Delete = _delete;
             Retrive = _retrive;
+            Additional = _additional;
         }
 
     }
-
+    public class PermissionVisibility
+    {
+        public Screen ScreenId { get; set; }
+        public ScreenType ScreenType { get; set; }
+    }
 
 }

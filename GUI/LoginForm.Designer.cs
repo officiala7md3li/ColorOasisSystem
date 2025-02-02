@@ -38,51 +38,51 @@
             this.Snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.Toltp = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.TabPage2 = new System.Windows.Forms.TabPage();
+            this.Back_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.Restore_Wrd_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Restore_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.TabPage4 = new System.Windows.Forms.TabPage();
+            this.Back1_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Exit_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Label3 = new System.Windows.Forms.Label();
             this.TabPage5 = new System.Windows.Forms.TabPage();
+            this.Username_Add_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Add_User_Recovery_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.Add_User_Password_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Add_Username_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.BunifuPages2 = new Bunifu.UI.WinForms.BunifuPages();
             this.TabPage1 = new System.Windows.Forms.TabPage();
+            this.Insta_Icon = new A7MD_Library.Pictures.AImageButton();
+            this.Wbsit_Icon = new A7MD_Library.Pictures.AImageButton();
+            this.Fb_Icon = new A7MD_Library.Pictures.AImageButton();
             this.Label1 = new System.Windows.Forms.Label();
             this.ASeperator2 = new A7MD_Library.Seperators.ASeperator();
             this.ASeperator1 = new A7MD_Library.Seperators.ASeperator();
             this.Frgt_Pswrd = new Guna.UI2.WinForms.Guna2Button();
             this.Login_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.Pass_txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Username_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.TabPage3 = new System.Windows.Forms.TabPage();
+            this.Restored_Pass_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Restored_User_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Quick_Access_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Mini_Btn = new A7MD_Library.NewControls.A2MinimizeButton();
             this.Close_Btn = new A7MD_Library.NewControls.A2CloseButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Banner_Image = new Bunifu.UI.WinForms.BunifuImageButton();
             this.Drag_Ctrl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.FormDock = new Bunifu.UI.WinForms.BunifuFormDock();
-            this.Banner_Image = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.Insta_Icon = new A7MD_Library.Pictures.AImageButton();
-            this.Wbsit_Icon = new A7MD_Library.Pictures.AImageButton();
-            this.Fb_Icon = new A7MD_Library.Pictures.AImageButton();
-            this.Pass_txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Username_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Back_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Restore_Wrd_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Restored_Pass_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Restored_User_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Back1_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Add_User_Recovery_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.Add_User_Password_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Add_Username_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Username_Add_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.TabPage2.SuspendLayout();
             this.TabPage4.SuspendLayout();
             this.TabPage5.SuspendLayout();
             this.BunifuPages2.SuspendLayout();
             this.TabPage1.SuspendLayout();
-            this.TabPage3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Insta_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wbsit_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fb_Icon)).BeginInit();
+            this.TabPage3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuLabel1
@@ -142,7 +142,7 @@
             this.Add_New_User_Btn.Location = new System.Drawing.Point(72, 350);
             this.Add_New_User_Btn.Name = "Add_New_User_Btn";
             this.Add_New_User_Btn.Size = new System.Drawing.Size(113, 35);
-            this.Add_New_User_Btn.TabIndex = 3;
+            this.Add_New_User_Btn.TabIndex = 4;
             this.Add_New_User_Btn.Text = "اضافة مستخدم";
             this.Toltp.SetToolTip(this.Add_New_User_Btn, "");
             this.Toltp.SetToolTipIcon(this.Add_New_User_Btn, null);
@@ -271,6 +271,64 @@
             this.Toltp.SetToolTipIcon(this.TabPage2, null);
             this.Toltp.SetToolTipTitle(this.TabPage2, "");
             // 
+            // Back_Btn
+            // 
+            this.Back_Btn.Animated = true;
+            this.Back_Btn.AutoRoundedCorners = true;
+            this.Back_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.Back_Btn.BorderRadius = 13;
+            this.Back_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Back_Btn.FillColor = System.Drawing.Color.MintCream;
+            this.Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Back_Btn.ForeColor = System.Drawing.Color.White;
+            this.Back_Btn.HoverState.FillColor = System.Drawing.Color.Azure;
+            this.Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Back_Btn.Image")));
+            this.Back_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Back_Btn.ImageOffset = new System.Drawing.Point(7, -1);
+            this.Back_Btn.IndicateFocus = true;
+            this.Back_Btn.Location = new System.Drawing.Point(-30, 15);
+            this.Back_Btn.Name = "Back_Btn";
+            this.Back_Btn.PressedColor = System.Drawing.Color.Transparent;
+            this.Back_Btn.Size = new System.Drawing.Size(70, 29);
+            this.Back_Btn.TabIndex = 2;
+            this.Toltp.SetToolTip(this.Back_Btn, "");
+            this.Toltp.SetToolTipIcon(this.Back_Btn, null);
+            this.Toltp.SetToolTipTitle(this.Back_Btn, "");
+            this.Back_Btn.UseTransparentBackground = true;
+            this.Back_Btn.Click += new System.EventHandler(this.Back_Btn_Click);
+            // 
+            // Restore_Wrd_Txt
+            // 
+            this.Restore_Wrd_Txt.AutoRoundedCorners = true;
+            this.Restore_Wrd_Txt.BorderRadius = 17;
+            this.Restore_Wrd_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Restore_Wrd_Txt.DefaultText = "";
+            this.Restore_Wrd_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Restore_Wrd_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Restore_Wrd_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Restore_Wrd_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Restore_Wrd_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Restore_Wrd_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Restore_Wrd_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Restore_Wrd_Txt.IconLeftOffset = new System.Drawing.Point(3, 0);
+            this.Restore_Wrd_Txt.IconLeftSize = new System.Drawing.Size(28, 28);
+            this.Restore_Wrd_Txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Restore_Wrd_Txt.IconRight")));
+            this.Restore_Wrd_Txt.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Restore_Wrd_Txt.IconRightSize = new System.Drawing.Size(28, 28);
+            this.Restore_Wrd_Txt.Location = new System.Drawing.Point(32, 162);
+            this.Restore_Wrd_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Restore_Wrd_Txt.Name = "Restore_Wrd_Txt";
+            this.Restore_Wrd_Txt.PasswordChar = '●';
+            this.Restore_Wrd_Txt.PlaceholderText = "ادخل كلمه الاسترجاع";
+            this.Restore_Wrd_Txt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Restore_Wrd_Txt.SelectedText = "";
+            this.Restore_Wrd_Txt.Size = new System.Drawing.Size(200, 36);
+            this.Restore_Wrd_Txt.TabIndex = 0;
+            this.Toltp.SetToolTip(this.Restore_Wrd_Txt, "");
+            this.Toltp.SetToolTipIcon(this.Restore_Wrd_Txt, null);
+            this.Toltp.SetToolTipTitle(this.Restore_Wrd_Txt, "");
+            this.Restore_Wrd_Txt.UseSystemPasswordChar = true;
+            // 
             // Restore_Btn
             // 
             this.Restore_Btn.Animated = true;
@@ -310,6 +368,32 @@
             this.Toltp.SetToolTip(this.TabPage4, "");
             this.Toltp.SetToolTipIcon(this.TabPage4, null);
             this.Toltp.SetToolTipTitle(this.TabPage4, "");
+            // 
+            // Back1_Btn
+            // 
+            this.Back1_Btn.Animated = true;
+            this.Back1_Btn.AutoRoundedCorners = true;
+            this.Back1_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.Back1_Btn.BorderRadius = 13;
+            this.Back1_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Back1_Btn.FillColor = System.Drawing.Color.MintCream;
+            this.Back1_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Back1_Btn.ForeColor = System.Drawing.Color.White;
+            this.Back1_Btn.HoverState.FillColor = System.Drawing.Color.Azure;
+            this.Back1_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Back1_Btn.Image")));
+            this.Back1_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Back1_Btn.ImageOffset = new System.Drawing.Point(7, -1);
+            this.Back1_Btn.IndicateFocus = true;
+            this.Back1_Btn.Location = new System.Drawing.Point(-30, 15);
+            this.Back1_Btn.Name = "Back1_Btn";
+            this.Back1_Btn.PressedColor = System.Drawing.Color.Transparent;
+            this.Back1_Btn.Size = new System.Drawing.Size(70, 29);
+            this.Back1_Btn.TabIndex = 2;
+            this.Toltp.SetToolTip(this.Back1_Btn, "");
+            this.Toltp.SetToolTipIcon(this.Back1_Btn, null);
+            this.Toltp.SetToolTipTitle(this.Back1_Btn, "");
+            this.Back1_Btn.UseTransparentBackground = true;
+            this.Back1_Btn.Click += new System.EventHandler(this.Back_Btn_Click);
             // 
             // Exit_Btn
             // 
@@ -371,6 +455,156 @@
             this.Toltp.SetToolTipIcon(this.TabPage5, null);
             this.Toltp.SetToolTipTitle(this.TabPage5, "");
             // 
+            // Username_Add_TextBox
+            // 
+            this.Username_Add_TextBox.AutoRoundedCorners = true;
+            this.Username_Add_TextBox.BorderRadius = 17;
+            this.Username_Add_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Username_Add_TextBox.DefaultText = "";
+            this.Username_Add_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Username_Add_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Username_Add_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username_Add_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username_Add_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username_Add_TextBox.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username_Add_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username_Add_TextBox.IconLeftOffset = new System.Drawing.Point(3, 0);
+            this.Username_Add_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Username_Add_TextBox.IconRight")));
+            this.Username_Add_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Username_Add_TextBox.Location = new System.Drawing.Point(28, 207);
+            this.Username_Add_TextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Username_Add_TextBox.Name = "Username_Add_TextBox";
+            this.Username_Add_TextBox.PasswordChar = '\0';
+            this.Username_Add_TextBox.PlaceholderText = "ادخل اسم المستخدم";
+            this.Username_Add_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Username_Add_TextBox.SelectedText = "";
+            this.Username_Add_TextBox.Size = new System.Drawing.Size(200, 36);
+            this.Username_Add_TextBox.TabIndex = 1;
+            this.Username_Add_TextBox.TextOffset = new System.Drawing.Point(3, 0);
+            this.Toltp.SetToolTip(this.Username_Add_TextBox, "");
+            this.Toltp.SetToolTipIcon(this.Username_Add_TextBox, null);
+            this.Toltp.SetToolTipTitle(this.Username_Add_TextBox, "");
+            // 
+            // Add_User_Recovery_TextBox
+            // 
+            this.Add_User_Recovery_TextBox.AutoRoundedCorners = true;
+            this.Add_User_Recovery_TextBox.BorderRadius = 17;
+            this.Add_User_Recovery_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Add_User_Recovery_TextBox.DefaultText = "";
+            this.Add_User_Recovery_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Add_User_Recovery_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Add_User_Recovery_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_User_Recovery_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_User_Recovery_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_User_Recovery_TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Add_User_Recovery_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_User_Recovery_TextBox.IconLeftSize = new System.Drawing.Size(28, 28);
+            this.Add_User_Recovery_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Add_User_Recovery_TextBox.IconRight")));
+            this.Add_User_Recovery_TextBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.Add_User_Recovery_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Add_User_Recovery_TextBox.IconRightSize = new System.Drawing.Size(28, 28);
+            this.Add_User_Recovery_TextBox.Location = new System.Drawing.Point(28, 301);
+            this.Add_User_Recovery_TextBox.Name = "Add_User_Recovery_TextBox";
+            this.Add_User_Recovery_TextBox.PasswordChar = '●';
+            this.Add_User_Recovery_TextBox.PlaceholderText = "ادخل كلمه الاسترجاع";
+            this.Add_User_Recovery_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Add_User_Recovery_TextBox.SelectedText = "";
+            this.Add_User_Recovery_TextBox.Size = new System.Drawing.Size(200, 36);
+            this.Add_User_Recovery_TextBox.TabIndex = 3;
+            this.Toltp.SetToolTip(this.Add_User_Recovery_TextBox, "");
+            this.Toltp.SetToolTipIcon(this.Add_User_Recovery_TextBox, null);
+            this.Toltp.SetToolTipTitle(this.Add_User_Recovery_TextBox, "");
+            this.Add_User_Recovery_TextBox.UseSystemPasswordChar = true;
+            // 
+            // Guna2Button2
+            // 
+            this.Guna2Button2.Animated = true;
+            this.Guna2Button2.AutoRoundedCorners = true;
+            this.Guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.Guna2Button2.BorderRadius = 13;
+            this.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Guna2Button2.FillColor = System.Drawing.Color.MintCream;
+            this.Guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.Guna2Button2.HoverState.FillColor = System.Drawing.Color.Azure;
+            this.Guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("Guna2Button2.Image")));
+            this.Guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Guna2Button2.ImageOffset = new System.Drawing.Point(7, -1);
+            this.Guna2Button2.IndicateFocus = true;
+            this.Guna2Button2.Location = new System.Drawing.Point(-30, 15);
+            this.Guna2Button2.Name = "Guna2Button2";
+            this.Guna2Button2.PressedColor = System.Drawing.Color.Transparent;
+            this.Guna2Button2.Size = new System.Drawing.Size(70, 29);
+            this.Guna2Button2.TabIndex = 4;
+            this.Toltp.SetToolTip(this.Guna2Button2, "");
+            this.Toltp.SetToolTipIcon(this.Guna2Button2, null);
+            this.Toltp.SetToolTipTitle(this.Guna2Button2, "");
+            this.Guna2Button2.UseTransparentBackground = true;
+            this.Guna2Button2.Visible = false;
+            this.Guna2Button2.Click += new System.EventHandler(this.Back_Btn_Click);
+            // 
+            // Add_User_Password_TextBox
+            // 
+            this.Add_User_Password_TextBox.AutoRoundedCorners = true;
+            this.Add_User_Password_TextBox.BorderRadius = 17;
+            this.Add_User_Password_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Add_User_Password_TextBox.DefaultText = "";
+            this.Add_User_Password_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Add_User_Password_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Add_User_Password_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_User_Password_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_User_Password_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_User_Password_TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Add_User_Password_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_User_Password_TextBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("Add_User_Password_TextBox.IconLeft")));
+            this.Add_User_Password_TextBox.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_User_Password_TextBox.IconLeftOffset = new System.Drawing.Point(4, 0);
+            this.Add_User_Password_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Add_User_Password_TextBox.IconRight")));
+            this.Add_User_Password_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Add_User_Password_TextBox.Location = new System.Drawing.Point(28, 254);
+            this.Add_User_Password_TextBox.Name = "Add_User_Password_TextBox";
+            this.Add_User_Password_TextBox.PasswordChar = '●';
+            this.Add_User_Password_TextBox.PlaceholderText = "ادخل كلمة المرور";
+            this.Add_User_Password_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Add_User_Password_TextBox.SelectedText = "";
+            this.Add_User_Password_TextBox.Size = new System.Drawing.Size(200, 36);
+            this.Add_User_Password_TextBox.TabIndex = 2;
+            this.Add_User_Password_TextBox.TextOffset = new System.Drawing.Point(3, 0);
+            this.Toltp.SetToolTip(this.Add_User_Password_TextBox, "");
+            this.Toltp.SetToolTipIcon(this.Add_User_Password_TextBox, null);
+            this.Toltp.SetToolTipTitle(this.Add_User_Password_TextBox, "");
+            this.Add_User_Password_TextBox.UseSystemPasswordChar = true;
+            // 
+            // Add_Username_TextBox
+            // 
+            this.Add_Username_TextBox.AutoRoundedCorners = true;
+            this.Add_Username_TextBox.BorderRadius = 17;
+            this.Add_Username_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Add_Username_TextBox.DefaultText = "";
+            this.Add_Username_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Add_Username_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Add_Username_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_Username_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_Username_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_Username_TextBox.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_Username_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_Username_TextBox.IconLeftOffset = new System.Drawing.Point(3, 0);
+            this.Add_Username_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Add_Username_TextBox.IconRight")));
+            this.Add_Username_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Add_Username_TextBox.Location = new System.Drawing.Point(28, 160);
+            this.Add_Username_TextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Add_Username_TextBox.Name = "Add_Username_TextBox";
+            this.Add_Username_TextBox.PasswordChar = '\0';
+            this.Add_Username_TextBox.PlaceholderText = "ادخل الاسم لتسجيل الدخول";
+            this.Add_Username_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Add_Username_TextBox.SelectedText = "";
+            this.Add_Username_TextBox.Size = new System.Drawing.Size(200, 36);
+            this.Add_Username_TextBox.TabIndex = 0;
+            this.Add_Username_TextBox.TextOffset = new System.Drawing.Point(3, 0);
+            this.Toltp.SetToolTip(this.Add_Username_TextBox, "");
+            this.Toltp.SetToolTipIcon(this.Add_Username_TextBox, null);
+            this.Toltp.SetToolTipTitle(this.Add_Username_TextBox, "");
+            // 
             // BunifuPages2
             // 
             this.BunifuPages2.Alignment = System.Windows.Forms.TabAlignment.Bottom;
@@ -391,7 +625,7 @@
             this.BunifuPages2.PageTitle = "Add User";
             this.BunifuPages2.SelectedIndex = 0;
             this.BunifuPages2.Size = new System.Drawing.Size(265, 425);
-            this.BunifuPages2.TabIndex = 54;
+            this.BunifuPages2.TabIndex = 2;
             this.Toltp.SetToolTip(this.BunifuPages2, "");
             this.Toltp.SetToolTipIcon(this.BunifuPages2, null);
             this.Toltp.SetToolTipTitle(this.BunifuPages2, "");
@@ -435,6 +669,75 @@
             this.Toltp.SetToolTip(this.TabPage1, "");
             this.Toltp.SetToolTipIcon(this.TabPage1, null);
             this.Toltp.SetToolTipTitle(this.TabPage1, "");
+            // 
+            // Insta_Icon
+            // 
+            this.Insta_Icon.BackColor = System.Drawing.Color.Transparent;
+            this.Insta_Icon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Insta_Icon.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Insta_Icon.ErrorImage")));
+            this.Insta_Icon.Image = ((System.Drawing.Image)(resources.GetObject("Insta_Icon.Image")));
+            this.Insta_Icon.ImageActive = ((System.Drawing.Image)(resources.GetObject("Insta_Icon.ImageActive")));
+            this.Insta_Icon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Insta_Icon.InitialImage = ((System.Drawing.Image)(resources.GetObject("Insta_Icon.InitialImage")));
+            this.Insta_Icon.Location = new System.Drawing.Point(180, 370);
+            this.Insta_Icon.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.Insta_Icon.Name = "Insta_Icon";
+            this.Insta_Icon.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.Insta_Icon.Size = new System.Drawing.Size(35, 35);
+            this.Insta_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Insta_Icon.TabIndex = 55;
+            this.Insta_Icon.TabStop = false;
+            this.Toltp.SetToolTip(this.Insta_Icon, "");
+            this.Toltp.SetToolTipIcon(this.Insta_Icon, null);
+            this.Toltp.SetToolTipTitle(this.Insta_Icon, "");
+            this.Insta_Icon.Zoom = 30;
+            this.Insta_Icon.Click += new System.EventHandler(this.Insta_Icon_Click);
+            // 
+            // Wbsit_Icon
+            // 
+            this.Wbsit_Icon.BackColor = System.Drawing.Color.Transparent;
+            this.Wbsit_Icon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Wbsit_Icon.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Wbsit_Icon.ErrorImage")));
+            this.Wbsit_Icon.Image = ((System.Drawing.Image)(resources.GetObject("Wbsit_Icon.Image")));
+            this.Wbsit_Icon.ImageActive = ((System.Drawing.Image)(resources.GetObject("Wbsit_Icon.ImageActive")));
+            this.Wbsit_Icon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Wbsit_Icon.InitialImage = global::ColorOasisSystem.Properties.Resources.ColorOasisLogo;
+            this.Wbsit_Icon.Location = new System.Drawing.Point(116, 370);
+            this.Wbsit_Icon.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.Wbsit_Icon.Name = "Wbsit_Icon";
+            this.Wbsit_Icon.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.Wbsit_Icon.Size = new System.Drawing.Size(35, 35);
+            this.Wbsit_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wbsit_Icon.TabIndex = 54;
+            this.Wbsit_Icon.TabStop = false;
+            this.Toltp.SetToolTip(this.Wbsit_Icon, "");
+            this.Toltp.SetToolTipIcon(this.Wbsit_Icon, null);
+            this.Toltp.SetToolTipTitle(this.Wbsit_Icon, "");
+            this.Wbsit_Icon.Zoom = 33;
+            this.Wbsit_Icon.Click += new System.EventHandler(this.Wbsit_Icon_Click);
+            // 
+            // Fb_Icon
+            // 
+            this.Fb_Icon.BackColor = System.Drawing.Color.Transparent;
+            this.Fb_Icon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Fb_Icon.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Fb_Icon.ErrorImage")));
+            this.Fb_Icon.Image = ((System.Drawing.Image)(resources.GetObject("Fb_Icon.Image")));
+            this.Fb_Icon.ImageActive = ((System.Drawing.Image)(resources.GetObject("Fb_Icon.ImageActive")));
+            this.Fb_Icon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Fb_Icon.InitialImage = ((System.Drawing.Image)(resources.GetObject("Fb_Icon.InitialImage")));
+            this.Fb_Icon.Location = new System.Drawing.Point(52, 370);
+            this.Fb_Icon.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.Fb_Icon.Name = "Fb_Icon";
+            this.Fb_Icon.Padding = new System.Windows.Forms.Padding(9);
+            this.Fb_Icon.Size = new System.Drawing.Size(35, 35);
+            this.Fb_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Fb_Icon.TabIndex = 53;
+            this.Fb_Icon.TabStop = false;
+            this.Toltp.SetToolTip(this.Fb_Icon, "");
+            this.Toltp.SetToolTipIcon(this.Fb_Icon, null);
+            this.Toltp.SetToolTipTitle(this.Fb_Icon, "");
+            this.Fb_Icon.Zoom = 33;
+            this.Fb_Icon.Click += new System.EventHandler(this.Fb_Icon_Click);
             // 
             // Label1
             // 
@@ -540,6 +843,69 @@
             this.Login_Btn.UseTransparentBackground = true;
             this.Login_Btn.Click += new System.EventHandler(this.Login_Btn_Click);
             // 
+            // Pass_txt
+            // 
+            this.Pass_txt.AutoRoundedCorners = true;
+            this.Pass_txt.BorderRadius = 17;
+            this.Pass_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Pass_txt.DefaultText = "";
+            this.Pass_txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Pass_txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Pass_txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Pass_txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Pass_txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Pass_txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Pass_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Pass_txt.IconLeft = ((System.Drawing.Image)(resources.GetObject("Pass_txt.IconLeft")));
+            this.Pass_txt.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.Pass_txt.IconLeftOffset = new System.Drawing.Point(4, 0);
+            this.Pass_txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Pass_txt.IconRight")));
+            this.Pass_txt.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Pass_txt.Location = new System.Drawing.Point(32, 212);
+            this.Pass_txt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Pass_txt.Name = "Pass_txt";
+            this.Pass_txt.PasswordChar = '●';
+            this.Pass_txt.PlaceholderText = "ادخل كلمه المرور";
+            this.Pass_txt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Pass_txt.SelectedText = "";
+            this.Pass_txt.Size = new System.Drawing.Size(200, 36);
+            this.Pass_txt.TabIndex = 1;
+            this.Pass_txt.TextOffset = new System.Drawing.Point(3, 0);
+            this.Toltp.SetToolTip(this.Pass_txt, "");
+            this.Toltp.SetToolTipIcon(this.Pass_txt, null);
+            this.Toltp.SetToolTipTitle(this.Pass_txt, "");
+            this.Pass_txt.UseSystemPasswordChar = true;
+            this.Pass_txt.IconLeftClick += new System.EventHandler(this.Pass_txt_IconLeftClick);
+            // 
+            // Username_TxtBox
+            // 
+            this.Username_TxtBox.AutoRoundedCorners = true;
+            this.Username_TxtBox.BorderRadius = 17;
+            this.Username_TxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Username_TxtBox.DefaultText = "";
+            this.Username_TxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Username_TxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Username_TxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username_TxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username_TxtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username_TxtBox.Font = new System.Drawing.Font("Cairo", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username_TxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username_TxtBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Username_TxtBox.IconRight")));
+            this.Username_TxtBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Username_TxtBox.Location = new System.Drawing.Point(32, 161);
+            this.Username_TxtBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Username_TxtBox.Name = "Username_TxtBox";
+            this.Username_TxtBox.PasswordChar = '\0';
+            this.Username_TxtBox.PlaceholderText = "ادخل اسم المستخدم";
+            this.Username_TxtBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Username_TxtBox.SelectedText = "";
+            this.Username_TxtBox.Size = new System.Drawing.Size(200, 36);
+            this.Username_TxtBox.TabIndex = 4;
+            this.Username_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
+            this.Toltp.SetToolTip(this.Username_TxtBox, "");
+            this.Toltp.SetToolTipIcon(this.Username_TxtBox, null);
+            this.Toltp.SetToolTipTitle(this.Username_TxtBox, "");
+            // 
             // TabPage3
             // 
             this.TabPage3.BackColor = System.Drawing.SystemColors.Control;
@@ -557,6 +923,69 @@
             this.Toltp.SetToolTipIcon(this.TabPage3, null);
             this.Toltp.SetToolTipTitle(this.TabPage3, "");
             // 
+            // Restored_Pass_Txt
+            // 
+            this.Restored_Pass_Txt.AutoRoundedCorners = true;
+            this.Restored_Pass_Txt.BorderRadius = 17;
+            this.Restored_Pass_Txt.Cursor = System.Windows.Forms.Cursors.No;
+            this.Restored_Pass_Txt.DefaultText = "";
+            this.Restored_Pass_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Restored_Pass_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Restored_Pass_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Restored_Pass_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Restored_Pass_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Restored_Pass_Txt.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.Restored_Pass_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Restored_Pass_Txt.IconLeftCursor = System.Windows.Forms.Cursors.No;
+            this.Restored_Pass_Txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Restored_Pass_Txt.IconRight")));
+            this.Restored_Pass_Txt.IconRightCursor = System.Windows.Forms.Cursors.No;
+            this.Restored_Pass_Txt.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Restored_Pass_Txt.Location = new System.Drawing.Point(32, 214);
+            this.Restored_Pass_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Restored_Pass_Txt.Name = "Restored_Pass_Txt";
+            this.Restored_Pass_Txt.PasswordChar = '●';
+            this.Restored_Pass_Txt.PlaceholderText = "ادخل كلمه المرور";
+            this.Restored_Pass_Txt.ReadOnly = true;
+            this.Restored_Pass_Txt.SelectedText = "";
+            this.Restored_Pass_Txt.Size = new System.Drawing.Size(200, 36);
+            this.Restored_Pass_Txt.TabIndex = 1;
+            this.Restored_Pass_Txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Toltp.SetToolTip(this.Restored_Pass_Txt, "");
+            this.Toltp.SetToolTipIcon(this.Restored_Pass_Txt, null);
+            this.Toltp.SetToolTipTitle(this.Restored_Pass_Txt, "");
+            this.Restored_Pass_Txt.UseSystemPasswordChar = true;
+            // 
+            // Restored_User_Txt
+            // 
+            this.Restored_User_Txt.AutoRoundedCorners = true;
+            this.Restored_User_Txt.BorderRadius = 17;
+            this.Restored_User_Txt.Cursor = System.Windows.Forms.Cursors.No;
+            this.Restored_User_Txt.DefaultText = "";
+            this.Restored_User_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Restored_User_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Restored_User_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Restored_User_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Restored_User_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Restored_User_Txt.Font = new System.Drawing.Font("Cairo", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Restored_User_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Restored_User_Txt.IconLeftCursor = System.Windows.Forms.Cursors.No;
+            this.Restored_User_Txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Restored_User_Txt.IconRight")));
+            this.Restored_User_Txt.IconRightCursor = System.Windows.Forms.Cursors.No;
+            this.Restored_User_Txt.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Restored_User_Txt.Location = new System.Drawing.Point(32, 162);
+            this.Restored_User_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Restored_User_Txt.Name = "Restored_User_Txt";
+            this.Restored_User_Txt.PasswordChar = '\0';
+            this.Restored_User_Txt.PlaceholderText = "ادخل اسم المستخدم";
+            this.Restored_User_Txt.ReadOnly = true;
+            this.Restored_User_Txt.SelectedText = "";
+            this.Restored_User_Txt.Size = new System.Drawing.Size(200, 36);
+            this.Restored_User_Txt.TabIndex = 0;
+            this.Restored_User_Txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Toltp.SetToolTip(this.Restored_User_Txt, "");
+            this.Toltp.SetToolTipIcon(this.Restored_User_Txt, null);
+            this.Toltp.SetToolTipTitle(this.Restored_User_Txt, "");
+            // 
             // Quick_Access_Btn
             // 
             this.Quick_Access_Btn.Animated = true;
@@ -571,7 +1000,7 @@
             this.Quick_Access_Btn.Location = new System.Drawing.Point(76, 263);
             this.Quick_Access_Btn.Name = "Quick_Access_Btn";
             this.Quick_Access_Btn.Size = new System.Drawing.Size(113, 35);
-            this.Quick_Access_Btn.TabIndex = 0;
+            this.Quick_Access_Btn.TabIndex = 2;
             this.Quick_Access_Btn.Text = "وصول سريع";
             this.Toltp.SetToolTip(this.Quick_Access_Btn, "");
             this.Toltp.SetToolTipIcon(this.Quick_Access_Btn, null);
@@ -635,6 +1064,44 @@
             this.Toltp.SetToolTipIcon(this.panel1, null);
             this.Toltp.SetToolTipTitle(this.panel1, "");
             // 
+            // Banner_Image
+            // 
+            this.Banner_Image.ActiveImage = null;
+            this.Banner_Image.AllowAnimations = true;
+            this.Banner_Image.AllowBuffering = false;
+            this.Banner_Image.AllowToggling = false;
+            this.Banner_Image.AllowZooming = true;
+            this.Banner_Image.AllowZoomingOnFocus = false;
+            this.Banner_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Banner_Image.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Banner_Image.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Banner_Image.ErrorImage")));
+            this.Banner_Image.FadeWhenInactive = false;
+            this.Banner_Image.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.Banner_Image.Image = global::ColorOasisSystem.Properties.Resources.ColorOasisLogo;
+            this.Banner_Image.ImageActive = null;
+            this.Banner_Image.ImageLocation = null;
+            this.Banner_Image.ImageMargin = 10;
+            this.Banner_Image.ImageSize = new System.Drawing.Size(144, 135);
+            this.Banner_Image.ImageZoomSize = new System.Drawing.Size(154, 145);
+            this.Banner_Image.InitialImage = ((System.Drawing.Image)(resources.GetObject("Banner_Image.InitialImage")));
+            this.Banner_Image.Location = new System.Drawing.Point(56, 34);
+            this.Banner_Image.Margin = new System.Windows.Forms.Padding(2);
+            this.Banner_Image.Name = "Banner_Image";
+            this.Banner_Image.Rotation = 0;
+            this.Banner_Image.ShowActiveImage = true;
+            this.Banner_Image.ShowCursorChanges = false;
+            this.Banner_Image.ShowImageBorders = true;
+            this.Banner_Image.ShowSizeMarkers = false;
+            this.Banner_Image.Size = new System.Drawing.Size(154, 145);
+            this.Banner_Image.TabIndex = 55;
+            this.Toltp.SetToolTip(this.Banner_Image, "");
+            this.Toltp.SetToolTipIcon(this.Banner_Image, null);
+            this.Banner_Image.ToolTipText = "";
+            this.Toltp.SetToolTipTitle(this.Banner_Image, "");
+            this.Banner_Image.WaitOnLoad = false;
+            this.Banner_Image.Zoom = 10;
+            this.Banner_Image.ZoomSpeed = 10;
+            // 
             // Drag_Ctrl
             // 
             this.Drag_Ctrl.DockForm = true;
@@ -682,473 +1149,6 @@
             this.FormDock.TitleBarOptions.TitleBarControl = this.panel1;
             this.FormDock.TitleBarOptions.UseBackColorOnDockingIndicators = false;
             // 
-            // Banner_Image
-            // 
-            this.Banner_Image.ActiveImage = null;
-            this.Banner_Image.AllowAnimations = true;
-            this.Banner_Image.AllowBuffering = false;
-            this.Banner_Image.AllowToggling = false;
-            this.Banner_Image.AllowZooming = true;
-            this.Banner_Image.AllowZoomingOnFocus = false;
-            this.Banner_Image.BackColor = System.Drawing.Color.Transparent;
-            this.Banner_Image.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Banner_Image.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Banner_Image.ErrorImage")));
-            this.Banner_Image.FadeWhenInactive = false;
-            this.Banner_Image.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.Banner_Image.Image = global::ColorOasisSystem.Properties.Resources.ColorOasisLogo;
-            this.Banner_Image.ImageActive = null;
-            this.Banner_Image.ImageLocation = null;
-            this.Banner_Image.ImageMargin = 10;
-            this.Banner_Image.ImageSize = new System.Drawing.Size(144, 135);
-            this.Banner_Image.ImageZoomSize = new System.Drawing.Size(154, 145);
-            this.Banner_Image.InitialImage = ((System.Drawing.Image)(resources.GetObject("Banner_Image.InitialImage")));
-            this.Banner_Image.Location = new System.Drawing.Point(56, 34);
-            this.Banner_Image.Margin = new System.Windows.Forms.Padding(2);
-            this.Banner_Image.Name = "Banner_Image";
-            this.Banner_Image.Rotation = 0;
-            this.Banner_Image.ShowActiveImage = true;
-            this.Banner_Image.ShowCursorChanges = false;
-            this.Banner_Image.ShowImageBorders = true;
-            this.Banner_Image.ShowSizeMarkers = false;
-            this.Banner_Image.Size = new System.Drawing.Size(154, 145);
-            this.Banner_Image.TabIndex = 55;
-            this.Toltp.SetToolTip(this.Banner_Image, "");
-            this.Toltp.SetToolTipIcon(this.Banner_Image, null);
-            this.Banner_Image.ToolTipText = "";
-            this.Toltp.SetToolTipTitle(this.Banner_Image, "");
-            this.Banner_Image.WaitOnLoad = false;
-            this.Banner_Image.Zoom = 10;
-            this.Banner_Image.ZoomSpeed = 10;
-            // 
-            // Insta_Icon
-            // 
-            this.Insta_Icon.BackColor = System.Drawing.Color.Transparent;
-            this.Insta_Icon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Insta_Icon.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Insta_Icon.ErrorImage")));
-            this.Insta_Icon.Image = ((System.Drawing.Image)(resources.GetObject("Insta_Icon.Image")));
-            this.Insta_Icon.ImageActive = ((System.Drawing.Image)(resources.GetObject("Insta_Icon.ImageActive")));
-            this.Insta_Icon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Insta_Icon.InitialImage = ((System.Drawing.Image)(resources.GetObject("Insta_Icon.InitialImage")));
-            this.Insta_Icon.Location = new System.Drawing.Point(180, 370);
-            this.Insta_Icon.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.Insta_Icon.Name = "Insta_Icon";
-            this.Insta_Icon.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.Insta_Icon.Size = new System.Drawing.Size(35, 35);
-            this.Insta_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Insta_Icon.TabIndex = 55;
-            this.Insta_Icon.TabStop = false;
-            this.Toltp.SetToolTip(this.Insta_Icon, "");
-            this.Toltp.SetToolTipIcon(this.Insta_Icon, null);
-            this.Toltp.SetToolTipTitle(this.Insta_Icon, "");
-            this.Insta_Icon.Zoom = 30;
-            this.Insta_Icon.Click += new System.EventHandler(this.Insta_Icon_Click);
-            // 
-            // Wbsit_Icon
-            // 
-            this.Wbsit_Icon.BackColor = System.Drawing.Color.Transparent;
-            this.Wbsit_Icon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Wbsit_Icon.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Wbsit_Icon.ErrorImage")));
-            this.Wbsit_Icon.Image = ((System.Drawing.Image)(resources.GetObject("Wbsit_Icon.Image")));
-            this.Wbsit_Icon.ImageActive = ((System.Drawing.Image)(resources.GetObject("Wbsit_Icon.ImageActive")));
-            this.Wbsit_Icon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Wbsit_Icon.InitialImage = global::ColorOasisSystem.Properties.Resources.ColorOasisLogo;
-            this.Wbsit_Icon.Location = new System.Drawing.Point(116, 370);
-            this.Wbsit_Icon.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.Wbsit_Icon.Name = "Wbsit_Icon";
-            this.Wbsit_Icon.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.Wbsit_Icon.Size = new System.Drawing.Size(35, 35);
-            this.Wbsit_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Wbsit_Icon.TabIndex = 54;
-            this.Wbsit_Icon.TabStop = false;
-            this.Toltp.SetToolTip(this.Wbsit_Icon, "");
-            this.Toltp.SetToolTipIcon(this.Wbsit_Icon, null);
-            this.Toltp.SetToolTipTitle(this.Wbsit_Icon, "");
-            this.Wbsit_Icon.Zoom = 33;
-            this.Wbsit_Icon.Click += new System.EventHandler(this.Wbsit_Icon_Click);
-            // 
-            // Fb_Icon
-            // 
-            this.Fb_Icon.BackColor = System.Drawing.Color.Transparent;
-            this.Fb_Icon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Fb_Icon.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Fb_Icon.ErrorImage")));
-            this.Fb_Icon.Image = ((System.Drawing.Image)(resources.GetObject("Fb_Icon.Image")));
-            this.Fb_Icon.ImageActive = ((System.Drawing.Image)(resources.GetObject("Fb_Icon.ImageActive")));
-            this.Fb_Icon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Fb_Icon.InitialImage = ((System.Drawing.Image)(resources.GetObject("Fb_Icon.InitialImage")));
-            this.Fb_Icon.Location = new System.Drawing.Point(52, 370);
-            this.Fb_Icon.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.Fb_Icon.Name = "Fb_Icon";
-            this.Fb_Icon.Padding = new System.Windows.Forms.Padding(9);
-            this.Fb_Icon.Size = new System.Drawing.Size(35, 35);
-            this.Fb_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Fb_Icon.TabIndex = 53;
-            this.Fb_Icon.TabStop = false;
-            this.Toltp.SetToolTip(this.Fb_Icon, "");
-            this.Toltp.SetToolTipIcon(this.Fb_Icon, null);
-            this.Toltp.SetToolTipTitle(this.Fb_Icon, "");
-            this.Fb_Icon.Zoom = 33;
-            this.Fb_Icon.Click += new System.EventHandler(this.Fb_Icon_Click);
-            // 
-            // Pass_txt
-            // 
-            this.Pass_txt.AutoRoundedCorners = true;
-            this.Pass_txt.BorderRadius = 17;
-            this.Pass_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Pass_txt.DefaultText = "";
-            this.Pass_txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Pass_txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Pass_txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Pass_txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Pass_txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Pass_txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Pass_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Pass_txt.IconLeft = ((System.Drawing.Image)(resources.GetObject("Pass_txt.IconLeft")));
-            this.Pass_txt.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.Pass_txt.IconLeftOffset = new System.Drawing.Point(4, 0);
-            this.Pass_txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Pass_txt.IconRight")));
-            this.Pass_txt.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Pass_txt.Location = new System.Drawing.Point(32, 212);
-            this.Pass_txt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Pass_txt.Name = "Pass_txt";
-            this.Pass_txt.PasswordChar = '●';
-            this.Pass_txt.PlaceholderText = "ادخل كلمه المرور";
-            this.Pass_txt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Pass_txt.SelectedText = "";
-            this.Pass_txt.Size = new System.Drawing.Size(200, 36);
-            this.Pass_txt.TabIndex = 1;
-            this.Pass_txt.TextOffset = new System.Drawing.Point(3, 0);
-            this.Toltp.SetToolTip(this.Pass_txt, "");
-            this.Toltp.SetToolTipIcon(this.Pass_txt, null);
-            this.Toltp.SetToolTipTitle(this.Pass_txt, "");
-            this.Pass_txt.UseSystemPasswordChar = true;
-            this.Pass_txt.IconLeftClick += new System.EventHandler(this.Pass_txt_IconLeftClick);
-            // 
-            // Username_TxtBox
-            // 
-            this.Username_TxtBox.AutoRoundedCorners = true;
-            this.Username_TxtBox.BorderRadius = 17;
-            this.Username_TxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Username_TxtBox.DefaultText = "";
-            this.Username_TxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Username_TxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Username_TxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Username_TxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Username_TxtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Username_TxtBox.Font = new System.Drawing.Font("Cairo", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username_TxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Username_TxtBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Username_TxtBox.IconRight")));
-            this.Username_TxtBox.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Username_TxtBox.Location = new System.Drawing.Point(32, 161);
-            this.Username_TxtBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Username_TxtBox.Name = "Username_TxtBox";
-            this.Username_TxtBox.PasswordChar = '\0';
-            this.Username_TxtBox.PlaceholderText = "ادخل اسم المستخدم";
-            this.Username_TxtBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Username_TxtBox.SelectedText = "";
-            this.Username_TxtBox.Size = new System.Drawing.Size(200, 36);
-            this.Username_TxtBox.TabIndex = 0;
-            this.Username_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
-            this.Toltp.SetToolTip(this.Username_TxtBox, "");
-            this.Toltp.SetToolTipIcon(this.Username_TxtBox, null);
-            this.Toltp.SetToolTipTitle(this.Username_TxtBox, "");
-            // 
-            // Back_Btn
-            // 
-            this.Back_Btn.Animated = true;
-            this.Back_Btn.AutoRoundedCorners = true;
-            this.Back_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.Back_Btn.BorderRadius = 13;
-            this.Back_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Back_Btn.FillColor = System.Drawing.Color.MintCream;
-            this.Back_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Back_Btn.ForeColor = System.Drawing.Color.White;
-            this.Back_Btn.HoverState.FillColor = System.Drawing.Color.Azure;
-            this.Back_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Back_Btn.Image")));
-            this.Back_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Back_Btn.ImageOffset = new System.Drawing.Point(7, -1);
-            this.Back_Btn.IndicateFocus = true;
-            this.Back_Btn.Location = new System.Drawing.Point(-30, 15);
-            this.Back_Btn.Name = "Back_Btn";
-            this.Back_Btn.PressedColor = System.Drawing.Color.Transparent;
-            this.Back_Btn.Size = new System.Drawing.Size(70, 29);
-            this.Back_Btn.TabIndex = 2;
-            this.Toltp.SetToolTip(this.Back_Btn, "");
-            this.Toltp.SetToolTipIcon(this.Back_Btn, null);
-            this.Toltp.SetToolTipTitle(this.Back_Btn, "");
-            this.Back_Btn.UseTransparentBackground = true;
-            this.Back_Btn.Click += new System.EventHandler(this.Back_Btn_Click);
-            // 
-            // Restore_Wrd_Txt
-            // 
-            this.Restore_Wrd_Txt.AutoRoundedCorners = true;
-            this.Restore_Wrd_Txt.BorderRadius = 17;
-            this.Restore_Wrd_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Restore_Wrd_Txt.DefaultText = "";
-            this.Restore_Wrd_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Restore_Wrd_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Restore_Wrd_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Restore_Wrd_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Restore_Wrd_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Restore_Wrd_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Restore_Wrd_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Restore_Wrd_Txt.IconLeftOffset = new System.Drawing.Point(3, 0);
-            this.Restore_Wrd_Txt.IconLeftSize = new System.Drawing.Size(28, 28);
-            this.Restore_Wrd_Txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Restore_Wrd_Txt.IconRight")));
-            this.Restore_Wrd_Txt.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Restore_Wrd_Txt.IconRightSize = new System.Drawing.Size(28, 28);
-            this.Restore_Wrd_Txt.Location = new System.Drawing.Point(32, 162);
-            this.Restore_Wrd_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Restore_Wrd_Txt.Name = "Restore_Wrd_Txt";
-            this.Restore_Wrd_Txt.PasswordChar = '●';
-            this.Restore_Wrd_Txt.PlaceholderText = "ادخل كلمه الاسترجاع";
-            this.Restore_Wrd_Txt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Restore_Wrd_Txt.SelectedText = "";
-            this.Restore_Wrd_Txt.Size = new System.Drawing.Size(200, 36);
-            this.Restore_Wrd_Txt.TabIndex = 0;
-            this.Toltp.SetToolTip(this.Restore_Wrd_Txt, "");
-            this.Toltp.SetToolTipIcon(this.Restore_Wrd_Txt, null);
-            this.Toltp.SetToolTipTitle(this.Restore_Wrd_Txt, "");
-            this.Restore_Wrd_Txt.UseSystemPasswordChar = true;
-            // 
-            // Restored_Pass_Txt
-            // 
-            this.Restored_Pass_Txt.AutoRoundedCorners = true;
-            this.Restored_Pass_Txt.BorderRadius = 17;
-            this.Restored_Pass_Txt.Cursor = System.Windows.Forms.Cursors.No;
-            this.Restored_Pass_Txt.DefaultText = "";
-            this.Restored_Pass_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Restored_Pass_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Restored_Pass_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Restored_Pass_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Restored_Pass_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Restored_Pass_Txt.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.Restored_Pass_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Restored_Pass_Txt.IconLeftCursor = System.Windows.Forms.Cursors.No;
-            this.Restored_Pass_Txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Restored_Pass_Txt.IconRight")));
-            this.Restored_Pass_Txt.IconRightCursor = System.Windows.Forms.Cursors.No;
-            this.Restored_Pass_Txt.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Restored_Pass_Txt.Location = new System.Drawing.Point(32, 214);
-            this.Restored_Pass_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Restored_Pass_Txt.Name = "Restored_Pass_Txt";
-            this.Restored_Pass_Txt.PasswordChar = '●';
-            this.Restored_Pass_Txt.PlaceholderText = "ادخل كلمه المرور";
-            this.Restored_Pass_Txt.ReadOnly = true;
-            this.Restored_Pass_Txt.SelectedText = "";
-            this.Restored_Pass_Txt.Size = new System.Drawing.Size(200, 36);
-            this.Restored_Pass_Txt.TabIndex = 50;
-            this.Restored_Pass_Txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Toltp.SetToolTip(this.Restored_Pass_Txt, "");
-            this.Toltp.SetToolTipIcon(this.Restored_Pass_Txt, null);
-            this.Toltp.SetToolTipTitle(this.Restored_Pass_Txt, "");
-            this.Restored_Pass_Txt.UseSystemPasswordChar = true;
-            // 
-            // Restored_User_Txt
-            // 
-            this.Restored_User_Txt.AutoRoundedCorners = true;
-            this.Restored_User_Txt.BorderRadius = 17;
-            this.Restored_User_Txt.Cursor = System.Windows.Forms.Cursors.No;
-            this.Restored_User_Txt.DefaultText = "";
-            this.Restored_User_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Restored_User_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Restored_User_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Restored_User_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Restored_User_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Restored_User_Txt.Font = new System.Drawing.Font("Cairo", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Restored_User_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Restored_User_Txt.IconLeftCursor = System.Windows.Forms.Cursors.No;
-            this.Restored_User_Txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Restored_User_Txt.IconRight")));
-            this.Restored_User_Txt.IconRightCursor = System.Windows.Forms.Cursors.No;
-            this.Restored_User_Txt.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Restored_User_Txt.Location = new System.Drawing.Point(32, 162);
-            this.Restored_User_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Restored_User_Txt.Name = "Restored_User_Txt";
-            this.Restored_User_Txt.PasswordChar = '\0';
-            this.Restored_User_Txt.PlaceholderText = "ادخل اسم المستخدم";
-            this.Restored_User_Txt.ReadOnly = true;
-            this.Restored_User_Txt.SelectedText = "";
-            this.Restored_User_Txt.Size = new System.Drawing.Size(200, 36);
-            this.Restored_User_Txt.TabIndex = 51;
-            this.Restored_User_Txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Toltp.SetToolTip(this.Restored_User_Txt, "");
-            this.Toltp.SetToolTipIcon(this.Restored_User_Txt, null);
-            this.Toltp.SetToolTipTitle(this.Restored_User_Txt, "");
-            // 
-            // Back1_Btn
-            // 
-            this.Back1_Btn.Animated = true;
-            this.Back1_Btn.AutoRoundedCorners = true;
-            this.Back1_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.Back1_Btn.BorderRadius = 13;
-            this.Back1_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Back1_Btn.FillColor = System.Drawing.Color.MintCream;
-            this.Back1_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Back1_Btn.ForeColor = System.Drawing.Color.White;
-            this.Back1_Btn.HoverState.FillColor = System.Drawing.Color.Azure;
-            this.Back1_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Back1_Btn.Image")));
-            this.Back1_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Back1_Btn.ImageOffset = new System.Drawing.Point(7, -1);
-            this.Back1_Btn.IndicateFocus = true;
-            this.Back1_Btn.Location = new System.Drawing.Point(-30, 15);
-            this.Back1_Btn.Name = "Back1_Btn";
-            this.Back1_Btn.PressedColor = System.Drawing.Color.Transparent;
-            this.Back1_Btn.Size = new System.Drawing.Size(70, 29);
-            this.Back1_Btn.TabIndex = 2;
-            this.Toltp.SetToolTip(this.Back1_Btn, "");
-            this.Toltp.SetToolTipIcon(this.Back1_Btn, null);
-            this.Toltp.SetToolTipTitle(this.Back1_Btn, "");
-            this.Back1_Btn.UseTransparentBackground = true;
-            this.Back1_Btn.Click += new System.EventHandler(this.Back_Btn_Click);
-            // 
-            // Add_User_Recovery_TextBox
-            // 
-            this.Add_User_Recovery_TextBox.AutoRoundedCorners = true;
-            this.Add_User_Recovery_TextBox.BorderRadius = 17;
-            this.Add_User_Recovery_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Add_User_Recovery_TextBox.DefaultText = "";
-            this.Add_User_Recovery_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Add_User_Recovery_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Add_User_Recovery_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_User_Recovery_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_User_Recovery_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_User_Recovery_TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Add_User_Recovery_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_User_Recovery_TextBox.IconLeftSize = new System.Drawing.Size(28, 28);
-            this.Add_User_Recovery_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Add_User_Recovery_TextBox.IconRight")));
-            this.Add_User_Recovery_TextBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.Add_User_Recovery_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Add_User_Recovery_TextBox.IconRightSize = new System.Drawing.Size(28, 28);
-            this.Add_User_Recovery_TextBox.Location = new System.Drawing.Point(28, 301);
-            this.Add_User_Recovery_TextBox.Name = "Add_User_Recovery_TextBox";
-            this.Add_User_Recovery_TextBox.PasswordChar = '●';
-            this.Add_User_Recovery_TextBox.PlaceholderText = "ادخل كلمه الاسترجاع";
-            this.Add_User_Recovery_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Add_User_Recovery_TextBox.SelectedText = "";
-            this.Add_User_Recovery_TextBox.Size = new System.Drawing.Size(200, 36);
-            this.Add_User_Recovery_TextBox.TabIndex = 2;
-            this.Toltp.SetToolTip(this.Add_User_Recovery_TextBox, "");
-            this.Toltp.SetToolTipIcon(this.Add_User_Recovery_TextBox, null);
-            this.Toltp.SetToolTipTitle(this.Add_User_Recovery_TextBox, "");
-            this.Add_User_Recovery_TextBox.UseSystemPasswordChar = true;
-            // 
-            // Guna2Button2
-            // 
-            this.Guna2Button2.Animated = true;
-            this.Guna2Button2.AutoRoundedCorners = true;
-            this.Guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.Guna2Button2.BorderRadius = 13;
-            this.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Guna2Button2.FillColor = System.Drawing.Color.MintCream;
-            this.Guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.Guna2Button2.HoverState.FillColor = System.Drawing.Color.Azure;
-            this.Guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("Guna2Button2.Image")));
-            this.Guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Guna2Button2.ImageOffset = new System.Drawing.Point(7, -1);
-            this.Guna2Button2.IndicateFocus = true;
-            this.Guna2Button2.Location = new System.Drawing.Point(-30, 15);
-            this.Guna2Button2.Name = "Guna2Button2";
-            this.Guna2Button2.PressedColor = System.Drawing.Color.Transparent;
-            this.Guna2Button2.Size = new System.Drawing.Size(70, 29);
-            this.Guna2Button2.TabIndex = 4;
-            this.Toltp.SetToolTip(this.Guna2Button2, "");
-            this.Toltp.SetToolTipIcon(this.Guna2Button2, null);
-            this.Toltp.SetToolTipTitle(this.Guna2Button2, "");
-            this.Guna2Button2.UseTransparentBackground = true;
-            this.Guna2Button2.Visible = false;
-            this.Guna2Button2.Click += new System.EventHandler(this.Back_Btn_Click);
-            // 
-            // Add_User_Password_TextBox
-            // 
-            this.Add_User_Password_TextBox.AutoRoundedCorners = true;
-            this.Add_User_Password_TextBox.BorderRadius = 17;
-            this.Add_User_Password_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Add_User_Password_TextBox.DefaultText = "";
-            this.Add_User_Password_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Add_User_Password_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Add_User_Password_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_User_Password_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_User_Password_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_User_Password_TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Add_User_Password_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_User_Password_TextBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("Add_User_Password_TextBox.IconLeft")));
-            this.Add_User_Password_TextBox.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.Add_User_Password_TextBox.IconLeftOffset = new System.Drawing.Point(4, 0);
-            this.Add_User_Password_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Add_User_Password_TextBox.IconRight")));
-            this.Add_User_Password_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Add_User_Password_TextBox.Location = new System.Drawing.Point(28, 254);
-            this.Add_User_Password_TextBox.Name = "Add_User_Password_TextBox";
-            this.Add_User_Password_TextBox.PasswordChar = '●';
-            this.Add_User_Password_TextBox.PlaceholderText = "ادخل كلمة المرور";
-            this.Add_User_Password_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Add_User_Password_TextBox.SelectedText = "";
-            this.Add_User_Password_TextBox.Size = new System.Drawing.Size(200, 36);
-            this.Add_User_Password_TextBox.TabIndex = 1;
-            this.Add_User_Password_TextBox.TextOffset = new System.Drawing.Point(3, 0);
-            this.Toltp.SetToolTip(this.Add_User_Password_TextBox, "");
-            this.Toltp.SetToolTipIcon(this.Add_User_Password_TextBox, null);
-            this.Toltp.SetToolTipTitle(this.Add_User_Password_TextBox, "");
-            this.Add_User_Password_TextBox.UseSystemPasswordChar = true;
-            // 
-            // Add_Username_TextBox
-            // 
-            this.Add_Username_TextBox.AutoRoundedCorners = true;
-            this.Add_Username_TextBox.BorderRadius = 17;
-            this.Add_Username_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Add_Username_TextBox.DefaultText = "";
-            this.Add_Username_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Add_Username_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Add_Username_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_Username_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_Username_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_Username_TextBox.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_Username_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_Username_TextBox.IconLeftOffset = new System.Drawing.Point(3, 0);
-            this.Add_Username_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Add_Username_TextBox.IconRight")));
-            this.Add_Username_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Add_Username_TextBox.Location = new System.Drawing.Point(28, 160);
-            this.Add_Username_TextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Add_Username_TextBox.Name = "Add_Username_TextBox";
-            this.Add_Username_TextBox.PasswordChar = '\0';
-            this.Add_Username_TextBox.PlaceholderText = "ادخل اسم المستخدم";
-            this.Add_Username_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Add_Username_TextBox.SelectedText = "";
-            this.Add_Username_TextBox.Size = new System.Drawing.Size(200, 36);
-            this.Add_Username_TextBox.TabIndex = 0;
-            this.Add_Username_TextBox.TextOffset = new System.Drawing.Point(3, 0);
-            this.Toltp.SetToolTip(this.Add_Username_TextBox, "");
-            this.Toltp.SetToolTipIcon(this.Add_Username_TextBox, null);
-            this.Toltp.SetToolTipTitle(this.Add_Username_TextBox, "");
-            // 
-            // Username_Add_TextBox
-            // 
-            this.Username_Add_TextBox.AutoRoundedCorners = true;
-            this.Username_Add_TextBox.BorderRadius = 17;
-            this.Username_Add_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Username_Add_TextBox.DefaultText = "";
-            this.Username_Add_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Username_Add_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Username_Add_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Username_Add_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Username_Add_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Username_Add_TextBox.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username_Add_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Username_Add_TextBox.IconLeftOffset = new System.Drawing.Point(3, 0);
-            this.Username_Add_TextBox.IconRight = ((System.Drawing.Image)(resources.GetObject("Username_Add_TextBox.IconRight")));
-            this.Username_Add_TextBox.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Username_Add_TextBox.Location = new System.Drawing.Point(28, 207);
-            this.Username_Add_TextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Username_Add_TextBox.Name = "Username_Add_TextBox";
-            this.Username_Add_TextBox.PasswordChar = '\0';
-            this.Username_Add_TextBox.PlaceholderText = "ادخل اسم المستخدم";
-            this.Username_Add_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Username_Add_TextBox.SelectedText = "";
-            this.Username_Add_TextBox.Size = new System.Drawing.Size(200, 36);
-            this.Username_Add_TextBox.TabIndex = 5;
-            this.Username_Add_TextBox.TextOffset = new System.Drawing.Point(3, 0);
-            this.Toltp.SetToolTip(this.Username_Add_TextBox, "");
-            this.Toltp.SetToolTipIcon(this.Username_Add_TextBox, null);
-            this.Toltp.SetToolTipTitle(this.Username_Add_TextBox, "");
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1169,12 +1169,12 @@
             this.BunifuPages2.ResumeLayout(false);
             this.TabPage1.ResumeLayout(false);
             this.TabPage1.PerformLayout();
-            this.TabPage3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Insta_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wbsit_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fb_Icon)).EndInit();
+            this.TabPage3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -26,7 +26,7 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<List<Client>>GetAll()
         {
-            var Clients = await DB.Clients.Where(client => client.IsDeleted == false).AsNoTracking().ToListAsync();
+            var Clients = await DB.Clients.Where(client => client.IsDeleted == false).ToListAsync();
             return Clients;
         }
 
@@ -57,7 +57,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                Client Client = await DB.Clients.AsNoTracking().Where(client => client.Id == id).FirstOrDefaultAsync();
+                Client Client = await DB.Clients.Where(client => client.Id == id).FirstOrDefaultAsync();
                 if (Client != null)
                 {
                     Client.IsDeleted = true;

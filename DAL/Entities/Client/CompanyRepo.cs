@@ -22,7 +22,7 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<List<Company>> GetAll()
         {
-            var Companies = await DB.Companies.Where(company => company.IsDeleted == false).AsNoTracking().ToListAsync();
+            var Companies = await DB.Companies.Where(company => company.IsDeleted == false).ToListAsync();
             return Companies;
         }
         public async Task<Company> GetById(int id)
@@ -52,7 +52,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                Company company = await DB.Companies.AsNoTracking().Where(Company => Company.Id == id).FirstOrDefaultAsync();
+                Company company = await DB.Companies.   Where(Company => Company.Id == id).FirstOrDefaultAsync();
                 if (company != null)
                 {
                     company.IsDeleted = true;

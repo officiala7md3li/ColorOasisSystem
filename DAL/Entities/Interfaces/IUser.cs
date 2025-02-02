@@ -9,15 +9,15 @@ namespace ColorOasisSystem.DAL.Entities.Interfaces
 {
     internal interface IUser
     {
-        Task<List<User>> GetAll();
-        Task<User> GetById(int id);
+        Task<List<ColorOasisSystem.Entities.User>> GetAll();
+        Task<ColorOasisSystem.Entities.User> GetById(int id);
         Task<bool> DeleteById(int id);
-        Task<bool> Add(User Item);
-        Task<bool> Update(User Item);
-        Task<bool> Delete(User _Item);
-        Task<User> ValidateUser(string _userName, string _password);
+        Task<bool> Add(ColorOasisSystem.Entities.User Item);
+        Task<bool> Update(ColorOasisSystem.Entities.User Item);
+        Task<bool> Delete(ColorOasisSystem.Entities.User _Item);
+        Task<ColorOasisSystem.Entities.User> ValidateUser(string _userName, string _password);
         Task<bool> IsEmpty();
-        Task<User> GetByRecoveryWord(string _recoverWord);
+        Task<ColorOasisSystem.Entities.User> GetByRecoveryWord(string _recoverWord);
         Task ChangePassword(int _id, string _password);
     }
 }

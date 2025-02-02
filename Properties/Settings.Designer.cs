@@ -36,12 +36,12 @@ namespace ColorOasisSystem.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        public global::System.Drawing.Color BG_Color {
+        public global::System.Drawing.Color BGColor {
             get {
-                return ((global::System.Drawing.Color)(this["BG_Color"]));
+                return ((global::System.Drawing.Color)(this["BGColor"]));
             }
             set {
-                this["BG_Color"] = value;
+                this["BGColor"] = value;
             }
         }
         
@@ -147,6 +147,42 @@ namespace ColorOasisSystem.Properties {
             }
             set {
                 this["EnableUC"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public decimal VATValue {
+            get {
+                return ((decimal)(this["VATValue"]));
+            }
+            set {
+                this["VATValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BeforeOpen {
+            get {
+                return ((bool)(this["BeforeOpen"]));
+            }
+            set {
+                this["BeforeOpen"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AfterClose {
+            get {
+                return ((bool)(this["AfterClose"]));
+            }
+            set {
+                this["AfterClose"] = value;
             }
         }
     }

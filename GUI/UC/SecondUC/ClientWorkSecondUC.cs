@@ -19,13 +19,13 @@ namespace ColorOasisSystem.GUI.UC
         private void Quotation_Click(object sender, EventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
-            frm.SelectedUC(frm.quotationUC1);
+            frm.AssignPermission(frm.quotationUC1, frm.CurrentUser.UserPermission.QuotationUCPermission);
         }
 
         private void Inspection_Click(object sender, EventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
-            frm.SelectedUC(frm.inspectionUC1);
+            frm.AssignPermission(frm.inspectionUC1, frm.CurrentUser.UserPermission.InspectionUCPermission);
         }
     }
 }

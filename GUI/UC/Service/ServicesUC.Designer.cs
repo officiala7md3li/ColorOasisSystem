@@ -47,6 +47,9 @@
             this.ServiceType_ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.Item_NameEn_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Username_Pic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,14 +139,14 @@
             this.Item_Name_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Item_Name_Txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Item_Name_Txt.IconRight")));
             this.Item_Name_Txt.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.Item_Name_Txt.Location = new System.Drawing.Point(101, 130);
+            this.Item_Name_Txt.Location = new System.Drawing.Point(352, 130);
             this.Item_Name_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Item_Name_Txt.Name = "Item_Name_Txt";
             this.Item_Name_Txt.PasswordChar = '\0';
             this.Item_Name_Txt.PlaceholderText = "ادخل اسم الصنف";
             this.Item_Name_Txt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Item_Name_Txt.SelectedText = "";
-            this.Item_Name_Txt.Size = new System.Drawing.Size(451, 36);
+            this.Item_Name_Txt.Size = new System.Drawing.Size(200, 36);
             this.Item_Name_Txt.TabIndex = 403;
             this.Item_Name_Txt.TextOffset = new System.Drawing.Point(3, 0);
             // 
@@ -434,9 +437,81 @@
             this.label9.Text = "الامراض";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Item_NameEn_Txt
+            // 
+            this.Item_NameEn_Txt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Item_NameEn_Txt.AutoRoundedCorners = true;
+            this.Item_NameEn_Txt.BorderRadius = 17;
+            this.Item_NameEn_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Item_NameEn_Txt.DefaultText = "";
+            this.Item_NameEn_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Item_NameEn_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Item_NameEn_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Item_NameEn_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Item_NameEn_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Item_NameEn_Txt.Font = new System.Drawing.Font("Cairo", 9F);
+            this.Item_NameEn_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Item_NameEn_Txt.IconRight = ((System.Drawing.Image)(resources.GetObject("Item_NameEn_Txt.IconRight")));
+            this.Item_NameEn_Txt.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.Item_NameEn_Txt.Location = new System.Drawing.Point(101, 130);
+            this.Item_NameEn_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Item_NameEn_Txt.Name = "Item_NameEn_Txt";
+            this.Item_NameEn_Txt.PasswordChar = '\0';
+            this.Item_NameEn_Txt.PlaceholderText = "ادخل اسم الصنف ج";
+            this.Item_NameEn_Txt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Item_NameEn_Txt.SelectedText = "";
+            this.Item_NameEn_Txt.Size = new System.Drawing.Size(200, 36);
+            this.Item_NameEn_Txt.TabIndex = 426;
+            this.Item_NameEn_Txt.TextOffset = new System.Drawing.Point(3, 0);
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2TextBox2.AutoRoundedCorners = true;
+            this.guna2TextBox2.BorderRadius = 17;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.IconLeftOffset = new System.Drawing.Point(3, 0);
+            this.guna2TextBox2.Location = new System.Drawing.Point(101, 130);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderText = "Enter Store Name";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.Size = new System.Drawing.Size(200, 36);
+            this.guna2TextBox2.TabIndex = 428;
+            this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2TextBox2.TextOffset = new System.Drawing.Point(3, 0);
+            this.guna2TextBox2.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Enabled = false;
+            this.label7.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Gray;
+            this.label7.Location = new System.Drawing.Point(213, 107);
+            this.label7.Name = "label7";
+            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label7.Size = new System.Drawing.Size(73, 23);
+            this.label7.TabIndex = 427;
+            this.label7.Text = "اسم الخدمه";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ServicesUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.Item_NameEn_Txt);
+            this.Controls.Add(this.guna2TextBox2);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.ServiceType_ComboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label9);
@@ -477,6 +552,9 @@
             this.Controls.SetChildIndex(this.label9, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.ServiceType_ComboBox, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
+            this.Controls.SetChildIndex(this.guna2TextBox2, 0);
+            this.Controls.SetChildIndex(this.Item_NameEn_Txt, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Username_Pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -503,5 +581,8 @@
         internal Guna.UI2.WinForms.Guna2ComboBox ServiceType_ComboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
+        internal Guna.UI2.WinForms.Guna2TextBox Item_NameEn_Txt;
+        internal Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private System.Windows.Forms.Label label7;
     }
 }

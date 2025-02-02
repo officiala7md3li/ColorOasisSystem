@@ -22,7 +22,7 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<List<ClientPayment>> GetAll()
         {
-            var clientPayments = await DB.ClientPayments.AsNoTracking().ToListAsync();
+            var clientPayments = await DB.ClientPayments.ToListAsync();
             return clientPayments;
         }
         public async Task<ClientPayment> GetById(int id)
@@ -43,7 +43,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                ClientPayment clientPayment = await DB.ClientPayments.AsNoTracking().Where(payment => payment.Id == id).FirstOrDefaultAsync();
+                ClientPayment clientPayment = await DB.ClientPayments.Where(payment => payment.Id == id).FirstOrDefaultAsync();
                 if (clientPayment != null)
                 {
                     DB.ClientPayments.Remove(clientPayment);
@@ -68,6 +68,7 @@ namespace ColorOasisSystem.Entities
             {
                 DB.ClientPayments.Add(Item);
                 await DB.SaveChangesAsync();
+                return true;
             }
             return false;
         }

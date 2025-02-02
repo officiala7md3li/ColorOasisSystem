@@ -20,25 +20,25 @@ namespace ColorOasisSystem.GUI.UC
         private void Clients_Click(object sender, EventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
-            frm.SelectedUC(frm.clientUC1);
+            frm.AssignPermission(frm.clientUC1, frm.CurrentUser.UserPermission.ClientUCPermission);
         }
 
         private void Companies_Click(object sender, EventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
-            frm.SelectedUC(frm.companyUC1);
+            frm.AssignPermission(frm.companyUC1, frm.CurrentUser.UserPermission.CompanyUCPermission);
         }
 
         private void ClientTransaction_Click(object sender, EventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
-            frm.SelectedUC(frm.clientTransactionsUC1);
+            frm.AssignPermission(frm.clientTransactionsUC1, frm.CurrentUser.UserPermission.ClientTransUCPermission);
         }
 
         private void CompanyTransaction_Click(object sender, EventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
-            frm.SelectedUC(frm.clientTransactionsUC1);
+            frm.AssignPermission(frm.clientTransactionsUC1, frm.CurrentUser.UserPermission.CompanyTransUCPermission);
         }
     }
 }

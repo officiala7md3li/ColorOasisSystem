@@ -20,7 +20,9 @@ namespace ColorOasisSystem.GUI.HelpingProgram
         public SreachForm(MasterUC masterUC,List<T> items, List<HelpingSearchForm> helpingSearch)
         {
             InitializeComponent();
-            Items=items;
+            Color color = Properties.Settings.Default.BGColor;
+            BackColor = color;
+            Items = items;
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
             frm.selectedUC= masterUC;
             // Create the DataGridViewButtonColumn for the first column.
@@ -91,6 +93,8 @@ namespace ColorOasisSystem.GUI.HelpingProgram
         public SreachForm()
         {
             InitializeComponent();
+            Color color = Properties.Settings.Default.BGColor;
+            BackColor = color;
         }
 
         public List<T> GetRecordByProperty<T>(List<T> sourceList, string propertyName, string searchValue)

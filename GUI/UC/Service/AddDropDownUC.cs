@@ -59,6 +59,7 @@ namespace ColorOasisSystem.GUI.UC
                 {
                     ServiceType serviceType = new ServiceType();
                     serviceType.Name=New_Name_TxtBox.Text;
+                    serviceType.NameEn = New_NameEn_TxtBox.Text;
                     bool isSuccess=await ClassRepo.Add(serviceType);
                     if (isSuccess)
                     {
@@ -70,10 +71,12 @@ namespace ColorOasisSystem.GUI.UC
                 {
                     ServiceCategory serviceCategory = new ServiceCategory();
                     serviceCategory.Name = New_Name_TxtBox.Text;
+                    serviceCategory.NameEn = New_NameEn_TxtBox.Text;
                     bool isSuccess = await ClassRepo1.Add(serviceCategory);
                     if (isSuccess)
                     {
                         popMessage($"تمت اضافه النوع {serviceCategory.Name}", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success);
+                        await base.SaveDataAsync();
                     }
                 }
             }
@@ -81,7 +84,6 @@ namespace ColorOasisSystem.GUI.UC
             {
                 popMessage(ex.Message, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
             }
-            await base.SaveDataAsync();
         }
         public override async Task EditData()
         {
@@ -93,6 +95,7 @@ namespace ColorOasisSystem.GUI.UC
                     ServiceType serviceType = new ServiceType();
                     serviceType.Id = Convert.ToInt32(ID_TxtBox.Text);
                     serviceType.Name = New_Name_TxtBox.Text;
+                    serviceType.NameEn = New_NameEn_TxtBox.Text;
                     bool isSuccess = await ClassRepo.Update(serviceType);
                     if (isSuccess)
                     {
@@ -105,6 +108,7 @@ namespace ColorOasisSystem.GUI.UC
                     ServiceCategory serviceCategory = new ServiceCategory();
                     serviceCategory.Id = Convert.ToInt32(ID_TxtBox.Text);
                     serviceCategory.Name = New_Name_TxtBox.Text;
+                    serviceCategory.NameEn = New_NameEn_TxtBox.Text;
                     bool isSuccess = await ClassRepo1.Update(serviceCategory);
                     if (isSuccess)
                     {
@@ -132,6 +136,7 @@ namespace ColorOasisSystem.GUI.UC
                             ServiceType serviceType = new ServiceType();
                             serviceType.Id = Convert.ToInt32(ID_TxtBox.Text);
                             serviceType.Name = New_Name_TxtBox.Text;
+                            serviceType.NameEn = New_NameEn_TxtBox.Text;
                             bool isSuccess = await ClassRepo.Delete(serviceType);
                             if (isSuccess)
                             {
@@ -144,6 +149,7 @@ namespace ColorOasisSystem.GUI.UC
                             ServiceCategory serviceCategory = new ServiceCategory();
                             serviceCategory.Id = Convert.ToInt32(ID_TxtBox.Text);
                             serviceCategory.Name = New_Name_TxtBox.Text;
+                            serviceCategory.NameEn = New_NameEn_TxtBox.Text;
                             bool isSuccess = await ClassRepo1.Delete(serviceCategory);
                             if (isSuccess)
                             {
@@ -160,8 +166,8 @@ namespace ColorOasisSystem.GUI.UC
         public override async Task Search_Data()
         {
             //todo:Change it for all screens
-            List<string> list = new List<string>() { "#", "الاسم" };
-            List<string> Properties = new List<string>() { "ID", "Name" };
+            List<string> list = new List<string>() { "#", "الاسم","الاسم بالانجليزيه" };
+            List<string> Properties = new List<string>() { "ID", "Name","NameEn" };
 
             List<HelpingSearchForm> dataSource = new List<HelpingSearchForm>();
             for (int i = 0; i < Properties.Count; i++)//DisplayAvailableProperties<Model.Branch>()
@@ -192,6 +198,7 @@ namespace ColorOasisSystem.GUI.UC
                 ServiceType serviceType = await ClassRepo.GetById(ItemID);
                 ID_TxtBox.Text = serviceType.Id.ToString();
                 New_Name_TxtBox.Text = serviceType.Name.ToString();
+                New_NameEn_TxtBox.Text = serviceType.NameEn.ToString();
                 await base.LoadData(ItemID);
             }
             else
@@ -199,6 +206,7 @@ namespace ColorOasisSystem.GUI.UC
                 ServiceCategory serviceCategory = await ClassRepo1.GetById(ItemID);
                 ID_TxtBox.Text = serviceCategory.Id.ToString();
                 New_Name_TxtBox.Text = serviceCategory.Name.ToString();
+                New_NameEn_TxtBox.Text = serviceCategory.NameEn.ToString();
                 await base.LoadData(ItemID);
             }
         }

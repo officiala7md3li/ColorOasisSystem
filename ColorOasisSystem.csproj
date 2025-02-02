@@ -100,6 +100,21 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IdentityModel.Tokens.6.24.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.SqlServer.Assessment, Version=1.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.Assessment.1.1.9\lib\net462\Microsoft.SqlServer.Assessment.dll</HintPath>
     </Reference>
@@ -189,6 +204,9 @@
     </Reference>
     <Reference Include="Microsoft.SqlServer.SqlWmiManagement, Version=17.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.SqlManagementObjects.171.30.0\lib\net462\Microsoft.SqlServer.SqlWmiManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.WmiEnum, Version=17.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.SqlManagementObjects.171.30.0\lib\net462\Microsoft.SqlServer.WmiEnum.dll</HintPath>
@@ -283,6 +301,8 @@
     <Compile Include="DAL\Entities\Client\ClientRepo.cs" />
     <Compile Include="DAL\Entities\Client\Company.cs" />
     <Compile Include="DAL\Entities\Client\CompanyRepo.cs" />
+    <Compile Include="DAL\Entities\CompanyInfo\CompanyInfo.cs" />
+    <Compile Include="DAL\Entities\CompanyInfo\CompanyInfoRepo.cs" />
     <Compile Include="DAL\Entities\HelpingSearchForm.cs" />
     <Compile Include="DAL\Entities\Inspection\Inspection.cs" />
     <Compile Include="DAL\Entities\Inspection\InspectionDetails.cs" />
@@ -293,8 +313,10 @@
     <Compile Include="DAL\Entities\Interfaces\IRepo.cs" />
     <Compile Include="DAL\Entities\Interfaces\IUnitOfWork.cs" />
     <Compile Include="DAL\Entities\Interfaces\IUser.cs" />
+    <Compile Include="DAL\Entities\Permission\PermissionProfile.cs" />
     <Compile Include="DAL\Entities\Quotation\QuotationDetailsRepo.cs" />
     <Compile Include="DAL\Entities\Quotation\QuotationRepo.cs" />
+    <Compile Include="DAL\Entities\Quotation\QuotationVM.cs" />
     <Compile Include="DAL\Entities\Service\ServiceTypeRepo.cs" />
     <Compile Include="DAL\Entities\Service\ServiceCategoryRepo.cs" />
     <Compile Include="DAL\Entities\Service\Service.cs" />
@@ -309,14 +331,11 @@
     <Compile Include="DAL\Entities\Quotation\QuotationDetails.cs" />
     <Compile Include="DAL\Entities\User\User.cs" />
     <Compile Include="DAL\Entities\Permission\UserPermissions.cs" />
+    <Compile Include="DAL\Entities\User\UserLog.cs" />
+    <Compile Include="DAL\Entities\User\UserLogRepo.cs" />
     <Compile Include="DAL\Entities\User\UsersRepo.cs" />
     <Compile Include="DAL\Enums\Enums.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DAL\Enums\Screen.cs" />
     <Compile Include="DAL\Data\ApplicationDB.cs" />
     <Compile Include="GUI\Helping Program\AddNumber.cs">
       <SubType>Form</SubType>
@@ -359,6 +378,24 @@
     </Compile>
     <Compile Include="GUI\SetConnection.Designer.cs">
       <DependentUpon>SetConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\CompanyInfoUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\CompanyInfoUC.Designer.cs">
+      <DependentUpon>CompanyInfoUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\SecondUC\SettingsSecondUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\SecondUC\SettingsSecondUC.Designer.cs">
+      <DependentUpon>SettingsSecondUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Settings\GlobalSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Settings\GlobalSettings.Designer.cs">
+      <DependentUpon>GlobalSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\SecondUC\ClientWorkSecondUC.cs">
       <SubType>UserControl</SubType>
@@ -432,6 +469,12 @@
     <Compile Include="GUI\UC\Service\ServicesUC.Designer.cs">
       <DependentUpon>ServicesUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\Masters\SettingsMasterUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Masters\SettingsMasterUC.Designer.cs">
+      <DependentUpon>SettingsMasterUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UC\User\PermissionsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -444,10 +487,10 @@
     <Compile Include="GUI\UC\Qoutation\QuotationUC.Designer.cs">
       <DependentUpon>QuotationUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC\User\SettingsUC.cs">
+    <Compile Include="GUI\UC\Settings\SettingsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UC\User\SettingsUC.Designer.cs">
+    <Compile Include="GUI\UC\Settings\SettingsUC.Designer.cs">
       <DependentUpon>SettingsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\User\UserUC.cs">
@@ -462,7 +505,9 @@
     <Compile Include="GUI\UC\SecondUC\WelcomeUC.Designer.cs">
       <DependentUpon>WelcomeUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Hasher.cs" />
     <Compile Include="Helper\MyHelper.cs" />
+    <Compile Include="Helper\TextBoxExtension.cs" />
     <Compile Include="Migrations\202405042125199_ColorOasisDB.cs" />
     <Compile Include="Migrations\202405042125199_ColorOasisDB.Designer.cs">
       <DependentUpon>202405042125199_ColorOasisDB.cs</DependentUpon>
@@ -483,9 +528,73 @@
     <Compile Include="Migrations\202406150254029_InspectionModified.Designer.cs">
       <DependentUpon>202406150254029_InspectionModified.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406211233325_QuotationModified.cs" />
+    <Compile Include="Migrations\202406211233325_QuotationModified.Designer.cs">
+      <DependentUpon>202406211233325_QuotationModified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406221241409_QuotationModified1.cs" />
+    <Compile Include="Migrations\202406221241409_QuotationModified1.Designer.cs">
+      <DependentUpon>202406221241409_QuotationModified1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406222305439_QuotationModified2.cs" />
+    <Compile Include="Migrations\202406222305439_QuotationModified2.Designer.cs">
+      <DependentUpon>202406222305439_QuotationModified2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406262104267_QuotationModified3.cs" />
+    <Compile Include="Migrations\202406262104267_QuotationModified3.Designer.cs">
+      <DependentUpon>202406262104267_QuotationModified3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407200117404_CompanyInfoAdd.cs" />
+    <Compile Include="Migrations\202407200117404_CompanyInfoAdd.Designer.cs">
+      <DependentUpon>202407200117404_CompanyInfoAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407201328004_addnotetoquotation.cs" />
+    <Compile Include="Migrations\202407201328004_addnotetoquotation.Designer.cs">
+      <DependentUpon>202407201328004_addnotetoquotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407222145057_addEnglishNameproperties.cs" />
+    <Compile Include="Migrations\202407222145057_addEnglishNameproperties.Designer.cs">
+      <DependentUpon>202407222145057_addEnglishNameproperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407312038174_UserPermission.cs" />
+    <Compile Include="Migrations\202407312038174_UserPermission.Designer.cs">
+      <DependentUpon>202407312038174_UserPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408021704515_UserPermission1.cs" />
+    <Compile Include="Migrations\202408021704515_UserPermission1.Designer.cs">
+      <DependentUpon>202408021704515_UserPermission1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408022333070_UserPermission2.cs" />
+    <Compile Include="Migrations\202408022333070_UserPermission2.Designer.cs">
+      <DependentUpon>202408022333070_UserPermission2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408031013288_UserModification.cs" />
+    <Compile Include="Migrations\202408031013288_UserModification.Designer.cs">
+      <DependentUpon>202408031013288_UserModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408031718205_UserModification1.cs" />
+    <Compile Include="Migrations\202408031718205_UserModification1.Designer.cs">
+      <DependentUpon>202408031718205_UserModification1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408271640252_inspectionedit.cs" />
+    <Compile Include="Migrations\202408271640252_inspectionedit.Designer.cs">
+      <DependentUpon>202408271640252_inspectionedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408271715542_inspectionedit1.cs" />
+    <Compile Include="Migrations\202408271715542_inspectionedit1.Designer.cs">
+      <DependentUpon>202408271715542_inspectionedit1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="GUI\Helping Program\AddNumber.resx">
       <DependentUpon>AddNumber.cs</DependentUpon>
     </EmbeddedResource>
@@ -506,6 +615,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SetConnection.resx">
       <DependentUpon>SetConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\CompanyInfoUC.resx">
+      <DependentUpon>CompanyInfoUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\SecondUC\ClientWorkSecondUC.resx">
       <DependentUpon>ClientWorkSecondUC.cs</DependentUpon>
@@ -537,11 +649,17 @@
     <EmbeddedResource Include="GUI\UC\SecondUC\ServiceSecondUC.resx">
       <DependentUpon>ServiceSecondUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\SecondUC\SettingsSecondUC.resx">
+      <DependentUpon>SettingsSecondUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Service\AddDropDownUC.resx">
       <DependentUpon>AddDropDownUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Service\ServicesUC.resx">
       <DependentUpon>ServicesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Masters\SettingsMasterUC.resx">
+      <DependentUpon>SettingsMasterUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\User\PermissionsUC.resx">
       <DependentUpon>PermissionsUC.cs</DependentUpon>
@@ -549,7 +667,7 @@
     <EmbeddedResource Include="GUI\UC\Qoutation\QuotationUC.resx">
       <DependentUpon>QuotationUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\User\SettingsUC.resx">
+    <EmbeddedResource Include="GUI\UC\Settings\SettingsUC.resx">
       <DependentUpon>SettingsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\User\UserUC.resx">
@@ -573,6 +691,48 @@
     <EmbeddedResource Include="Migrations\202406150254029_InspectionModified.resx">
       <DependentUpon>202406150254029_InspectionModified.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406211233325_QuotationModified.resx">
+      <DependentUpon>202406211233325_QuotationModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406221241409_QuotationModified1.resx">
+      <DependentUpon>202406221241409_QuotationModified1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406222305439_QuotationModified2.resx">
+      <DependentUpon>202406222305439_QuotationModified2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406262104267_QuotationModified3.resx">
+      <DependentUpon>202406262104267_QuotationModified3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407200117404_CompanyInfoAdd.resx">
+      <DependentUpon>202407200117404_CompanyInfoAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407201328004_addnotetoquotation.resx">
+      <DependentUpon>202407201328004_addnotetoquotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407222145057_addEnglishNameproperties.resx">
+      <DependentUpon>202407222145057_addEnglishNameproperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407312038174_UserPermission.resx">
+      <DependentUpon>202407312038174_UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408021704515_UserPermission1.resx">
+      <DependentUpon>202408021704515_UserPermission1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408022333070_UserPermission2.resx">
+      <DependentUpon>202408022333070_UserPermission2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408031013288_UserModification.resx">
+      <DependentUpon>202408031013288_UserModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408031718205_UserModification1.resx">
+      <DependentUpon>202408031718205_UserModification1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408271640252_inspectionedit.resx">
+      <DependentUpon>202408271640252_inspectionedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408271715542_inspectionedit1.resx">
+      <DependentUpon>202408271715542_inspectionedit1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -583,7 +743,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\QuotationReportAr.rdlc" />
+    <EmbeddedResource Include="Reports\QuotationReport.rdlc" />
+    <EmbeddedResource Include="Reports\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ColorOasisSystem.Entities.QuotationVM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -598,6 +764,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\ColorOasisLogo.png" />
     <Content Include="Resources\Search_48px.png" />
     <Content Include="Resources\Search_TxtBox.IconRight.png" />

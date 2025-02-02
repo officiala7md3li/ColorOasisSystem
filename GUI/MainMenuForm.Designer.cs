@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
-            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation2 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             this.Elli1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.TabPage1 = new System.Windows.Forms.TabPage();
             this.Message_Lbl = new System.Windows.Forms.Label();
@@ -65,6 +65,7 @@
             this.BunifuPages2 = new Bunifu.UI.WinForms.BunifuPages();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.welcomeUC1 = new ColorOasisSystem.GUI.UC.WelcomeUC();
+            this.companyInfoUC1 = new ColorOasisSystem.GUI.UC.CompanyInfoUC();
             this.userUC1 = new ColorOasisSystem.GUI.UC.UserUC();
             this.settingsUC1 = new ColorOasisSystem.GUI.UC.SettingsUC();
             this.servicesUC1 = new ColorOasisSystem.GUI.UC.ServicesUC();
@@ -97,11 +98,9 @@
             this.Guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.A2SGradSlider1 = new A7MD_Library.Panels.A2SGradSlider();
             this.Menu_Icon = new A7MD_Library.Pictures.AImageButton();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.Main_Slider_Visits_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.Main_Slider_Payments_Btn = new Guna.UI2.WinForms.Guna2Button();
+            this.ClientWorksMainSliderBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.ClientMainSliderBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.ServicesMainSliderBtn = new Guna.UI2.WinForms.Guna2Button();
             this.Main_Menu_Home_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.Username_Pic = new A7MD_Library.Pictures.A2PictureboxPro();
@@ -207,6 +206,7 @@
             this.Guna2Button9.Size = new System.Drawing.Size(86, 37);
             this.Guna2Button9.TabIndex = 216;
             this.Guna2Button9.UseTransparentBackground = true;
+            this.Guna2Button9.Click += new System.EventHandler(this.Back_Btn_Click);
             // 
             // Auth_Pass_txt
             // 
@@ -235,7 +235,6 @@
             this.Auth_Pass_txt.SelectedText = "";
             this.Auth_Pass_txt.Size = new System.Drawing.Size(310, 36);
             this.Auth_Pass_txt.TabIndex = 3;
-            this.Auth_Pass_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Auth_Pass_txt.UseSystemPasswordChar = true;
             this.Auth_Pass_txt.IconLeftClick += new System.EventHandler(this.Auth_Pass_txt_IconLeftClick);
             this.Auth_Pass_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auth_Pass_txt_KeyDown);
@@ -591,6 +590,7 @@
             this.Users_Popup_Menu.TabIndex = 0;
             this.Users_Popup_Menu.Text = "المستخدمين";
             this.Users_Popup_Menu.UseTransparentBackground = true;
+            this.Users_Popup_Menu.Click += new System.EventHandler(this.Users_Popup_Menu_Click);
             this.Users_Popup_Menu.MouseEnter += new System.EventHandler(this.All_Button_in_Popup_Menu_Popup_Menu_MouseHover);
             this.Users_Popup_Menu.MouseLeave += new System.EventHandler(this.All_Button_in_Popup_Menu_MouseLeave);
             this.Users_Popup_Menu.MouseHover += new System.EventHandler(this.All_Button_in_Popup_Menu_Popup_Menu_MouseHover);
@@ -634,7 +634,7 @@
             this.Section_Popup_Menu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(163)))), ((int)(((byte)(103)))));
             this.Section_Popup_Menu.Size = new System.Drawing.Size(83, 67);
             this.Section_Popup_Menu.TabIndex = 2;
-            this.Section_Popup_Menu.Text = "الفروع";
+            this.Section_Popup_Menu.Text = "الشركه";
             this.Section_Popup_Menu.UseTransparentBackground = true;
             this.Section_Popup_Menu.Click += new System.EventHandler(this.Section_Popup_Menu_Click);
             this.Section_Popup_Menu.MouseEnter += new System.EventHandler(this.All_Button_in_Popup_Menu_Popup_Menu_MouseHover);
@@ -761,35 +761,36 @@
             this.BunifuPages2.Margin = new System.Windows.Forms.Padding(4);
             this.BunifuPages2.Multiline = true;
             this.BunifuPages2.Name = "BunifuPages2";
-            this.BunifuPages2.Page = this.TabPage2;
-            this.BunifuPages2.PageIndex = 2;
-            this.BunifuPages2.PageName = "TabPage2";
-            this.BunifuPages2.PageTitle = "Camera_Shot";
+            this.BunifuPages2.Page = this.TabPage1;
+            this.BunifuPages2.PageIndex = 1;
+            this.BunifuPages2.PageName = "TabPage1";
+            this.BunifuPages2.PageTitle = "Auth_For_Account";
             this.BunifuPages2.SelectedIndex = 0;
             this.BunifuPages2.Size = new System.Drawing.Size(1026, 650);
             this.BunifuPages2.TabIndex = 252;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.BunifuPages2.Transition = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.BunifuPages2.Transition = animation2;
             this.BunifuPages2.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Scale;
             this.BunifuPages2.Visible = false;
             // 
             // Panel2
             // 
             this.Panel2.Controls.Add(this.welcomeUC1);
+            this.Panel2.Controls.Add(this.companyInfoUC1);
             this.Panel2.Controls.Add(this.userUC1);
             this.Panel2.Controls.Add(this.settingsUC1);
             this.Panel2.Controls.Add(this.servicesUC1);
@@ -818,21 +819,44 @@
             this.welcomeUC1.Size = new System.Drawing.Size(820, 546);
             this.welcomeUC1.TabIndex = 14;
             // 
+            // companyInfoUC1
+            // 
+            this.companyInfoUC1.DeleteBtnVisible = false;
+            this.companyInfoUC1.EditBtnVisible = false;
+            this.companyInfoUC1.EditDataCheck = false;
+            this.companyInfoUC1.Enabled = false;
+            this.companyInfoUC1.Location = new System.Drawing.Point(73, 23);
+            this.companyInfoUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("companyInfoUC1.Logoimage")));
+            this.companyInfoUC1.LogoLabel = "بيانات الشركه";
+            this.companyInfoUC1.MasterUCLock = false;
+            this.companyInfoUC1.Modified = false;
+            this.companyInfoUC1.Name = "companyInfoUC1";
+            this.companyInfoUC1.NewBtnVisible = false;
+            this.companyInfoUC1.SaveAsBtnVisible = false;
+            this.companyInfoUC1.SaveAsLabel = "بحث";
+            this.companyInfoUC1.SaveBtnVisible = true;
+            this.companyInfoUC1.SearchBtnVisible = false;
+            this.companyInfoUC1.Size = new System.Drawing.Size(820, 546);
+            this.companyInfoUC1.TabIndex = 15;
+            this.companyInfoUC1.Visible = false;
+            // 
             // userUC1
             // 
-            this.userUC1.DeleteBtnVisible = false;
-            this.userUC1.EditBtnVisible = false;
+            this.userUC1.DeleteBtnVisible = true;
+            this.userUC1.EditBtnVisible = true;
             this.userUC1.EditDataCheck = false;
             this.userUC1.Enabled = false;
             this.userUC1.Location = new System.Drawing.Point(-36, 37);
             this.userUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("userUC1.Logoimage")));
             this.userUC1.LogoLabel = "المستخدمين";
             this.userUC1.MasterUCLock = false;
+            this.userUC1.Modified = false;
             this.userUC1.Name = "userUC1";
             this.userUC1.NewBtnVisible = true;
-            this.userUC1.PrintBtnVisible = false;
-            this.userUC1.SaveBtnVisible = false;
-            this.userUC1.SearchBtnVisible = false;
+            this.userUC1.SaveAsBtnVisible = false;
+            this.userUC1.SaveAsLabel = "بحث";
+            this.userUC1.SaveBtnVisible = true;
+            this.userUC1.SearchBtnVisible = true;
             this.userUC1.Size = new System.Drawing.Size(810, 540);
             this.userUC1.TabIndex = 13;
             this.userUC1.Visible = false;
@@ -843,7 +867,7 @@
             this.settingsUC1.Location = new System.Drawing.Point(26, 37);
             this.settingsUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("settingsUC1.Logoimage")));
             this.settingsUC1.LogoLabel = "الاعدادات";
-            this.settingsUC1.Master_UC_Lock = false;
+            this.settingsUC1.MasterUCLock = false;
             this.settingsUC1.Name = "settingsUC1";
             this.settingsUC1.Size = new System.Drawing.Size(810, 468);
             this.settingsUC1.TabIndex = 12;
@@ -859,9 +883,11 @@
             this.servicesUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("servicesUC1.Logoimage")));
             this.servicesUC1.LogoLabel = "الخدمات";
             this.servicesUC1.MasterUCLock = false;
+            this.servicesUC1.Modified = false;
             this.servicesUC1.Name = "servicesUC1";
             this.servicesUC1.NewBtnVisible = true;
-            this.servicesUC1.PrintBtnVisible = false;
+            this.servicesUC1.SaveAsBtnVisible = false;
+            this.servicesUC1.SaveAsLabel = "بحث";
             this.servicesUC1.SaveBtnVisible = true;
             this.servicesUC1.SearchBtnVisible = true;
             this.servicesUC1.Size = new System.Drawing.Size(810, 468);
@@ -874,7 +900,7 @@
             this.serviceSecondUC1.Location = new System.Drawing.Point(-40, 37);
             this.serviceSecondUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("serviceSecondUC1.Logoimage")));
             this.serviceSecondUC1.LogoLabel = "الخدمات";
-            this.serviceSecondUC1.Master_UC_Lock = false;
+            this.serviceSecondUC1.MasterUCLock = false;
             this.serviceSecondUC1.Name = "serviceSecondUC1";
             this.serviceSecondUC1.Size = new System.Drawing.Size(810, 468);
             this.serviceSecondUC1.TabIndex = 10;
@@ -882,38 +908,42 @@
             // 
             // quotationUC1
             // 
-            this.quotationUC1.DeleteBtnVisible = false;
-            this.quotationUC1.EditBtnVisible = false;
+            this.quotationUC1.DeleteBtnVisible = true;
+            this.quotationUC1.EditBtnVisible = true;
             this.quotationUC1.EditDataCheck = false;
             this.quotationUC1.Enabled = false;
             this.quotationUC1.Location = new System.Drawing.Point(-24, 37);
             this.quotationUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("quotationUC1.Logoimage")));
             this.quotationUC1.LogoLabel = "التسعير";
             this.quotationUC1.MasterUCLock = false;
+            this.quotationUC1.Modified = false;
             this.quotationUC1.Name = "quotationUC1";
             this.quotationUC1.NewBtnVisible = true;
-            this.quotationUC1.PrintBtnVisible = false;
-            this.quotationUC1.SaveBtnVisible = false;
-            this.quotationUC1.SearchBtnVisible = false;
+            this.quotationUC1.SaveAsBtnVisible = false;
+            this.quotationUC1.SaveAsLabel = "بحث";
+            this.quotationUC1.SaveBtnVisible = true;
+            this.quotationUC1.SearchBtnVisible = true;
             this.quotationUC1.Size = new System.Drawing.Size(810, 468);
             this.quotationUC1.TabIndex = 9;
             this.quotationUC1.Visible = false;
             // 
             // permissionsUC1
             // 
-            this.permissionsUC1.DeleteBtnVisible = false;
-            this.permissionsUC1.EditBtnVisible = false;
+            this.permissionsUC1.DeleteBtnVisible = true;
+            this.permissionsUC1.EditBtnVisible = true;
             this.permissionsUC1.EditDataCheck = false;
             this.permissionsUC1.Enabled = false;
             this.permissionsUC1.Location = new System.Drawing.Point(37, 37);
             this.permissionsUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("permissionsUC1.Logoimage")));
             this.permissionsUC1.LogoLabel = "الصلاحيات";
             this.permissionsUC1.MasterUCLock = false;
+            this.permissionsUC1.Modified = false;
             this.permissionsUC1.Name = "permissionsUC1";
             this.permissionsUC1.NewBtnVisible = true;
-            this.permissionsUC1.PrintBtnVisible = false;
-            this.permissionsUC1.SaveBtnVisible = false;
-            this.permissionsUC1.SearchBtnVisible = false;
+            this.permissionsUC1.SaveAsBtnVisible = false;
+            this.permissionsUC1.SaveAsLabel = "بحث";
+            this.permissionsUC1.SaveBtnVisible = true;
+            this.permissionsUC1.SearchBtnVisible = true;
             this.permissionsUC1.Size = new System.Drawing.Size(810, 468);
             this.permissionsUC1.TabIndex = 8;
             this.permissionsUC1.Visible = false;
@@ -928,9 +958,11 @@
             this.paymentsUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("paymentsUC1.Logoimage")));
             this.paymentsUC1.LogoLabel = "المدفوعات";
             this.paymentsUC1.MasterUCLock = false;
+            this.paymentsUC1.Modified = false;
             this.paymentsUC1.Name = "paymentsUC1";
             this.paymentsUC1.NewBtnVisible = true;
-            this.paymentsUC1.PrintBtnVisible = false;
+            this.paymentsUC1.SaveAsBtnVisible = false;
+            this.paymentsUC1.SaveAsLabel = "بحث";
             this.paymentsUC1.SaveBtnVisible = false;
             this.paymentsUC1.SearchBtnVisible = false;
             this.paymentsUC1.Size = new System.Drawing.Size(810, 468);
@@ -947,9 +979,11 @@
             this.clientTransactionsUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("clientTransactionsUC1.Logoimage")));
             this.clientTransactionsUC1.LogoLabel = "المعاملات";
             this.clientTransactionsUC1.MasterUCLock = false;
+            this.clientTransactionsUC1.Modified = false;
             this.clientTransactionsUC1.Name = "clientTransactionsUC1";
             this.clientTransactionsUC1.NewBtnVisible = true;
-            this.clientTransactionsUC1.PrintBtnVisible = false;
+            this.clientTransactionsUC1.SaveAsBtnVisible = false;
+            this.clientTransactionsUC1.SaveAsLabel = "بحث";
             this.clientTransactionsUC1.SaveBtnVisible = false;
             this.clientTransactionsUC1.SearchBtnVisible = false;
             this.clientTransactionsUC1.Size = new System.Drawing.Size(810, 468);
@@ -958,19 +992,21 @@
             // 
             // inspectionUC1
             // 
-            this.inspectionUC1.DeleteBtnVisible = false;
-            this.inspectionUC1.EditBtnVisible = false;
+            this.inspectionUC1.DeleteBtnVisible = true;
+            this.inspectionUC1.EditBtnVisible = true;
             this.inspectionUC1.EditDataCheck = false;
             this.inspectionUC1.Enabled = false;
             this.inspectionUC1.Location = new System.Drawing.Point(-26, 37);
             this.inspectionUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("inspectionUC1.Logoimage")));
             this.inspectionUC1.LogoLabel = "التوصيف";
             this.inspectionUC1.MasterUCLock = false;
+            this.inspectionUC1.Modified = false;
             this.inspectionUC1.Name = "inspectionUC1";
             this.inspectionUC1.NewBtnVisible = true;
-            this.inspectionUC1.PrintBtnVisible = false;
-            this.inspectionUC1.SaveBtnVisible = false;
-            this.inspectionUC1.SearchBtnVisible = false;
+            this.inspectionUC1.SaveAsBtnVisible = true;
+            this.inspectionUC1.SaveAsLabel = "تحويل";
+            this.inspectionUC1.SaveBtnVisible = true;
+            this.inspectionUC1.SearchBtnVisible = true;
             this.inspectionUC1.Size = new System.Drawing.Size(810, 544);
             this.inspectionUC1.TabIndex = 5;
             this.inspectionUC1.Visible = false;
@@ -981,7 +1017,7 @@
             this.clientWorkSecondUC1.Location = new System.Drawing.Point(-13, 37);
             this.clientWorkSecondUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("clientWorkSecondUC1.Logoimage")));
             this.clientWorkSecondUC1.LogoLabel = "الادويه";
-            this.clientWorkSecondUC1.Master_UC_Lock = false;
+            this.clientWorkSecondUC1.MasterUCLock = false;
             this.clientWorkSecondUC1.Name = "clientWorkSecondUC1";
             this.clientWorkSecondUC1.Size = new System.Drawing.Size(810, 468);
             this.clientWorkSecondUC1.TabIndex = 4;
@@ -993,7 +1029,7 @@
             this.clientSecondUC1.Location = new System.Drawing.Point(34, 37);
             this.clientSecondUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("clientSecondUC1.Logoimage")));
             this.clientSecondUC1.LogoLabel = "العملاء";
-            this.clientSecondUC1.Master_UC_Lock = false;
+            this.clientSecondUC1.MasterUCLock = false;
             this.clientSecondUC1.Name = "clientSecondUC1";
             this.clientSecondUC1.Size = new System.Drawing.Size(810, 468);
             this.clientSecondUC1.TabIndex = 3;
@@ -1009,9 +1045,11 @@
             this.companyUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("companyUC1.Logoimage")));
             this.companyUC1.LogoLabel = "الشركات";
             this.companyUC1.MasterUCLock = false;
+            this.companyUC1.Modified = false;
             this.companyUC1.Name = "companyUC1";
             this.companyUC1.NewBtnVisible = true;
-            this.companyUC1.PrintBtnVisible = false;
+            this.companyUC1.SaveAsBtnVisible = false;
+            this.companyUC1.SaveAsLabel = "بحث";
             this.companyUC1.SaveBtnVisible = true;
             this.companyUC1.SearchBtnVisible = true;
             this.companyUC1.Size = new System.Drawing.Size(810, 468);
@@ -1028,9 +1066,11 @@
             this.clientUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("clientUC1.Logoimage")));
             this.clientUC1.LogoLabel = "العملاء";
             this.clientUC1.MasterUCLock = false;
+            this.clientUC1.Modified = false;
             this.clientUC1.Name = "clientUC1";
             this.clientUC1.NewBtnVisible = true;
-            this.clientUC1.PrintBtnVisible = true;
+            this.clientUC1.SaveAsBtnVisible = true;
+            this.clientUC1.SaveAsLabel = "بحث";
             this.clientUC1.SaveBtnVisible = true;
             this.clientUC1.SearchBtnVisible = true;
             this.clientUC1.Size = new System.Drawing.Size(810, 468);
@@ -1047,9 +1087,11 @@
             this.addDropDownUC1.Logoimage = ((System.Drawing.Image)(resources.GetObject("addDropDownUC1.Logoimage")));
             this.addDropDownUC1.LogoLabel = "النوع";
             this.addDropDownUC1.MasterUCLock = false;
+            this.addDropDownUC1.Modified = false;
             this.addDropDownUC1.Name = "addDropDownUC1";
             this.addDropDownUC1.NewBtnVisible = true;
-            this.addDropDownUC1.PrintBtnVisible = false;
+            this.addDropDownUC1.SaveAsBtnVisible = false;
+            this.addDropDownUC1.SaveAsLabel = "بحث";
             this.addDropDownUC1.SaveBtnVisible = true;
             this.addDropDownUC1.SearchBtnVisible = true;
             this.addDropDownUC1.Size = new System.Drawing.Size(810, 468);
@@ -1359,11 +1401,9 @@
             this.A2SGradSlider1.BottomRight = System.Drawing.Color.White;
             this.A2SGradSlider1.CollapseControl = this.Menu_Icon;
             this.A2SGradSlider1.Collapsed = false;
-            this.A2SGradSlider1.Controls.Add(this.guna2Button1);
-            this.A2SGradSlider1.Controls.Add(this.guna2Button2);
-            this.A2SGradSlider1.Controls.Add(this.guna2Button3);
-            this.A2SGradSlider1.Controls.Add(this.Main_Slider_Visits_Btn);
-            this.A2SGradSlider1.Controls.Add(this.Main_Slider_Payments_Btn);
+            this.A2SGradSlider1.Controls.Add(this.ClientWorksMainSliderBtn);
+            this.A2SGradSlider1.Controls.Add(this.ClientMainSliderBtn);
+            this.A2SGradSlider1.Controls.Add(this.ServicesMainSliderBtn);
             this.A2SGradSlider1.Controls.Add(this.Main_Menu_Home_Btn);
             this.A2SGradSlider1.Controls.Add(this.SidePanel);
             this.A2SGradSlider1.Controls.Add(this.Menu_Icon);
@@ -1401,139 +1441,83 @@
             this.Menu_Icon.Zoom = 15;
             this.Menu_Icon.Click += new System.EventHandler(this.Menu_Icon_Click);
             // 
-            // guna2Button1
+            // ClientWorksMainSliderBtn
             // 
-            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(153)))));
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button1.Location = new System.Drawing.Point(0, 395);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(213)))), ((int)(((byte)(187)))));
-            this.guna2Button1.PressedDepth = 10;
-            this.guna2Button1.Size = new System.Drawing.Size(197, 42);
-            this.guna2Button1.TabIndex = 80;
-            this.guna2Button1.Text = "الزيارة والفاتورة";
-            this.guna2Button1.TextOffset = new System.Drawing.Point(-12, 0);
-            this.guna2Button1.UseTransparentBackground = true;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.ClientWorksMainSliderBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ClientWorksMainSliderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ClientWorksMainSliderBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.ClientWorksMainSliderBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ClientWorksMainSliderBtn.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.ClientWorksMainSliderBtn.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientWorksMainSliderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClientWorksMainSliderBtn.FillColor = System.Drawing.Color.Transparent;
+            this.ClientWorksMainSliderBtn.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientWorksMainSliderBtn.ForeColor = System.Drawing.Color.White;
+            this.ClientWorksMainSliderBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(153)))));
+            this.ClientWorksMainSliderBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ClientWorksMainSliderBtn.Location = new System.Drawing.Point(0, 372);
+            this.ClientWorksMainSliderBtn.Name = "ClientWorksMainSliderBtn";
+            this.ClientWorksMainSliderBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(213)))), ((int)(((byte)(187)))));
+            this.ClientWorksMainSliderBtn.PressedDepth = 10;
+            this.ClientWorksMainSliderBtn.Size = new System.Drawing.Size(197, 42);
+            this.ClientWorksMainSliderBtn.TabIndex = 78;
+            this.ClientWorksMainSliderBtn.Text = "العمليات";
+            this.ClientWorksMainSliderBtn.UseTransparentBackground = true;
+            this.ClientWorksMainSliderBtn.Click += new System.EventHandler(this.ClientWorksMainSliderBtn_Click);
             // 
-            // guna2Button2
+            // ClientMainSliderBtn
             // 
-            this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Button2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(153)))));
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button2.Location = new System.Drawing.Point(0, 350);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(213)))), ((int)(((byte)(187)))));
-            this.guna2Button2.PressedDepth = 10;
-            this.guna2Button2.Size = new System.Drawing.Size(197, 42);
-            this.guna2Button2.TabIndex = 79;
-            this.guna2Button2.Text = "المدفوعات";
-            this.guna2Button2.UseTransparentBackground = true;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.ClientMainSliderBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ClientMainSliderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ClientMainSliderBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.ClientMainSliderBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ClientMainSliderBtn.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.ClientMainSliderBtn.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientMainSliderBtn.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.ClientMainSliderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClientMainSliderBtn.FillColor = System.Drawing.Color.Transparent;
+            this.ClientMainSliderBtn.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientMainSliderBtn.ForeColor = System.Drawing.Color.White;
+            this.ClientMainSliderBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(153)))));
+            this.ClientMainSliderBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClientMainSliderBtn.Image")));
+            this.ClientMainSliderBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ClientMainSliderBtn.ImageSize = new System.Drawing.Size(25, 25);
+            this.ClientMainSliderBtn.Location = new System.Drawing.Point(0, 327);
+            this.ClientMainSliderBtn.Name = "ClientMainSliderBtn";
+            this.ClientMainSliderBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(213)))), ((int)(((byte)(187)))));
+            this.ClientMainSliderBtn.PressedDepth = 10;
+            this.ClientMainSliderBtn.Size = new System.Drawing.Size(197, 42);
+            this.ClientMainSliderBtn.TabIndex = 77;
+            this.ClientMainSliderBtn.Text = "العملاء";
+            this.ClientMainSliderBtn.UseTransparentBackground = true;
+            this.ClientMainSliderBtn.Click += new System.EventHandler(this.ClientMainSliderBtn_Click);
             // 
-            // guna2Button3
+            // ServicesMainSliderBtn
             // 
-            this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button3.Checked = true;
-            this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(153)))));
-            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.Location = new System.Drawing.Point(0, 305);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(213)))), ((int)(((byte)(187)))));
-            this.guna2Button3.PressedDepth = 10;
-            this.guna2Button3.Size = new System.Drawing.Size(197, 42);
-            this.guna2Button3.TabIndex = 78;
-            this.guna2Button3.Text = "الرئيسية";
-            this.guna2Button3.UseTransparentBackground = true;
-            // 
-            // Main_Slider_Visits_Btn
-            // 
-            this.Main_Slider_Visits_Btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Main_Slider_Visits_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.Main_Slider_Visits_Btn.BorderColor = System.Drawing.Color.Transparent;
-            this.Main_Slider_Visits_Btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.Main_Slider_Visits_Btn.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.Main_Slider_Visits_Btn.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Main_Slider_Visits_Btn.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
-            this.Main_Slider_Visits_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Main_Slider_Visits_Btn.FillColor = System.Drawing.Color.Transparent;
-            this.Main_Slider_Visits_Btn.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Main_Slider_Visits_Btn.ForeColor = System.Drawing.Color.White;
-            this.Main_Slider_Visits_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(153)))));
-            this.Main_Slider_Visits_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Main_Slider_Visits_Btn.Image")));
-            this.Main_Slider_Visits_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Main_Slider_Visits_Btn.ImageSize = new System.Drawing.Size(25, 25);
-            this.Main_Slider_Visits_Btn.Location = new System.Drawing.Point(0, 260);
-            this.Main_Slider_Visits_Btn.Name = "Main_Slider_Visits_Btn";
-            this.Main_Slider_Visits_Btn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(213)))), ((int)(((byte)(187)))));
-            this.Main_Slider_Visits_Btn.PressedDepth = 10;
-            this.Main_Slider_Visits_Btn.Size = new System.Drawing.Size(197, 42);
-            this.Main_Slider_Visits_Btn.TabIndex = 77;
-            this.Main_Slider_Visits_Btn.Text = "الزيارة والفاتورة";
-            this.Main_Slider_Visits_Btn.TextOffset = new System.Drawing.Point(-12, 0);
-            this.Main_Slider_Visits_Btn.UseTransparentBackground = true;
-            this.Main_Slider_Visits_Btn.Click += new System.EventHandler(this.Main_Slider_Visits_Btn_Click);
-            // 
-            // Main_Slider_Payments_Btn
-            // 
-            this.Main_Slider_Payments_Btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Main_Slider_Payments_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.Main_Slider_Payments_Btn.BorderColor = System.Drawing.Color.Transparent;
-            this.Main_Slider_Payments_Btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.Main_Slider_Payments_Btn.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.Main_Slider_Payments_Btn.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Main_Slider_Payments_Btn.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
-            this.Main_Slider_Payments_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Main_Slider_Payments_Btn.FillColor = System.Drawing.Color.Transparent;
-            this.Main_Slider_Payments_Btn.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
-            this.Main_Slider_Payments_Btn.ForeColor = System.Drawing.Color.White;
-            this.Main_Slider_Payments_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(153)))));
-            this.Main_Slider_Payments_Btn.Image = ((System.Drawing.Image)(resources.GetObject("Main_Slider_Payments_Btn.Image")));
-            this.Main_Slider_Payments_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Main_Slider_Payments_Btn.ImageSize = new System.Drawing.Size(25, 25);
-            this.Main_Slider_Payments_Btn.Location = new System.Drawing.Point(0, 215);
-            this.Main_Slider_Payments_Btn.Name = "Main_Slider_Payments_Btn";
-            this.Main_Slider_Payments_Btn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(213)))), ((int)(((byte)(187)))));
-            this.Main_Slider_Payments_Btn.PressedDepth = 10;
-            this.Main_Slider_Payments_Btn.Size = new System.Drawing.Size(197, 42);
-            this.Main_Slider_Payments_Btn.TabIndex = 76;
-            this.Main_Slider_Payments_Btn.Text = "المدفوعات";
-            this.Main_Slider_Payments_Btn.UseTransparentBackground = true;
-            this.Main_Slider_Payments_Btn.Click += new System.EventHandler(this.Main_Slider_Payments_Btn_Click);
+            this.ServicesMainSliderBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ServicesMainSliderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ServicesMainSliderBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.ServicesMainSliderBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ServicesMainSliderBtn.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.ServicesMainSliderBtn.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ServicesMainSliderBtn.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            this.ServicesMainSliderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ServicesMainSliderBtn.FillColor = System.Drawing.Color.Transparent;
+            this.ServicesMainSliderBtn.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
+            this.ServicesMainSliderBtn.ForeColor = System.Drawing.Color.White;
+            this.ServicesMainSliderBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(153)))));
+            this.ServicesMainSliderBtn.Image = ((System.Drawing.Image)(resources.GetObject("ServicesMainSliderBtn.Image")));
+            this.ServicesMainSliderBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ServicesMainSliderBtn.ImageSize = new System.Drawing.Size(25, 25);
+            this.ServicesMainSliderBtn.Location = new System.Drawing.Point(0, 282);
+            this.ServicesMainSliderBtn.Name = "ServicesMainSliderBtn";
+            this.ServicesMainSliderBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(213)))), ((int)(((byte)(187)))));
+            this.ServicesMainSliderBtn.PressedDepth = 10;
+            this.ServicesMainSliderBtn.Size = new System.Drawing.Size(197, 42);
+            this.ServicesMainSliderBtn.TabIndex = 76;
+            this.ServicesMainSliderBtn.Text = "الخدمات";
+            this.ServicesMainSliderBtn.UseTransparentBackground = true;
+            this.ServicesMainSliderBtn.Click += new System.EventHandler(this.ServicesMainSliderBtn_Click);
             // 
             // Main_Menu_Home_Btn
             // 
@@ -1550,7 +1534,7 @@
             this.Main_Menu_Home_Btn.ForeColor = System.Drawing.Color.White;
             this.Main_Menu_Home_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(153)))));
             this.Main_Menu_Home_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Main_Menu_Home_Btn.Location = new System.Drawing.Point(0, 170);
+            this.Main_Menu_Home_Btn.Location = new System.Drawing.Point(0, 237);
             this.Main_Menu_Home_Btn.Name = "Main_Menu_Home_Btn";
             this.Main_Menu_Home_Btn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(213)))), ((int)(((byte)(187)))));
             this.Main_Menu_Home_Btn.PressedDepth = 10;
@@ -1565,7 +1549,7 @@
             this.SidePanel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(163)))), ((int)(((byte)(103)))));
             this.SidePanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(163)))), ((int)(((byte)(103)))));
-            this.SidePanel.Location = new System.Drawing.Point(194, 170);
+            this.SidePanel.Location = new System.Drawing.Point(194, 237);
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(5, 42);
             this.SidePanel.TabIndex = 71;
@@ -1601,11 +1585,11 @@
             this.Autherity_Shw_lbl.Font = new System.Drawing.Font("Cairo", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Autherity_Shw_lbl.ForeColor = System.Drawing.Color.White;
             this.Autherity_Shw_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Autherity_Shw_lbl.Location = new System.Drawing.Point(22, 97);
+            this.Autherity_Shw_lbl.Location = new System.Drawing.Point(11, 97);
             this.Autherity_Shw_lbl.MaximumSize = new System.Drawing.Size(99, 23);
             this.Autherity_Shw_lbl.Name = "Autherity_Shw_lbl";
             this.Autherity_Shw_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Autherity_Shw_lbl.Size = new System.Drawing.Size(79, 23);
+            this.Autherity_Shw_lbl.Size = new System.Drawing.Size(90, 23);
             this.Autherity_Shw_lbl.TabIndex = 72;
             this.Autherity_Shw_lbl.Text = "الصلاحيه";
             this.Autherity_Shw_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1619,11 +1603,11 @@
             this.Username_Shw_lbl.Font = new System.Drawing.Font("Cairo", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Username_Shw_lbl.ForeColor = System.Drawing.Color.White;
             this.Username_Shw_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Username_Shw_lbl.Location = new System.Drawing.Point(22, 77);
+            this.Username_Shw_lbl.Location = new System.Drawing.Point(7, 77);
             this.Username_Shw_lbl.MaximumSize = new System.Drawing.Size(99, 23);
             this.Username_Shw_lbl.Name = "Username_Shw_lbl";
             this.Username_Shw_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Username_Shw_lbl.Size = new System.Drawing.Size(79, 20);
+            this.Username_Shw_lbl.Size = new System.Drawing.Size(94, 20);
             this.Username_Shw_lbl.TabIndex = 73;
             this.Username_Shw_lbl.Text = "اسم المستخدم";
             this.Username_Shw_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1732,6 +1716,7 @@
             this.Name = "MainMenuForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenuForm";
             this.Load += new System.EventHandler(this.MainMenuForm_Load);
             this.TabPage1.ResumeLayout(false);
@@ -1809,8 +1794,8 @@
         internal A7MD_Library.NewControls.A2CloseButton A2CloseButton1;
         internal A7MD_Library.Panels.A2SGradSlider A2SGradSlider1;
         internal A7MD_Library.Pictures.AImageButton Menu_Icon;
-        internal Guna.UI2.WinForms.Guna2Button Main_Slider_Visits_Btn;
-        internal Guna.UI2.WinForms.Guna2Button Main_Slider_Payments_Btn;
+        internal Guna.UI2.WinForms.Guna2Button ClientMainSliderBtn;
+        internal Guna.UI2.WinForms.Guna2Button ServicesMainSliderBtn;
         internal Guna.UI2.WinForms.Guna2Button Main_Menu_Home_Btn;
         public System.Windows.Forms.Panel SidePanel;
         internal A7MD_Library.Pictures.A2PictureboxPro Username_Pic;
@@ -1825,9 +1810,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         internal Bunifu.UI.WinForms.BunifuFormDock FormDock;
         private Bunifu.UI.WinForms.BunifuFormResizer bunifuFormResizer1;
-        internal Guna.UI2.WinForms.Guna2Button guna2Button1;
-        internal Guna.UI2.WinForms.Guna2Button guna2Button2;
-        internal Guna.UI2.WinForms.Guna2Button guna2Button3;
+        internal Guna.UI2.WinForms.Guna2Button ClientWorksMainSliderBtn;
         public UC.CompanyUC companyUC1;
         public UC.ClientUC clientUC1;
         public UC.AddDropDownUC addDropDownUC1;
@@ -1843,5 +1826,6 @@
         public UC.ClientWorkSecondUC clientWorkSecondUC1;
         public UC.ClientSecondUC clientSecondUC1;
         public UC.WelcomeUC welcomeUC1;
+        private UC.CompanyInfoUC companyInfoUC1;
     }
 }

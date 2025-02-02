@@ -24,7 +24,7 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<List<Inspection>> GetAll()
         {
-            var Clients = await DB.Inspections.Where(client => client.IsDeleted == false).AsNoTracking().ToListAsync();
+            var Clients = await DB.Inspections.Where(client => client.IsDeleted == false).ToListAsync();
             return Clients;
         }
         public async Task<Inspection> GetById(int id)
@@ -45,7 +45,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                Inspection inspection = await DB.Inspections.AsNoTracking().Where(I => I.Id == id).FirstOrDefaultAsync();
+                Inspection inspection = await DB.Inspections.Where(I => I.Id == id).FirstOrDefaultAsync();
                 if (inspection != null)
                 {
                     inspection.IsDeleted = true;
@@ -70,6 +70,7 @@ namespace ColorOasisSystem.Entities
             {
                 DB.Inspections.Add(Item);
                 await DB.SaveChangesAsync();
+                return true;
             }
             return false;
         }

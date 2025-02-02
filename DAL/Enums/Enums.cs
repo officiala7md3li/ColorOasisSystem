@@ -6,16 +6,6 @@ using System.Threading.Tasks;
 
 namespace ColorOasisSystem.Enums
 {
-    public enum Screen
-    {
-        User=0,
-        Permission=1,
-        Client=2,
-        Company=3,
-        Inspection=4,
-        Quotation=5,
-        Payment=6
-    }
 
     public enum UserBehivour
     {
@@ -23,7 +13,8 @@ namespace ColorOasisSystem.Enums
         Save=1,
         Edit=2, 
         Delete=3,
-        Restored=4
+        Additional=4,
+        Print=5
     }
     public enum AddDropDown
     {

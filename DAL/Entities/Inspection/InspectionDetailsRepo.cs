@@ -21,7 +21,7 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<List<InspectionDetails>> GetAll()
         {
-            var InspectionDetails = await DB.InspectionDetails.AsNoTracking().ToListAsync();
+            var InspectionDetails = await DB.InspectionDetails.ToListAsync();
             return InspectionDetails;
         }
         public async Task<List<InspectionDetails>> GetById(int id)
@@ -42,7 +42,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                List<InspectionDetails> inspectionDetails = await DB.InspectionDetails.AsNoTracking().Where(quote => quote.InspectionId == id).ToListAsync();
+                List<InspectionDetails> inspectionDetails = await DB.InspectionDetails.Where(quote => quote.InspectionId == id).ToListAsync();
                 if (inspectionDetails != null)
                 {
                     DB.InspectionDetails.RemoveRange(inspectionDetails);

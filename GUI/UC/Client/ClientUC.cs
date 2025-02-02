@@ -20,14 +20,11 @@ namespace ColorOasisSystem.GUI.UC
         {
             InitializeComponent();
             ClassRepo = new ClientRepo();
+            Customer_Phone_TxtBox.AllowOnlyNumbers();
         }
         public override async void NewDataAsync()
         {
             base.NewDataAsync();
-            List<Client> Clients = await ClassRepo.GetAll();
-            guna2ComboBox1.DataSource=Clients;
-            guna2ComboBox1.DisplayMember = "Name";
-            guna2ComboBox1.ValueMember = "ID";
         }
         public override async Task SaveDataAsync()
         {
@@ -38,12 +35,14 @@ namespace ColorOasisSystem.GUI.UC
             {
                 Client client = new Client();
                 client.Name = Customer_Name_TxtBox.Text;
+                client.NameEn = Customer_NameEn_TxtBox.Text;
                 client.Phone = Customer_Phone_TxtBox.Text;
                 client.Address = Customer_Address_TxtBox.Text;
                 bool isSuccess=await ClassRepo.Add(client);
                 if (isSuccess)
                 {
                     popMessage($"تمت اضافه العميل {client.Name}", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success);
+                    await base.SaveDataAsync();
                 }
 
             }
@@ -63,7 +62,6 @@ namespace ColorOasisSystem.GUI.UC
 
                 throw;
             }
-            await base.SaveDataAsync();
         }
         public override async Task EditData()
         {
@@ -75,6 +73,7 @@ namespace ColorOasisSystem.GUI.UC
                 Client client = new Client();
                 client.Id = Convert.ToInt32(ID_TxtBox.Text);
                 client.Name = Customer_Name_TxtBox.Text;
+                client.NameEn = Customer_NameEn_TxtBox.Text;
                 client.Phone = Customer_Phone_TxtBox.Text;
                 client.Address = Customer_Address_TxtBox.Text;
                 client.Id = Convert.ToInt32(ID_TxtBox.Text);
@@ -113,6 +112,7 @@ namespace ColorOasisSystem.GUI.UC
                         Client client = new Client();
                         client.Id = Convert.ToInt32(ID_TxtBox.Text);
                         client.Name = Customer_Name_TxtBox.Text;
+                        client.NameEn = Customer_NameEn_TxtBox.Text;
                         client.Phone = Customer_Phone_TxtBox.Text;
                         client.Address = Customer_Address_TxtBox.Text;
                         bool isSuccess = await ClassRepo.Delete(client);
@@ -154,6 +154,7 @@ namespace ColorOasisSystem.GUI.UC
             ChosenClient =await ClassRepo.GetById(ItemID);
             ID_TxtBox.Text = ChosenClient.Id.ToString();
             Customer_Name_TxtBox.Text = ChosenClient.Name.ToString();
+            Customer_NameEn_TxtBox.Text = ChosenClient.NameEn;
             Customer_Phone_TxtBox.Text = ChosenClient.Phone.ToString();
             Customer_Address_TxtBox.Text = ChosenClient.Address.ToString();
             await base.LoadData(ItemID);

@@ -23,7 +23,7 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<List<QuotationDetails>> GetAll()
         {
-            var QuotationDetails = await DB.QuotationDetails.AsNoTracking().ToListAsync();
+            var QuotationDetails = await DB.QuotationDetails.ToListAsync();
             return QuotationDetails;
         }
 
@@ -45,7 +45,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                List<QuotationDetails> quotationDetails = await DB.QuotationDetails.AsNoTracking().Where(quote => quote.QuoteId == id).ToListAsync();
+                List<QuotationDetails> quotationDetails = await DB.QuotationDetails.Where(quote => quote.QuoteId == id).ToListAsync();
                 if (quotationDetails != null)
                 {
                     DB.QuotationDetails.RemoveRange(quotationDetails);

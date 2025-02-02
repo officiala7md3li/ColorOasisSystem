@@ -28,6 +28,7 @@ namespace ColorOasisSystem
 
             base.OnModelCreating(modelBuilder);
         }
+        public DbSet<CompanyInfo> CompanyInfo { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserPermissions> UserPermissions { get; set; }
         public DbSet<Quotation> Quotations { get; set; }

@@ -23,6 +23,10 @@ namespace ColorOasisSystem.GUI.UC
         {
             InitializeComponent();
             ServiceRepo =new Entities.ServiceRepo();
+            Buy_Price_Txt.AllowOnlyNumbers();
+            Sell_Price_Txt.AllowOnlyNumbers();
+            Barcode_Txtbox.AllowOnlyNumbers();
+            Discount_Txt.AllowOnlyNumbers();
         }
         public override async void NewDataAsync()
         {
@@ -51,8 +55,8 @@ namespace ColorOasisSystem.GUI.UC
             if (!ValidateString(Sell_Price_Txt, "يرجى إدخال السعر الاكبر")) return;
             if (!ValidateString(Barcode_Txtbox, "يرجى إدخال رقم الباركود")) return;
             if (!ValidateString(Discount_Txt, "يرجى إدخال قيمه الخصم")) return;
-            if (!ValidateDropDown(ServiceType_ComboBox, "يرجى اختيار نوع الخدمه")) return;
-            if (!ValidateDropDown(ServiceCategory_ComboBox, "يرجى اختيار فئه الخدمه")) return;
+            if (!ValidateString(ServiceType_ComboBox, "يرجى اختيار نوع الخدمه")) return;
+            if (!ValidateString(ServiceCategory_ComboBox, "يرجى اختيار فئه الخدمه")) return;
             if (Username_Pic.Image == Username_Pic.InitialImage)
             {
                 popMessage("يرجي تغيير الصوره",Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning,5);
@@ -62,10 +66,11 @@ namespace ColorOasisSystem.GUI.UC
             {
                 Service service = new Service();
                 service.Name = Item_Name_Txt.Text;
+                service.NameEn = Item_NameEn_Txt.Text;
                 service.MinimumPrice=Convert.ToDecimal(Buy_Price_Txt.Text.Trim());
                 service.MaximumPrice = Convert.ToDecimal(Sell_Price_Txt.Text.Trim());
                 service.Barcode=Barcode_Txtbox.Text;
-                service.Dicount = Convert.ToDecimal(Discount_Txt.Text.Trim());
+                service.Discount = Convert.ToDecimal(Discount_Txt.Text.Trim());
                 service.Photo = ImageToByteArray(Username_Pic.Image, System.Drawing.Imaging.ImageFormat.Png);
                 service.ServiceTypeId = Convert.ToInt32(ServiceType_ComboBox.SelectedValue);
                 service.ServiceCategoryId = Convert.ToInt32(ServiceCategory_ComboBox.SelectedValue);
@@ -74,13 +79,13 @@ namespace ColorOasisSystem.GUI.UC
                 if (isSuccess)
                 {
                     popMessage($"تمت اضافه الخدمه {service.Name}", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success);
+                    await base.SaveDataAsync();
                 }
             }
             catch (Exception ex)
             {
                 popMessage(ex.Message, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning);
             }
-            await base.SaveDataAsync();
         }
         public override async Task EditData()
         {
@@ -89,8 +94,8 @@ namespace ColorOasisSystem.GUI.UC
             if (!ValidateString(Sell_Price_Txt, "يرجى إدخال السعر الاكبر")) return;
             if (!ValidateString(Barcode_Txtbox, "يرجى إدخال رقم الباركود")) return;
             if (!ValidateString(Discount_Txt, "يرجى إدخال قيمه الخصم")) return;
-            if (!ValidateDropDown(ServiceType_ComboBox, "يرجى اختيار نوع الخدمه")) return;
-            if (!ValidateDropDown(ServiceCategory_ComboBox, "يرجى اختيار فئه الخدمه")) return;
+            if (!ValidateString(ServiceType_ComboBox, "يرجى اختيار نوع الخدمه")) return;
+            if (!ValidateString(ServiceCategory_ComboBox, "يرجى اختيار فئه الخدمه")) return;
             if (Username_Pic.Image == Username_Pic.InitialImage)
             {
                 popMessage("يرجي تغيير الصوره", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 5);
@@ -101,10 +106,11 @@ namespace ColorOasisSystem.GUI.UC
                 Service service = new Service();
                 service.Id = Convert.ToInt32(ID_TxtBox.Text);
                 service.Name = Item_Name_Txt.Text;
+                service.NameEn = Item_NameEn_Txt.Text;
                 service.MinimumPrice = Convert.ToDecimal(Buy_Price_Txt.Text.Trim());
                 service.MaximumPrice = Convert.ToDecimal(Sell_Price_Txt.Text.Trim());
                 service.Barcode = Barcode_Txtbox.Text;
-                service.Dicount = Convert.ToDecimal(Discount_Txt.Text.Trim());
+                service.Discount = Convert.ToDecimal(Discount_Txt.Text.Trim());
                 service.Photo = ImageToByteArray(Username_Pic.Image, System.Drawing.Imaging.ImageFormat.Png);
                 service.ServiceTypeId = Convert.ToInt32(ServiceType_ComboBox.SelectedValue);
                 service.ServiceCategoryId = Convert.ToInt32(ServiceCategory_ComboBox.SelectedValue);
@@ -133,10 +139,11 @@ namespace ColorOasisSystem.GUI.UC
                         Service service = new Service();
                         service.Id = Convert.ToInt32(ID_TxtBox.Text);
                         service.Name = Item_Name_Txt.Text;
+                        service.NameEn = Item_NameEn_Txt.Text;
                         service.MinimumPrice = Convert.ToDecimal(Buy_Price_Txt.Text.Trim());
                         service.MaximumPrice = Convert.ToDecimal(Sell_Price_Txt.Text.Trim());
                         service.Barcode = Barcode_Txtbox.Text;
-                        service.Dicount = Convert.ToDecimal(Discount_Txt.Text.Trim());
+                        service.Discount = Convert.ToDecimal(Discount_Txt.Text.Trim());
                         service.Photo = ImageToByteArray(Username_Pic.Image, System.Drawing.Imaging.ImageFormat.Png);
                         service.ServiceTypeId = Convert.ToInt32(ServiceType_ComboBox.SelectedValue);
                         service.ServiceCategoryId = Convert.ToInt32(ServiceCategory_ComboBox.SelectedValue);
@@ -155,8 +162,8 @@ namespace ColorOasisSystem.GUI.UC
         public override async Task Search_Data()
         {
             //todo:Change it for all screens
-            List<string> list = new List<string>() { "#", "الاسم", "الباركود" };
-            List<string> Properties = new List<string>() { "ID", "Name", "Barcode" };
+            List<string> list = new List<string>() { "#", "الاسم","الاسم ج", "الباركود" };
+            List<string> Properties = new List<string>() { "ID", "Name","NameEn", "Barcode" };
 
             List<HelpingSearchForm> dataSource = new List<HelpingSearchForm>();
             for (int i = 0; i < Properties.Count; i++)//DisplayAvailableProperties<Model.Branch>()
@@ -177,10 +184,11 @@ namespace ColorOasisSystem.GUI.UC
             ChosenService = await ServiceRepo.GetById(ItemID);
             ID_TxtBox.Text = ChosenService.Id.ToString();
             Item_Name_Txt.Text = ChosenService.Name;
+            Item_NameEn_Txt.Text=ChosenService.NameEn;
             Buy_Price_Txt.Text = ChosenService.MinimumPrice.ToString();
             Sell_Price_Txt.Text = ChosenService.MaximumPrice.ToString();
             Barcode_Txtbox.Text = ChosenService.Barcode;
-            Discount_Txt.Text = ChosenService.Dicount.ToString();
+            Discount_Txt.Text = ChosenService.Discount.ToString();
             Username_Pic.Image =ByteArrayToImage(ChosenService.Photo);
             ServiceType_ComboBox.SelectedValue = ChosenService.ServiceTypeId;
             ServiceCategory_ComboBox.SelectedValue = ChosenService.ServiceCategoryId;

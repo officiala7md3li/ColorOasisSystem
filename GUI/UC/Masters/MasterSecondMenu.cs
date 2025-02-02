@@ -1,4 +1,5 @@
-﻿using ColorOasisSystem.Helper;
+﻿using ColorOasisSystem.Entities;
+using ColorOasisSystem.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,9 +33,14 @@ namespace ColorOasisSystem.GUI.UC
             mainMenuForm.A2SGradSlider1.Refresh();
             mainMenuForm.A2SGradSlider1.Invalidate();
         }
-
+        public void SetPermissions(Permission permission)
+        {
+            MasterUCLock = !permission.Lock;
+            Refresh();
+            Invalidate();
+        }
         private bool masterUCLockValue = false;
-        public bool Master_UC_Lock
+        public bool MasterUCLock
         {
             get { return masterUCLockValue; }
             set
@@ -67,7 +73,11 @@ namespace ColorOasisSystem.GUI.UC
                 Invalidate();
             }
         }
-
+        public virtual void popMessage(string Caption, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes messageTypes, int timerDelay = 5)
+        {
+            MainMenuForm MainForm_Var = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
+            MyHelper.SnackbarShow(MainForm_Var, MainForm_Var.Snackbar, Caption, messageTypes, timerDelay);
+        }
 
     }
 }

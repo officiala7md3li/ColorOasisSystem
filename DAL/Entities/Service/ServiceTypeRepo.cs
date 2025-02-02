@@ -26,7 +26,7 @@ namespace ColorOasisSystem.Entities
         public async Task<List<ServiceType>> GetAll()
         {
 
-            var serviceTypes = await DB.ServiceTypes.AsNoTracking().ToListAsync();
+            var serviceTypes = await DB.ServiceTypes.ToListAsync();
             return serviceTypes;
         }
         public async Task<ServiceType> GetById(int id)
@@ -47,7 +47,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                ServiceType serviceType = await DB.ServiceTypes.AsNoTracking().Where(s => s.Id == id).FirstOrDefaultAsync();
+                ServiceType serviceType = await DB.ServiceTypes.Where(s => s.Id == id).FirstOrDefaultAsync();
                 if (serviceType != null)
                 {
                     DB.ServiceTypes.Remove(serviceType);

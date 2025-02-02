@@ -13,9 +13,6 @@ namespace ColorOasisSystem.Entities
     {
         public int Id { get; set; }
         public string Code { get; set; }
-        [ForeignKey("User")]
-        public int UserId { get; set; }
-        public User User { get; set; }
         public DateTime DateTime { get; set; }
         public UnitType TypeofUnit { get; set; }
         public int RoomsNo { get; set; }

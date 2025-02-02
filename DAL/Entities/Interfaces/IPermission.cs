@@ -13,5 +13,6 @@ namespace ColorOasisSystem.Entities.Interfaces
         bool Edit { get; set; }
         bool Delete { get; set; }
         bool Retrive { get; set; }
+        bool Additional { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ColorOasisSystem.DAL.Entities.Interfaces;
 using ColorOasisSystem.Entities.Interfaces;
+using ColorOasisSystem.Helper;
 using Microsoft.SqlServer.Management.Smo;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace ColorOasisSystem.Entities
         public async Task<List<User>> GetAll()
         {
             
-            var Useres = await db.Users.Where(user => user.IsDeleted == false).AsNoTracking().ToListAsync();
+            var Useres = await db.Users.Where(user => user.IsDeleted == false).ToListAsync();
             return Useres;
         }
         public async Task<User> GetById(int id)
@@ -45,7 +46,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                User User =await db.Users.AsNoTracking().Where(user=>user.Id==id).FirstOrDefaultAsync();
+                User User =await db.Users.Where(user=>user.Id==id).FirstOrDefaultAsync();
                 if (User != null)
                 {
                     User.IsDeleted = true;
@@ -70,6 +71,7 @@ namespace ColorOasisSystem.Entities
             {
                 db.Users.Add(Item);
                 await db.SaveChangesAsync();
+                return true;
             }
             return false;
         }
@@ -101,9 +103,10 @@ namespace ColorOasisSystem.Entities
             {
                 throw new Exception("No Record in Database");
             }
+            string password = Hasher.Hash(_password);
             User user =await (from u in db.Users
-                        where u.UserName == _userName && u.Password == _password
-                        select u).AsNoTracking().FirstOrDefaultAsync();
+                        where u.UserName == _userName && u.Password == password
+                              select u).Include(u=>u.UserPermission).FirstOrDefaultAsync();
             if (user != null)
             {
                 return user;
@@ -121,7 +124,8 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<User> GetByRecoveryWord(string _recoverWord)
         {
-            User user= await db.Users.AsNoTracking().Where(x => x.RecoverWord == _recoverWord).FirstOrDefaultAsync();
+            var RecoverWord=Hasher.Hash(_recoverWord); 
+            User user= await db.Users.Where(x => x.RecoverWord == RecoverWord).FirstOrDefaultAsync();
             if (user != null) return user;
             return null;
         }

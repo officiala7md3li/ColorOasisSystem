@@ -8,16 +8,11 @@ using System.Windows.Forms;
 
 namespace ColorOasisSystem.GUI.UC
 {
-    public partial class SettingsUC :MasterSecondMenu
+    public partial class GlobalSettings : ColorOasisSystem.GUI.UC.MasterSecondMenu
     {
-        public SettingsUC()
+        public GlobalSettings()
         {
             InitializeComponent();
-        }
-
-        private void SaveSettings_Btn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

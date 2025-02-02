@@ -9,7 +9,7 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=A7MD\A7MD;Initial Catalog=ColorOasisDB;Integrated Security=true</Value>
     </Setting>
-    <Setting Name="BG_Color" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="BGColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">White</Value>
     </Setting>
     <Setting Name="Server_Name" Type="System.String" Scope="User">
@@ -37,6 +37,15 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="EnableUC" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VATValue" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="BeforeOpen" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AfterClose" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>

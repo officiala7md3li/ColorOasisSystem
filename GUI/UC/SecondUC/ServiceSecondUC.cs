@@ -19,19 +19,21 @@ namespace ColorOasisSystem.GUI.UC
         private void ServiceType_Click(object sender, EventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
-            frm.SelectedUC(frm.addDropDownUC1);
+            frm.addDropDownUC1.SelectType(Enums.AddDropDown.ItemType);
+            frm.AssignPermission(frm.addDropDownUC1, frm.CurrentUser.UserPermission.ServiceTypeUCPermission);
         }
 
         private void ServiceCategory_Click(object sender, EventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
-            frm.SelectedUC(frm.addDropDownUC1);
+            frm.addDropDownUC1.SelectType(Enums.AddDropDown.ItemCategory);
+            frm.AssignPermission(frm.addDropDownUC1, frm.CurrentUser.UserPermission.ServiceCategoryUCPermission);
         }
 
         private void Service_Click(object sender, EventArgs e)
         {
             MainMenuForm frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
-            frm.SelectedUC(frm.servicesUC1);
+            frm.AssignPermission(frm.servicesUC1, frm.CurrentUser.UserPermission.ServiceUCPermission);
         }
     }
 }

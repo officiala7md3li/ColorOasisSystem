@@ -9,10 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections.Generic;
 using ColorOasisSystem.DAL;
 using ColorOasisSystem.GUI.HelpingProgram;
 using ColorOasisSystem.GUI.Helping_Program;
+using ColorOasisSystem.Enums;
+using ColorOasisSystem.Helper;
+using Microsoft.SqlServer.Management.Sdk.Sfc;
 namespace ColorOasisSystem.GUI.UC
 {
     public partial class InspectionUC : ColorOasisSystem.GUI.UC.MasterUC
@@ -22,6 +24,9 @@ namespace ColorOasisSystem.GUI.UC
         ServiceTypeRepo TypeRepo;
         ClientRepo ClientRepo;
         CompanyRepo CompanyRepo;
+        InspectionRepo InspectionRepo;
+        InspectionDetailsRepo InspectionDetailsRepo;
+        List<Service > Services;
         public InspectionUC()
         {
             InitializeComponent();
@@ -30,18 +35,25 @@ namespace ColorOasisSystem.GUI.UC
             RemoveItem.DefaultCellStyle.SelectionBackColor = Color.FromArgb(227, 99, 89);
             RemoveItem.CellTemplate.Style.BackColor=Color.FromArgb(228, 159, 115);
 
+            PoBoxTxtBox.AllowOnlyNumbers();
+            UnitRoomsNoTxtbox.AllowOnlyNumbers();
+            ClientTRNTxtBox.AllowOnlyNumbers();
+
             ServiceRepo = new ServiceRepo();
             CategoryRepo = new ServiceCategoryRepo();
             TypeRepo = new ServiceTypeRepo();
             ClientRepo = new ClientRepo();
             CompanyRepo = new CompanyRepo();
+            InspectionRepo = new InspectionRepo();
+            InspectionDetailsRepo=new InspectionDetailsRepo();
+            Services = new List<Service>();
         }
         public async override void NewDataAsync()
         {
             base.NewDataAsync();
-            List<Service> services = await ServiceRepo.GetAll();
+            Services = await ServiceRepo.GetAll();
             Item_Name_TxtBox.AutoCompleteCustomSource.Clear();
-            Item_Name_TxtBox.AutoCompleteCustomSource.AddRange(services.Select(service => service.Name).ToArray());
+            Item_Name_TxtBox.AutoCompleteCustomSource.AddRange(Services.Select(service => service.Name).ToArray());
 
             List<ServiceCategory> serviceCategories = await CategoryRepo.GetAll();
 
@@ -60,6 +72,18 @@ namespace ColorOasisSystem.GUI.UC
             ServiceType_ComboBox.DisplayMember = "Name";
             ServiceType_ComboBox.ValueMember = "Id";
             ServiceType_ComboBox.SelectedIndex = -1;
+            IdTextBox.Clear();
+            UnitTypeComboBox.SelectedIndex=-1;
+            UnitRoomsNoTxtbox.Clear();
+            UnitCodeTxtBox.Clear();
+            PoBoxTxtBox.Clear();
+            ClientTypeComboBox.SelectedIndex = -1;
+            ClientIdTxtBox.Clear();
+            ClientNameTxtBox.Clear();
+            ClientLocationTxtBox.Clear();
+            ClientPhoneTxtBox.Clear();
+            ClientTRNTxtBox.Clear();
+            DGV_Search.Rows.Clear();
 
         }
 
@@ -90,7 +114,7 @@ namespace ColorOasisSystem.GUI.UC
         public async Task<List<Service>> SideBarLoadItems(string ItemName,int ItemCategory,int ItemType )
         {
             List<Service> services = new List<Service>();
-            services = await ServiceRepo.SelectListOfServices(ItemName, ItemCategory, ItemType);
+            services = ServiceRepo.SelectListOfServices(ItemName, ItemCategory, ItemType,Services);
             return services;
         }
         public void CreateItemsOnFLP(List<Service> services)
@@ -168,7 +192,7 @@ namespace ColorOasisSystem.GUI.UC
                 Pnl.Controls.Add(Lbl_Price);
                 Lbl_Price.Location = new Point(89, 123);
 
-                if (service.Dicount > 0)
+                if (service.Discount > 0)
                 {
                     var Lbl_Discount = new Label
                     {
@@ -193,7 +217,7 @@ namespace ColorOasisSystem.GUI.UC
                     Sale_Banner.Refresh();
                     Pnl.Controls.Add(Sale_Banner);
 
-                    Lbl_Price.Text = (service.MaximumPrice - Convert.ToInt32(service.Dicount)) + " L.E";
+                    Lbl_Price.Text = (service.MaximumPrice - Convert.ToInt32(service.Discount)) + " L.E";
                 }
                 RoundedFLowLayoutPanel1.Controls.Add(Pnl);
                 RoundedFLowLayoutPanel1.Refresh();
@@ -228,26 +252,28 @@ namespace ColorOasisSystem.GUI.UC
 
                 if (DGV_Search.Rows[i].Cells[1].Value.ToString() == service.Id.ToString())
                 {
-                    DGV_Search.Rows[i].Cells[3].Value = Convert.ToInt32(DGV_Search.Rows[i].Cells[3].Value) + 1;
-                    //DGV_Calculations();
-                    // TODO: Add Calculations
+                    DGV_Search.Rows[i].Cells[3].Value = Convert.ToDecimal(DGV_Search.Rows[i].Cells[3].Value) + 1;
+                    DGV_Search[11, DGV_Search.CurrentRow.Index].Selected = false;
+                    DGV_Calculations();
                     return;
                 }
             }
             DGV_Search.Rows.Add();
             int Barcod = DGV_Search.Rows.Count - 1;
             DGV_Search[0, Barcod].Value = DGV_Search.Rows.Count; // My.Settings.Ahmed or DT.Rows[0]["ITEM_CODE"]
-            DGV_Search[1, Barcod].Value = service.Id;
+            DGV_Search[1, Barcod].Value = Convert.ToInt32(service.Id);
             DGV_Search[2, Barcod].Value = service.Name;
             DGV_Search[3, Barcod].Value = 1;
-            DGV_Search[4, Barcod].Value = service.MinimumPrice;
-            DGV_Search[5, Barcod].Value = service.MaximumPrice;
-            DGV_Search[6, Barcod].Value = service.Dicount;
-            DGV_Search[7, Barcod].Value = (service.MaximumPrice+ service.MinimumPrice)/2;
-            DGV_Search[8, Barcod].Value = (service.MaximumPrice + service.MinimumPrice) / 2;
-            DGV_Search[9, Barcod].Value = service.ServiceCategoryId;
-            DGV_Search[10, Barcod].Value = service.ServiceTypeId;
-            DGV_Search[11, DGV_Search.CurrentRow.Index].Selected = false;
+            DGV_Search[4, Barcod].Value = Convert.ToDecimal(service.MinimumPrice);
+            DGV_Search[5, Barcod].Value = Convert.ToDecimal(service.MaximumPrice);
+            DGV_Search[6, Barcod].Value = Convert.ToDecimal(service.Discount);
+            DGV_Search[7, Barcod].Value = Convert.ToDecimal((service.MaximumPrice + service.MinimumPrice) / 2);
+            DGV_Search[8, Barcod].Value = Convert.ToDecimal(service.Discount);
+            DGV_Search[9, Barcod].Value = Convert.ToInt32((service.MaximumPrice + service.MinimumPrice) / 2);
+            DGV_Search[10, Barcod].Value = Convert.ToInt32(service.ServiceCategoryId);
+            DGV_Search[11, Barcod].Value = Convert.ToInt32(service.ServiceTypeId);
+            DGV_Search[12, DGV_Search.CurrentRow.Index].Selected = false;
+            DGV_Calculations();
 
         }
         public async override Task SizeChangedAsync()
@@ -362,17 +388,20 @@ namespace ColorOasisSystem.GUI.UC
             {
                 var frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
                 new WaitLoaderForm(frm, new AddNumber(DGV_Search[3, e.RowIndex],1000,0), 10);
+                DGV_Calculations();
             }
         }
 
         private void DGV_Search_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             if (DGV_Search.Rows.Count > 0)
             {
                 if (e.ColumnIndex == 3)
                 {
                     var frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
                     new WaitLoaderForm(frm, new AddNumber(DGV_Search[3, e.RowIndex], 1000, 0), 10);
+                    DGV_Calculations();
                 }
             }
         }
@@ -381,16 +410,16 @@ namespace ColorOasisSystem.GUI.UC
         {
             if (DGV_Search.Rows.Count>0)
             {
-                if (e.ColumnIndex == 11)
+                if (e.ColumnIndex == 12)
                 {
-                    if (DGV_Search[11, DGV_Search.CurrentRow.Index].Selected == true)
+                    if (DGV_Search[12, DGV_Search.CurrentRow.Index].Selected == true)
                     {
                         DGV_Search.Rows.RemoveAt(DGV_Search.CurrentRow.Index);
                         if (DGV_Search.Rows.Count > 0)
                         {
-                            DGV_Search[11, DGV_Search.CurrentRow.Index].Selected = false;
+                            DGV_Search[12, DGV_Search.CurrentRow.Index].Selected = false;
                         }
-                        //DGV_Calculations();
+                        DGV_Calculations();
                     }
                 }
             }
@@ -400,19 +429,262 @@ namespace ColorOasisSystem.GUI.UC
         {
             if (DGV_Search.Rows.Count>0)
             {
-                if (e.ColumnIndex == 11)
+                if (e.ColumnIndex == 12)
                 {
-                    if (DGV_Search[11, DGV_Search.CurrentRow.Index].Selected == true)
+                    if (DGV_Search[12, DGV_Search.CurrentRow.Index].Selected == true)
                     {
                         DGV_Search.Rows.RemoveAt(DGV_Search.CurrentRow.Index);
                         if (DGV_Search.Rows.Count > 0)
                         {
-                            DGV_Search[11, DGV_Search.CurrentRow.Index].Selected = false;
+                            DGV_Search[12, DGV_Search.CurrentRow.Index].Selected = false;
                         }
-                        //DGV_Calculations();
+                        DGV_Calculations();
                     }
                 }
             }
+        }
+        private void DGV_Calculations()
+        {
+            decimal TotalQty=0, TotalPrice=0, TotalDiscount=0;
+            if (DGV_Search.Rows.Count>0)
+            {
+                for (int i = 0; i <= DGV_Search.Rows.Count - 1; i++)
+                {
+                    if (Convert.ToDecimal(DGV_Search.Rows[i].Cells[3].Value) <= 0) 
+                    { 
+                        DGV_Search.Rows.RemoveAt(DGV_Search.CurrentRow.Index);
+                        DGV_Calculations();
+                        return;
+                    }
+                    TotalQty += Convert.ToDecimal(DGV_Search.Rows[i].Cells[3].Value);
+                    TotalDiscount += Convert.ToDecimal(DGV_Search.Rows[i].Cells[6].Value);
+                    DGV_Search.Rows[i].Cells[8].Value = Convert.ToDecimal(DGV_Search.Rows[i].Cells[3].Value) * Convert.ToDecimal(DGV_Search.Rows[i].Cells[6].Value);
+                    DGV_Search.Rows[i].Cells[9].Value = Convert.ToDecimal(DGV_Search.Rows[i].Cells[3].Value)* Convert.ToDecimal(DGV_Search.Rows[i].Cells[7].Value);
+                    TotalPrice = Convert.ToDecimal(DGV_Search.Rows[i].Cells[9].Value);
+                }
+                QtyTxtBox.Text = TotalQty.ToString();
+            }
+            else
+            {
+                QtyTxtBox.Text = "0";
+            }
+        }
+        public override async Task SaveDataAsync()
+        {
+            if (!ValidateStringD(UnitTypeComboBox, "يرجى اختيار نوع الوحده")) return;
+            if (!ValidateString(UnitRoomsNoTxtbox, "يرجى ادخال عدد الغرف")) return;
+            if (!ValidateString(UnitCodeTxtBox, "يرجى ادخال كود الوحده")) return;
+            if (!ValidateString(PoBoxTxtBox, "يرجى ادخال صندوق البريد")) return;
+            if (!ValidateStringD(ClientTypeComboBox, "يرجى اختيار نوع العميل")) return;
+            if (!ValidateString(ClientNameTxtBox, "يرجى ادخال اسم العميل")) return;
+            if (!ValidateString(ClientTRNTxtBox, "يرجى ادخال الرقم الضريبي")) return;
+            if (DGV_Search.Rows.Count<=0)
+            {
+                popMessage("اضف بعض الخدمات للتوصيف", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5);
+                return;
+            }
+            Inspection inspection = new Inspection();
+            //todo:make it dynamic
+            inspection.DateTime = DateTime.Now;
+            inspection.TypeofUnit = (UnitType)UnitTypeComboBox.SelectedIndex;
+            inspection.RoomsNo = Convert.ToInt32(UnitRoomsNoTxtbox.Text);
+            inspection.UnitCode=UnitCodeTxtBox.Text;
+            inspection.POBox = PoBoxTxtBox.Text;
+            inspection.ClientType=(ClientType)ClientTypeComboBox.SelectedIndex;
+            inspection.ClientId = Convert.ToInt32(ClientIdTxtBox.Text);
+            inspection.ClientName = ClientNameTxtBox.Text;
+            inspection.ClientLocation=ClientLocationTxtBox.Text;
+            inspection.ClientPhoneNo = ClientPhoneTxtBox.Text;
+            inspection.ClientTRN = ClientTRNTxtBox.Text;
+            inspection.AddedBy = "1";
+            inspection.EditedBy = "";
+            inspection.DeletedBy = "";
+            inspection.IsDeleted = false;
+            bool isSuccess=await InspectionRepo.Add(inspection);
+            if (isSuccess)
+            {
+                List<InspectionDetails> details = new List<InspectionDetails>();
+                foreach (DataGridViewRow row in DGV_Search.Rows)
+                {
+                    // Skip the last row if it's a new row for input
+                    if (row.IsNewRow) continue;
+                    InspectionDetails inspectionDetails = new InspectionDetails();
+
+                    inspectionDetails.InspectionId=inspection.Id;
+                    inspectionDetails.ServiceId = Convert.ToInt32(row.Cells[1].Value);
+                    inspectionDetails.ServiceName = row.Cells[2].Value.ToString();
+                    inspectionDetails.Qty = Convert.ToDecimal(row.Cells[3].Value);
+                    inspectionDetails.MinimumPrice = Convert.ToDecimal(row.Cells[4].Value);
+                    inspectionDetails.MaximumPrice = Convert.ToDecimal(row.Cells[5].Value);
+                    inspectionDetails.Discount = Convert.ToDecimal(row.Cells[6].Value);
+                    inspectionDetails.UnitPrice = Convert.ToDecimal(row.Cells[7].Value);
+                    inspectionDetails.Price = Convert.ToDecimal(row.Cells[9].Value);
+                    inspectionDetails.CategoryId = Convert.ToInt32(row.Cells[10].Value);
+                    inspectionDetails.TypeId = Convert.ToInt32(row.Cells[11].Value);
+                    details.Add(inspectionDetails);
+                }
+                bool isSuccessDetails=await InspectionDetailsRepo.Add(details);
+                if (isSuccessDetails)
+                {
+                    popMessage($"تمت اضافه توصيف جديد بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success);
+                    await base.SaveDataAsync();
+                }
+            }
+        }
+        public override async Task EditData()
+        {
+            if (!ValidateStringD(UnitTypeComboBox, "يرجى اختيار نوع الوحده")) return;
+            if (!ValidateString(UnitRoomsNoTxtbox, "يرجى ادخال عدد الغرف")) return;
+            if (!ValidateString(UnitCodeTxtBox, "يرجى ادخال كود الوحده")) return;
+            if (!ValidateString(PoBoxTxtBox, "يرجى ادخال صندوق البريد")) return;
+            if (!ValidateStringD(ClientTypeComboBox, "يرجى اختيار نوع العميل")) return;
+            if (!ValidateString(ClientNameTxtBox, "يرجى ادخال اسم العميل")) return;
+            if (!ValidateString(ClientTRNTxtBox, "يرجى ادخال الرقم الضريبي")) return;
+            if (DGV_Search.Rows.Count <= 0)
+            {
+                popMessage("اضف بعض الخدمات للتوصيف", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5);
+                return;
+            }
+            Inspection inspection = new Inspection();
+            //todo:make it dynamic
+            inspection.Id = Convert.ToInt32(IdTextBox.Text);
+            inspection.DateTime = DateTime.Now;
+            inspection.TypeofUnit = (UnitType)UnitTypeComboBox.SelectedIndex;
+            inspection.RoomsNo = Convert.ToInt32(UnitRoomsNoTxtbox.Text);
+            inspection.UnitCode = UnitCodeTxtBox.Text;
+            inspection.POBox = PoBoxTxtBox.Text;
+            inspection.ClientType = (ClientType)ClientTypeComboBox.SelectedIndex;
+            inspection.ClientId = Convert.ToInt32(ClientIdTxtBox.Text);
+            inspection.ClientName = ClientNameTxtBox.Text;
+            inspection.ClientLocation = ClientLocationTxtBox.Text;
+            inspection.ClientPhoneNo = ClientPhoneTxtBox.Text;
+            inspection.ClientTRN = ClientTRNTxtBox.Text;
+            inspection.EditedBy = "1";
+            inspection.IsDeleted = false;
+            bool isSuccess = await InspectionRepo.Update(inspection);
+            if (isSuccess) isSuccess=await InspectionDetailsRepo.DeleteById(inspection.Id);
+            if (isSuccess)
+            {
+                List<InspectionDetails> details = new List<InspectionDetails>();
+                foreach (DataGridViewRow row in DGV_Search.Rows)
+                {
+                    // Skip the last row if it's a new row for input
+                    if (row.IsNewRow) continue;
+                    InspectionDetails inspectionDetails = new InspectionDetails();
+
+                    inspectionDetails.InspectionId = inspection.Id;
+                    inspectionDetails.ServiceId = Convert.ToInt32(row.Cells[1].Value);
+                    inspectionDetails.ServiceName = row.Cells[2].Value.ToString();
+                    inspectionDetails.Qty = Convert.ToDecimal(row.Cells[3].Value);
+                    inspectionDetails.MinimumPrice = Convert.ToDecimal(row.Cells[4].Value);
+                    inspectionDetails.MaximumPrice = Convert.ToDecimal(row.Cells[5].Value);
+                    inspectionDetails.Discount = Convert.ToDecimal(row.Cells[6].Value);
+                    inspectionDetails.UnitPrice = Convert.ToDecimal(row.Cells[7].Value);
+                    inspectionDetails.Price = Convert.ToDecimal(row.Cells[9].Value);
+                    inspectionDetails.CategoryId = Convert.ToInt32(row.Cells[10].Value);
+                    inspectionDetails.TypeId = Convert.ToInt32(row.Cells[11].Value);
+                    details.Add(inspectionDetails);
+                }
+                bool isSuccessDetails = await InspectionDetailsRepo.Add(details);
+                if (isSuccessDetails) popMessage($"تمت تعديل التوصيف بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success);
+            }
+            await base.EditData();
+        }
+        public override async Task DeleteData()
+        {
+            if (MyHelper.IsFormOpen(typeof(MainMenuForm)))
+            {
+                MainMenuForm existingForm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
+                if (existingForm != null)
+                {
+                    if (existingForm.CustomMessage("هل تريد حذف البيانات؟", "نعم", "لا") == DialogResult.Yes)
+                    {
+                        Inspection inspection = new Inspection();
+                        //todo:make it dynamic
+                        inspection.Id = Convert.ToInt32(IdTextBox.Text.Trim());
+                        inspection.DateTime = DateTime.Now;
+                        inspection.TypeofUnit = (UnitType)UnitTypeComboBox.SelectedIndex;
+                        inspection.RoomsNo = Convert.ToInt32(UnitRoomsNoTxtbox.Text);
+                        inspection.UnitCode = UnitCodeTxtBox.Text;
+                        inspection.POBox = PoBoxTxtBox.Text;
+                        inspection.ClientType = (ClientType)ClientTypeComboBox.SelectedIndex;
+                        inspection.ClientId = Convert.ToInt32(ClientIdTxtBox.Text);
+                        inspection.ClientName = ClientNameTxtBox.Text;
+                        inspection.ClientLocation = ClientLocationTxtBox.Text;
+                        inspection.ClientPhoneNo = ClientPhoneTxtBox.Text;
+                        inspection.ClientTRN = ClientTRNTxtBox.Text;
+                        inspection.EditedBy = "1";
+                        inspection.IsDeleted = false;
+                        bool isSuccess = await InspectionRepo.Delete(inspection);
+                        if (isSuccess) isSuccess = await InspectionDetailsRepo.DeleteById(Convert.ToInt32(IdTextBox.Text.Trim()));
+                        if (isSuccess) popMessage($"تمت حذف التوصيف بنجاح", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success);
+                        await base.DeleteData();
+                    }
+                }
+            }
+        }
+        public override async Task Search_Data()
+        {
+            //todo:Change it for all screens
+            List<string> list = new List<string>() { "#", "اسم العميل", "كود الوحده", "رقم صندوق البريد" };
+            List<string> Properties = new List<string>() { "ID", "ClientName", "UnitCode", "POBox" };
+
+            List<HelpingSearchForm> dataSource = new List<HelpingSearchForm>();
+            for (int i = 0; i < Properties.Count; i++)//DisplayAvailableProperties<Model.Branch>()
+            {
+                //dataSource.Add(new HelpingSearchForm { Display = list[i], Value = DisplayAvailableProperties<Model.Branch>()[i] });
+                dataSource.Add(new HelpingSearchForm { Display = list[i], Value = Properties[i] });
+            }
+
+            var frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
+
+            new WaitLoaderForm(frm, new SreachForm<Inspection>(this, await InspectionRepo.GetAll(), dataSource), 10);
+
+            await base.Search_Data();
+        }
+        public override async Task LoadData(int ItemID)
+        {
+            Inspection inspection =await InspectionRepo.GetById(ItemID);
+            IdTextBox.Text = inspection.Id.ToString();
+            UnitTypeComboBox.SelectedIndex = (int)inspection.TypeofUnit;
+            UnitRoomsNoTxtbox.Text =inspection.RoomsNo.ToString();
+            UnitCodeTxtBox.Text =inspection.UnitCode;
+            PoBoxTxtBox.Text = inspection.POBox;
+            ClientTypeComboBox.SelectedIndex = (int)inspection.ClientType;
+            ClientIdTxtBox.Text = inspection.ClientId.ToString();
+            ClientNameTxtBox.Text = inspection.ClientName;
+            ClientLocationTxtBox.Text = inspection.ClientLocation;
+            ClientPhoneTxtBox.Text = inspection.ClientPhoneNo;
+            ClientTRNTxtBox.Text = inspection.ClientTRN;
+            DGV_Search.Rows.Clear();
+            List<InspectionDetails> inspectionDetails = await InspectionDetailsRepo.GetById(ItemID);
+            foreach (InspectionDetails service in inspectionDetails)
+            {
+                DGV_Search.Rows.Add();
+                int Barcod = DGV_Search.Rows.Count - 1;
+                DGV_Search[0, Barcod].Value = DGV_Search.Rows.Count; // My.Settings.Ahmed or DT.Rows[0]["ITEM_CODE"]
+                DGV_Search[1, Barcod].Value = Convert.ToInt32(service.Id);
+                DGV_Search[2, Barcod].Value = service.ServiceName;
+                DGV_Search[3, Barcod].Value = Convert.ToDecimal(service.Qty);
+                DGV_Search[4, Barcod].Value = Convert.ToDecimal(service.MinimumPrice);
+                DGV_Search[5, Barcod].Value = Convert.ToDecimal(service.MaximumPrice);
+                DGV_Search[6, Barcod].Value = Convert.ToDecimal(service.Discount);
+                DGV_Search[7, Barcod].Value = Convert.ToDecimal(service.UnitPrice);
+                DGV_Search[8, Barcod].Value = Convert.ToDecimal(service.Discount * service.Qty);
+                DGV_Search[9, Barcod].Value = Convert.ToInt32(service.Price);
+                DGV_Search[10, Barcod].Value = Convert.ToInt32(service.CategoryId);
+                DGV_Search[11, Barcod].Value = Convert.ToInt32(service.TypeId);
+                DGV_Search[12, DGV_Search.CurrentRow.Index].Selected = false;
+            }
+            DGV_Calculations();
+
+            await base.LoadData(ItemID);   
+        }
+        public override Task SaveAsData()
+        {
+            var frm = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
+            frm.quotationUC1.GetFromInspection(Convert.ToInt32(IdTextBox.Text));
+            return base.SaveAsData();
         }
     }
 }

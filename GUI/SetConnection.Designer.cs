@@ -128,7 +128,7 @@
             this.Win_Test_Connection_Btn.Name = "Win_Test_Connection_Btn";
             this.Win_Test_Connection_Btn.PressedColor = System.Drawing.Color.DodgerBlue;
             this.Win_Test_Connection_Btn.Size = new System.Drawing.Size(126, 31);
-            this.Win_Test_Connection_Btn.TabIndex = 220;
+            this.Win_Test_Connection_Btn.TabIndex = 0;
             this.Win_Test_Connection_Btn.Text = "Test Connection";
             this.Win_Test_Connection_Btn.TextOffset = new System.Drawing.Point(7, 0);
             this.Win_Test_Connection_Btn.UseTransparentBackground = true;
@@ -153,7 +153,7 @@
             this.Win_Save_Settings_Btn.Name = "Win_Save_Settings_Btn";
             this.Win_Save_Settings_Btn.PressedColor = System.Drawing.Color.DodgerBlue;
             this.Win_Save_Settings_Btn.Size = new System.Drawing.Size(124, 31);
-            this.Win_Save_Settings_Btn.TabIndex = 221;
+            this.Win_Save_Settings_Btn.TabIndex = 1;
             this.Win_Save_Settings_Btn.Text = "Save Settings";
             this.Win_Save_Settings_Btn.TextOffset = new System.Drawing.Point(-7, 0);
             this.Win_Save_Settings_Btn.UseTransparentBackground = true;
@@ -179,7 +179,7 @@
             this.Win_Port_Num_TxtBox.PlaceholderText = "Port";
             this.Win_Port_Num_TxtBox.SelectedText = "";
             this.Win_Port_Num_TxtBox.Size = new System.Drawing.Size(83, 36);
-            this.Win_Port_Num_TxtBox.TabIndex = 218;
+            this.Win_Port_Num_TxtBox.TabIndex = 3;
             this.Win_Port_Num_TxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Win_Port_Num_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
@@ -204,7 +204,7 @@
             this.Win_DataBasename_TxtBox.PlaceholderText = "Enter Database Name";
             this.Win_DataBasename_TxtBox.SelectedText = "";
             this.Win_DataBasename_TxtBox.Size = new System.Drawing.Size(256, 36);
-            this.Win_DataBasename_TxtBox.TabIndex = 219;
+            this.Win_DataBasename_TxtBox.TabIndex = 2;
             this.Win_DataBasename_TxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Win_DataBasename_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
@@ -229,7 +229,7 @@
             this.Win_Servername_TxtBox.PlaceholderText = "Enter Server Name ";
             this.Win_Servername_TxtBox.SelectedText = "";
             this.Win_Servername_TxtBox.Size = new System.Drawing.Size(167, 36);
-            this.Win_Servername_TxtBox.TabIndex = 217;
+            this.Win_Servername_TxtBox.TabIndex = 4;
             this.Win_Servername_TxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Win_Servername_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
@@ -251,7 +251,7 @@
             this.Back_1_Btn.Name = "Back_1_Btn";
             this.Back_1_Btn.PressedColor = System.Drawing.Color.Transparent;
             this.Back_1_Btn.Size = new System.Drawing.Size(70, 29);
-            this.Back_1_Btn.TabIndex = 216;
+            this.Back_1_Btn.TabIndex = 5;
             this.Back_1_Btn.UseTransparentBackground = true;
             this.Back_1_Btn.Click += new System.EventHandler(this.Back_Btn_Click);
             // 
@@ -270,7 +270,7 @@
             this.Banner_Image.FadeWhenInactive = false;
             this.Banner_Image.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.Banner_Image.Image = ((System.Drawing.Image)(resources.GetObject("Banner_Image.Image")));
-            this.Banner_Image.ActiveImage = null;
+            this.Banner_Image.ImageActive = null;
             this.Banner_Image.ImageLocation = null;
             this.Banner_Image.ImageMargin = 20;
             this.Banner_Image.ImageSize = new System.Drawing.Size(114, 115);
@@ -288,7 +288,7 @@
             this.Banner_Image.TabIndex = 221;
             this.Banner_Image.ToolTipText = "";
             this.Banner_Image.WaitOnLoad = false;
-            this.Banner_Image.ImageMargin = 20;
+            this.Banner_Image.Zoom = 20;
             this.Banner_Image.ZoomSpeed = 10;
             // 
             // TabPage3
@@ -325,7 +325,7 @@
             this.Next_Btn.Name = "Next_Btn";
             this.Next_Btn.PressedColor = System.Drawing.Color.DodgerBlue;
             this.Next_Btn.Size = new System.Drawing.Size(89, 31);
-            this.Next_Btn.TabIndex = 223;
+            this.Next_Btn.TabIndex = 3;
             this.Next_Btn.Text = "Next";
             this.Next_Btn.TextOffset = new System.Drawing.Point(-7, 0);
             this.Next_Btn.UseTransparentBackground = true;
@@ -351,7 +351,7 @@
             this.SQL_Port_Num_TxtBox.PlaceholderText = "Port";
             this.SQL_Port_Num_TxtBox.SelectedText = "";
             this.SQL_Port_Num_TxtBox.Size = new System.Drawing.Size(83, 36);
-            this.SQL_Port_Num_TxtBox.TabIndex = 221;
+            this.SQL_Port_Num_TxtBox.TabIndex = 0;
             this.SQL_Port_Num_TxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SQL_Port_Num_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
@@ -376,7 +376,7 @@
             this.SQL_DataBasename_TxtBox.PlaceholderText = "Enter Database Name";
             this.SQL_DataBasename_TxtBox.SelectedText = "";
             this.SQL_DataBasename_TxtBox.Size = new System.Drawing.Size(256, 36);
-            this.SQL_DataBasename_TxtBox.TabIndex = 222;
+            this.SQL_DataBasename_TxtBox.TabIndex = 2;
             this.SQL_DataBasename_TxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SQL_DataBasename_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
@@ -401,7 +401,7 @@
             this.SQL_Servername_TxtBox.PlaceholderText = "Enter Server Name ";
             this.SQL_Servername_TxtBox.SelectedText = "";
             this.SQL_Servername_TxtBox.Size = new System.Drawing.Size(167, 36);
-            this.SQL_Servername_TxtBox.TabIndex = 220;
+            this.SQL_Servername_TxtBox.TabIndex = 1;
             this.SQL_Servername_TxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SQL_Servername_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
@@ -423,7 +423,7 @@
             this.Back_Btn.Name = "Back_Btn";
             this.Back_Btn.PressedColor = System.Drawing.Color.Transparent;
             this.Back_Btn.Size = new System.Drawing.Size(70, 29);
-            this.Back_Btn.TabIndex = 216;
+            this.Back_Btn.TabIndex = 4;
             this.Back_Btn.UseTransparentBackground = true;
             this.Back_Btn.Click += new System.EventHandler(this.Back_Btn_Click);
             // 
@@ -460,7 +460,7 @@
             this.Back_2_Btn.Name = "Back_2_Btn";
             this.Back_2_Btn.PressedColor = System.Drawing.Color.Transparent;
             this.Back_2_Btn.Size = new System.Drawing.Size(70, 29);
-            this.Back_2_Btn.TabIndex = 217;
+            this.Back_2_Btn.TabIndex = 4;
             this.Back_2_Btn.UseTransparentBackground = true;
             this.Back_2_Btn.Click += new System.EventHandler(this.Back_2_Btn_Click);
             // 
@@ -483,7 +483,7 @@
             this.SQL_Test_Connection_Btn.Name = "SQL_Test_Connection_Btn";
             this.SQL_Test_Connection_Btn.PressedColor = System.Drawing.Color.DodgerBlue;
             this.SQL_Test_Connection_Btn.Size = new System.Drawing.Size(126, 31);
-            this.SQL_Test_Connection_Btn.TabIndex = 16;
+            this.SQL_Test_Connection_Btn.TabIndex = 3;
             this.SQL_Test_Connection_Btn.Text = "Test Connection";
             this.SQL_Test_Connection_Btn.TextOffset = new System.Drawing.Point(7, 0);
             this.SQL_Test_Connection_Btn.UseTransparentBackground = true;
@@ -508,7 +508,7 @@
             this.SQL_Save_Settings_Btn.Name = "SQL_Save_Settings_Btn";
             this.SQL_Save_Settings_Btn.PressedColor = System.Drawing.Color.DodgerBlue;
             this.SQL_Save_Settings_Btn.Size = new System.Drawing.Size(124, 31);
-            this.SQL_Save_Settings_Btn.TabIndex = 17;
+            this.SQL_Save_Settings_Btn.TabIndex = 2;
             this.SQL_Save_Settings_Btn.Text = "Save Settings";
             this.SQL_Save_Settings_Btn.TextOffset = new System.Drawing.Point(-7, 0);
             this.SQL_Save_Settings_Btn.UseTransparentBackground = true;
@@ -535,7 +535,7 @@
             this.Username_TxtBox.PlaceholderText = "Enter Username";
             this.Username_TxtBox.SelectedText = "";
             this.Username_TxtBox.Size = new System.Drawing.Size(256, 36);
-            this.Username_TxtBox.TabIndex = 14;
+            this.Username_TxtBox.TabIndex = 0;
             this.Username_TxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Username_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
@@ -563,7 +563,7 @@
             this.Pass_txt.PlaceholderText = "Enter Password";
             this.Pass_txt.SelectedText = "";
             this.Pass_txt.Size = new System.Drawing.Size(256, 36);
-            this.Pass_txt.TabIndex = 15;
+            this.Pass_txt.TabIndex = 1;
             this.Pass_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Pass_txt.TextOffset = new System.Drawing.Point(3, 0);
             this.Pass_txt.UseSystemPasswordChar = true;
@@ -602,7 +602,7 @@
             this.Back2_Action_Btn.Name = "Back2_Action_Btn";
             this.Back2_Action_Btn.PressedColor = System.Drawing.Color.Transparent;
             this.Back2_Action_Btn.Size = new System.Drawing.Size(70, 29);
-            this.Back2_Action_Btn.TabIndex = 226;
+            this.Back2_Action_Btn.TabIndex = 4;
             this.Back2_Action_Btn.UseTransparentBackground = true;
             this.Back2_Action_Btn.Click += new System.EventHandler(this.Back2_Action_Btn_Click);
             // 
@@ -623,7 +623,7 @@
             this.Guna2Button3.Name = "Guna2Button3";
             this.Guna2Button3.PressedColor = System.Drawing.Color.Transparent;
             this.Guna2Button3.Size = new System.Drawing.Size(57, 31);
-            this.Guna2Button3.TabIndex = 225;
+            this.Guna2Button3.TabIndex = 1;
             this.Guna2Button3.UseTransparentBackground = true;
             // 
             // Guna2Button1
@@ -645,7 +645,7 @@
             this.Guna2Button1.Name = "Guna2Button1";
             this.Guna2Button1.PressedColor = System.Drawing.Color.DodgerBlue;
             this.Guna2Button1.Size = new System.Drawing.Size(126, 31);
-            this.Guna2Button1.TabIndex = 223;
+            this.Guna2Button1.TabIndex = 3;
             this.Guna2Button1.Text = "Test Connection";
             this.Guna2Button1.TextOffset = new System.Drawing.Point(7, 0);
             this.Guna2Button1.UseTransparentBackground = true;
@@ -669,7 +669,7 @@
             this.Guna2Button2.Name = "Guna2Button2";
             this.Guna2Button2.PressedColor = System.Drawing.Color.DodgerBlue;
             this.Guna2Button2.Size = new System.Drawing.Size(124, 31);
-            this.Guna2Button2.TabIndex = 224;
+            this.Guna2Button2.TabIndex = 2;
             this.Guna2Button2.Text = "Save Settings";
             this.Guna2Button2.TextOffset = new System.Drawing.Point(-7, 0);
             this.Guna2Button2.UseTransparentBackground = true;
@@ -695,7 +695,7 @@
             this.Guna2TextBox1.PlaceholderText = "Enter Database Name";
             this.Guna2TextBox1.SelectedText = "";
             this.Guna2TextBox1.Size = new System.Drawing.Size(256, 36);
-            this.Guna2TextBox1.TabIndex = 222;
+            this.Guna2TextBox1.TabIndex = 0;
             this.Guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Guna2TextBox1.TextOffset = new System.Drawing.Point(3, 0);
             // 
@@ -773,8 +773,10 @@
             // 
             this.Form_Dock.BorderRadius = 7;
             this.Form_Dock.ContainerControl = this;
+            this.Form_Dock.DockIndicatorTransparencyValue = 0.6D;
             this.Form_Dock.DragStartTransparencyValue = 0.5D;
             this.Form_Dock.ResizeForm = false;
+            this.Form_Dock.TransparentWhileDrag = true;
             // 
             // Close_Btn
             // 
@@ -840,7 +842,7 @@
             this.Discard_Btn.Location = new System.Drawing.Point(283, 104);
             this.Discard_Btn.Name = "Discard_Btn";
             this.Discard_Btn.Size = new System.Drawing.Size(95, 30);
-            this.Discard_Btn.TabIndex = 214;
+            this.Discard_Btn.TabIndex = 1;
             this.Discard_Btn.Text = "Discard";
             this.Discard_Btn.UseTransparentBackground = true;
             this.Discard_Btn.Click += new System.EventHandler(this.Discard_Btn_Click);
@@ -863,7 +865,7 @@
             this.Exit_Btn.Name = "Exit_Btn";
             this.Exit_Btn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.Exit_Btn.Size = new System.Drawing.Size(95, 30);
-            this.Exit_Btn.TabIndex = 213;
+            this.Exit_Btn.TabIndex = 0;
             this.Exit_Btn.Text = "Exit";
             this.Exit_Btn.UseTransparentBackground = true;
             this.Exit_Btn.Click += new System.EventHandler(this.Exit_Btn_Click);
@@ -939,7 +941,7 @@
             this.SQL_Auth_Btn.Name = "SQL_Auth_Btn";
             this.SQL_Auth_Btn.PressedColor = System.Drawing.Color.SteelBlue;
             this.SQL_Auth_Btn.Size = new System.Drawing.Size(164, 30);
-            this.SQL_Auth_Btn.TabIndex = 223;
+            this.SQL_Auth_Btn.TabIndex = 1;
             this.SQL_Auth_Btn.Text = "SQL Authentication";
             this.SQL_Auth_Btn.TextOffset = new System.Drawing.Point(0, -1);
             this.SQL_Auth_Btn.UseTransparentBackground = true;
@@ -963,7 +965,7 @@
             this.Win_Auth_Btn.Name = "Win_Auth_Btn";
             this.Win_Auth_Btn.PressedColor = System.Drawing.Color.SteelBlue;
             this.Win_Auth_Btn.Size = new System.Drawing.Size(164, 30);
-            this.Win_Auth_Btn.TabIndex = 223;
+            this.Win_Auth_Btn.TabIndex = 0;
             this.Win_Auth_Btn.Text = "Windows Authentication";
             this.Win_Auth_Btn.TextOffset = new System.Drawing.Point(0, -1);
             this.Win_Auth_Btn.UseTransparentBackground = true;
@@ -1059,13 +1061,13 @@
             this.SQL_Page.Margin = new System.Windows.Forms.Padding(4);
             this.SQL_Page.Multiline = true;
             this.SQL_Page.Name = "SQL_Page";
-            this.SQL_Page.Page = this.TabPage1;
-            this.SQL_Page.PageIndex = 3;
-            this.SQL_Page.PageName = "TabPage1";
-            this.SQL_Page.PageTitle = "Win_Auth";
+            this.SQL_Page.Page = this.TabPage2;
+            this.SQL_Page.PageIndex = 0;
+            this.SQL_Page.PageName = "TabPage2";
+            this.SQL_Page.PageTitle = "Selection";
             this.SQL_Page.SelectedIndex = 0;
             this.SQL_Page.Size = new System.Drawing.Size(398, 193);
-            this.SQL_Page.TabIndex = 220;
+            this.SQL_Page.TabIndex = 1;
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
             animation1.LeafCoeff = 0F;

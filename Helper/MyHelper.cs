@@ -1,18 +1,24 @@
 ﻿using Bunifu.UI.WinForms;
 using ColorOasisSystem.Entities;
 using ColorOasisSystem.GUI;
+using ColorOasisSystem.GUI.Login;
+using ColorOasisSystem.GUI.UC;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.WinForms.Suite.Descriptions;
 
 namespace ColorOasisSystem.Helper
 {
     public class MyHelper
     {
+        bool isEnglish;
         public static void CloseForm<T>() where T : Form
         {
             if (IsFormOpen(typeof(T)))
@@ -142,5 +148,80 @@ namespace ColorOasisSystem.Helper
 
             return dataTable;
         }
+        public static void ChangeMode(Color color)
+        {
+            MainMenuForm mainMenu = Application.OpenForms.OfType<MainMenuForm>().FirstOrDefault();
+            LoginForm loginForm = Application.OpenForms.OfType<LoginForm>().FirstOrDefault();
+            if(loginForm != null)
+            {
+                loginForm.BackColor= color;
+                loginForm.Banner_Image.BackColor = color;
+
+                foreach (Control ctrl in loginForm.BunifuPages2.Controls)
+                {
+                    if (ctrl is TabPage)
+                    {
+                        TabPage TabCtrl = (TabPage)ctrl;
+                        TabCtrl.BackColor = color;
+                        TabCtrl.Refresh();
+                    }
+                }
+            }
+            if (mainMenu != null)
+            {
+                mainMenu.BackColor= color;
+                mainMenu.Exit_PictureBox.BackColor = color;
+                foreach (Control ctrl in mainMenu.BunifuPages2.Controls)
+                {
+                    if (ctrl is TabPage)
+                    {
+                        TabPage TabCtrl = (TabPage)ctrl;
+                        TabCtrl.BackColor = color;
+                        TabCtrl.Refresh();
+                    }
+                }
+                mainMenu.A2SGradSlider1.TopLeft = color;
+                mainMenu.A2SGradSlider1.BottomRight = color;
+                mainMenu.inspectionUC1.SiticonePanel1.PrimerColor = color;
+                mainMenu.inspectionUC1.SiticonePanel1.TopLeft = color;
+                mainMenu.inspectionUC1.SiticonePanel1.BottomLeft = color;
+                mainMenu.inspectionUC1.SiticonePanel1.BottomRight = color;
+                mainMenu.inspectionUC1.SiticonePanel1.TopRight = color;
+
+            }
+
+        }
+        //                        catch (Exception exc)
+                        //{
+                        //    Utilities.save_Log(exc.Message, exc);
+        public static void save_Log(string message, Exception exception)
+        {
+            //try
+            //{
+            //    //get connected db name
+            //    System.Data.SqlClient.SqlConnectionStringBuilder builder = new System.Data.SqlClient.SqlConnectionStringBuilder();
+            //    builder.ConnectionString = DAL.Config.ConnectionString;
+
+            //    string LinkITERP_path = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\LinkITERP";
+            //    if (!System.IO.Directory.Exists(LinkITERP_path))
+            //        System.IO.Directory.CreateDirectory(LinkITERP_path);
+
+            //    string logFileName = LinkITERP_path + "\\" + builder.InitialCatalog + "_Log.txt";
+            //    if (!System.IO.File.Exists(logFileName))
+            //        System.IO.File.CreateText(logFileName);
+
+            //    StreamWriter sw = File.AppendText(logFileName);
+            //    sw.WriteLine(DateTime.Now.ToString() + ">> " + message);
+            //    if (exception != null)
+            //    {
+            //        sw.WriteLine(DateTime.Now.ToString() + "Inner Exception: " + exception.InnerException?.Message);
+            //        sw.WriteLine(DateTime.Now.ToString() + "Stacke Trace: " + exception.InnerException?.StackTrace);
+            //    }
+            //    sw.Flush();
+            //    sw.Close();
+            //}
+            //catch { }
+        }
     }
 }
+

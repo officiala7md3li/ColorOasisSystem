@@ -345,6 +345,9 @@
         KSkpKSlFqW7d/gMmhK1GCxjUjAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="Eli2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -369,6 +372,9 @@
   <metadata name="UnitPrice.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="TotalDiscount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -380,9 +386,6 @@
   </metadata>
   <metadata name="RemoveItem.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="Eli2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
   <data name="UnitRoomsNoTxtbox.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -655,6 +658,25 @@
         bQ0Qr7kxluMLTaEY7BN+MVnBmrOYcZMLDm4fOAiqkLGTCw9xY6wm2x9aTjHYJ7wAf8GZSwYrb/e0rsx0
         J+yhXxew/29Yookdkqmk8Wju440C7rNkkO0Pfk8x2CevP7SLM5cm/Ekx2Cc0Ycv5N0U4RDEoKSkpKSkp
         KSkpKSlFqW7d/gMmhK1GCxjUjAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="QtyTxtBox.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAzRJREFUWEft
+        lV1IFFEUx69mu1uBREXf2YMEQUGF6Mz4kSsuFUEPBhElRSDt7hhiZA8lEUtPlRIKgpTuzFYQFZRQPRQi
+        +6G9WPTgWyA9GGGQJFQbfmSnM9NZvTN7R6ldegj/8GOXuffM79x7Z2fZYhbjFChhq6GceaGUFdKlfxOQ
+        WD7sZZ1QwZIIINPYyAkaXjBnde/KoKYEArrUEdTkB2pEaVH1kgoanj8oOobCERLzjNAUx4RCLDegKReD
+        upxEIB3puf9m0Rqanh7wsp0C8Sw0zTG42naxmCOivAqFvHlUYg2u3icSp6BpjlF1+ZtQakPVleNUYg3u
+        QB6KepCfvDgFTXMM3nyAE33EhpqDEbnWdt3gFpU4Bx/Ch3/agP9u0QbzwdOVNv6sA7rcwDcQiMgaDTnH
+        qQF4zZZDzFUDcdcliLs7kVb8fhiizGMWUoLh4iZVl96hcDSoSTOWBjTpPE1zTloD+5G4uw1JIsZ3O++R
+        g0atPyyV80IeXP1kvVa8xZTMF0sDPqTHJZLamYKo+4CqlzWL5CnUiOQnjXMsDZzOFcmcGO1+tGcriqbs
+        Yo6xU7rXcmRpsTRQkwO4sjlJwj0Mcc9VPPtaiHmu4LWvs2MmrqONXdXrgmGpSQ1L1/H90IXSSb4JvyZL
+        pLIGxe0oHZ+Vp6jDXehYOgOhJcNwhBXQdDMQc5/jGxjry9fxkc2hYZzActSI3M83gL+MQzQ6F6hkSppY
+        RDlrpRIz2EAD30Dfk834xpM/oWgQP3vxc4iXG5yJFO+g8rng6kuFwnRuUAmDqGs7Sj/wDdx/XGiRpaHJ
+        byw7xIeO4LtNmMJ4Q/ZDGdtozk14qvFZ+MzLp2MeuHCnSCxG8EU1Xq+X7jZlmQRlAWSKlxsknm0ytvuL
+        XYzM4HE8xQa20S3+LvCCrcCV37OLTRLua8Yc498uEC7ZpWqyz6D+tlRV162sMm+QSWBgWQFu+aBQHne3
+        gNO5ZiPmTy3mmhCIf0DCNYSr7/0N7k7MU0Vl2QnetFIgno8JY7eoPPPgCi8LJAuxj8ozD7xka3F7JwUS
+        J94aDyuVZycwyNbjjRvxITwJUY/PEeO4si1fzH8exn4BUdWxD4D4t5IAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="$this.Logoimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

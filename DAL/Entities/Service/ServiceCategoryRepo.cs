@@ -23,7 +23,7 @@ namespace ColorOasisSystem.Entities
         public async Task<List<ServiceCategory>> GetAll()
         {
 
-            var serviceCategories = await DB.ServiceCategories.AsNoTracking().ToListAsync();
+            var serviceCategories = await DB.ServiceCategories.ToListAsync();
             return serviceCategories;
         }
         public async Task<ServiceCategory> GetById(int id)
@@ -44,7 +44,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                ServiceCategory serviceCategory = await DB.ServiceCategories.AsNoTracking().Where(user => user.Id == id).FirstOrDefaultAsync();
+                ServiceCategory serviceCategory = await DB.ServiceCategories.Where(user => user.Id == id).FirstOrDefaultAsync();
                 if (serviceCategory != null)
                 {
                     DB.ServiceCategories.Remove(serviceCategory);

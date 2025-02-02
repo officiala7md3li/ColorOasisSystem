@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InspectionUC));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Show_Search_Settings_Btn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Spread_Panel_Btn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SiticonePanel1 = new A7MD_Library.Panels.A2SGradSlider();
@@ -49,8 +49,21 @@
             this.ServiceCategory_ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.ServiceType_ComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Item_Name_TxtBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.DGV_Search = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Eli2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.DGV_Search = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MinimumPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaximumPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RemoveItem = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ClientTypeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.UnitTypeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.UnitRoomsNoTxtbox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,20 +75,9 @@
             this.ClientIdTxtBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ClientLocationTxtBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.IdTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MinimumPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaximumPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RemoveItem = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.QtyTxtBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.SiticonePanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Search)).BeginInit();
@@ -86,7 +88,6 @@
             // Show_Search_Settings_Btn
             // 
             this.Show_Search_Settings_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.Show_Search_Settings_Btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.Show_Search_Settings_Btn.CheckedState.FillColor = System.Drawing.Color.Transparent;
             this.Show_Search_Settings_Btn.DisabledState.FillColor = System.Drawing.Color.Transparent;
             this.Show_Search_Settings_Btn.FillColor = System.Drawing.Color.LightSkyBlue;
@@ -206,11 +207,11 @@
             this.Search_Items_Btn.ColorContrastOnClick = 45;
             this.Search_Items_Btn.ColorContrastOnHover = 45;
             this.Search_Items_Btn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.Search_Items_Btn.CustomizableEdges = borderEdges6;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.Search_Items_Btn.CustomizableEdges = borderEdges1;
             this.Search_Items_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Search_Items_Btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.Search_Items_Btn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -392,29 +393,34 @@
             this.Item_Name_TxtBox.TabIndex = 417;
             this.Item_Name_TxtBox.TextOffset = new System.Drawing.Point(3, 0);
             // 
+            // Eli2
+            // 
+            this.Eli2.BorderRadius = 15;
+            this.Eli2.TargetControl = this.DGV_Search;
+            // 
             // DGV_Search
             // 
             this.DGV_Search.AllowUserToAddRows = false;
             this.DGV_Search.AllowUserToDeleteRows = false;
             this.DGV_Search.AllowUserToResizeColumns = false;
             this.DGV_Search.AllowUserToResizeRows = false;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.White;
-            this.DGV_Search.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.DGV_Search.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(179)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(214)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Search.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(188)))), ((int)(((byte)(152)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(214)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Search.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Search.ColumnHeadersHeight = 21;
             this.DGV_Search.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -425,46 +431,47 @@
             this.MaximumPrice,
             this.Discount,
             this.UnitPrice,
+            this.TotalDiscount,
             this.Price,
             this.CategoryId,
             this.ServiceType,
             this.RemoveItem});
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 8F);
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(214)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Search.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Search.DefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_Search.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.DGV_Search.Location = new System.Drawing.Point(175, 163);
+            this.DGV_Search.Location = new System.Drawing.Point(175, 150);
             this.DGV_Search.MultiSelect = false;
             this.DGV_Search.Name = "DGV_Search";
             this.DGV_Search.ReadOnly = true;
             this.DGV_Search.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(128)))), ((int)(((byte)(178)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Search.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(128)))), ((int)(((byte)(178)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Search.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_Search.RowHeadersVisible = false;
             this.DGV_Search.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(191)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGV_Search.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(191)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGV_Search.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DGV_Search.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DGV_Search.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(199)))), ((int)(((byte)(162)))));
             this.DGV_Search.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGV_Search.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DGV_Search.Size = new System.Drawing.Size(627, 209);
-            this.DGV_Search.TabIndex = 406;
+            this.DGV_Search.Size = new System.Drawing.Size(622, 274);
+            this.DGV_Search.TabIndex = 461;
             this.DGV_Search.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.White;
             this.DGV_Search.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DGV_Search.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -492,10 +499,122 @@
             this.DGV_Search.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Search_CellDoubleClick);
             this.DGV_Search.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Search_CellMouseClick);
             // 
-            // Eli2
+            // Id
             // 
-            this.Eli2.BorderRadius = 15;
-            this.Eli2.TargetControl = this.DGV_Search;
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Id.FillWeight = 22.06035F;
+            this.Id.Frozen = true;
+            this.Id.HeaderText = "#";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Id.Width = 5;
+            // 
+            // ServiceId
+            // 
+            this.ServiceId.HeaderText = "رقم الخدمه";
+            this.ServiceId.Name = "ServiceId";
+            this.ServiceId.ReadOnly = true;
+            this.ServiceId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ServiceId.Visible = false;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ServiceName.FillWeight = 104.4392F;
+            this.ServiceName.HeaderText = "اسم الخدمه";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            this.ServiceName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Qty.FillWeight = 104.4392F;
+            this.Qty.HeaderText = "الكميه";
+            this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
+            this.Qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // MinimumPrice
+            // 
+            this.MinimumPrice.HeaderText = "السعر الاقل";
+            this.MinimumPrice.Name = "MinimumPrice";
+            this.MinimumPrice.ReadOnly = true;
+            this.MinimumPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.MinimumPrice.Visible = false;
+            // 
+            // MaximumPrice
+            // 
+            this.MaximumPrice.HeaderText = "السعر الاكبر";
+            this.MaximumPrice.Name = "MaximumPrice";
+            this.MaximumPrice.ReadOnly = true;
+            this.MaximumPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.MaximumPrice.Visible = false;
+            // 
+            // Discount
+            // 
+            this.Discount.HeaderText = "الخصم";
+            this.Discount.Name = "Discount";
+            this.Discount.ReadOnly = true;
+            this.Discount.Visible = false;
+            // 
+            // UnitPrice
+            // 
+            this.UnitPrice.HeaderText = "السعر";
+            this.UnitPrice.Name = "UnitPrice";
+            this.UnitPrice.ReadOnly = true;
+            this.UnitPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.UnitPrice.Visible = false;
+            // 
+            // TotalDiscount
+            // 
+            this.TotalDiscount.HeaderText = "الخصم الكلي";
+            this.TotalDiscount.Name = "TotalDiscount";
+            this.TotalDiscount.ReadOnly = true;
+            this.TotalDiscount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TotalDiscount.Visible = false;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "السعر الكلي";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Price.Visible = false;
+            // 
+            // CategoryId
+            // 
+            this.CategoryId.HeaderText = "رقم الفئه";
+            this.CategoryId.Name = "CategoryId";
+            this.CategoryId.ReadOnly = true;
+            this.CategoryId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CategoryId.Visible = false;
+            // 
+            // ServiceType
+            // 
+            this.ServiceType.HeaderText = "رقم النوع";
+            this.ServiceType.Name = "ServiceType";
+            this.ServiceType.ReadOnly = true;
+            this.ServiceType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ServiceType.Visible = false;
+            // 
+            // RemoveItem
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(117)))), ((int)(((byte)(93)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = "حذف";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(179)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.RemoveItem.DefaultCellStyle = dataGridViewCellStyle3;
+            this.RemoveItem.FillWeight = 61.4348F;
+            this.RemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveItem.HeaderText = "-";
+            this.RemoveItem.Name = "RemoveItem";
+            this.RemoveItem.ReadOnly = true;
+            this.RemoveItem.Text = "حذف";
+            this.RemoveItem.UseColumnTextForButtonValue = true;
             // 
             // ClientTypeComboBox
             // 
@@ -813,116 +932,6 @@
             this.IdTextBox.TextOffset = new System.Drawing.Point(3, 0);
             this.IdTextBox.Visible = false;
             // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Id.FillWeight = 22.06035F;
-            this.Id.Frozen = true;
-            this.Id.HeaderText = "#";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Id.Width = 5;
-            // 
-            // ServiceId
-            // 
-            this.ServiceId.HeaderText = "رقم الخدمه";
-            this.ServiceId.Name = "ServiceId";
-            this.ServiceId.ReadOnly = true;
-            this.ServiceId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ServiceId.Visible = false;
-            // 
-            // ServiceName
-            // 
-            this.ServiceName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ServiceName.FillWeight = 104.4392F;
-            this.ServiceName.HeaderText = "اسم الخدمه";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
-            this.ServiceName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Qty
-            // 
-            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Qty.FillWeight = 104.4392F;
-            this.Qty.HeaderText = "الكميه";
-            this.Qty.Name = "Qty";
-            this.Qty.ReadOnly = true;
-            this.Qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // MinimumPrice
-            // 
-            this.MinimumPrice.HeaderText = "السعر الاقل";
-            this.MinimumPrice.Name = "MinimumPrice";
-            this.MinimumPrice.ReadOnly = true;
-            this.MinimumPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.MinimumPrice.Visible = false;
-            // 
-            // MaximumPrice
-            // 
-            this.MaximumPrice.HeaderText = "السعر الاكبر";
-            this.MaximumPrice.Name = "MaximumPrice";
-            this.MaximumPrice.ReadOnly = true;
-            this.MaximumPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.MaximumPrice.Visible = false;
-            // 
-            // Discount
-            // 
-            this.Discount.HeaderText = "الخصم";
-            this.Discount.Name = "Discount";
-            this.Discount.ReadOnly = true;
-            this.Discount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Discount.Visible = false;
-            // 
-            // UnitPrice
-            // 
-            this.UnitPrice.HeaderText = "السعر";
-            this.UnitPrice.Name = "UnitPrice";
-            this.UnitPrice.ReadOnly = true;
-            this.UnitPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.UnitPrice.Visible = false;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "السعر الكلي";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Price.Visible = false;
-            // 
-            // CategoryId
-            // 
-            this.CategoryId.HeaderText = "رقم الفئه";
-            this.CategoryId.Name = "CategoryId";
-            this.CategoryId.ReadOnly = true;
-            this.CategoryId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CategoryId.Visible = false;
-            // 
-            // ServiceType
-            // 
-            this.ServiceType.HeaderText = "رقم النوع";
-            this.ServiceType.Name = "ServiceType";
-            this.ServiceType.ReadOnly = true;
-            this.ServiceType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ServiceType.Visible = false;
-            // 
-            // RemoveItem
-            // 
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(117)))), ((int)(((byte)(93)))));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.NullValue = "حذف";
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(179)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.Black;
-            this.RemoveItem.DefaultCellStyle = dataGridViewCellStyle33;
-            this.RemoveItem.FillWeight = 61.4348F;
-            this.RemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveItem.HeaderText = "-";
-            this.RemoveItem.Name = "RemoveItem";
-            this.RemoveItem.ReadOnly = true;
-            this.RemoveItem.Text = "حذف";
-            this.RemoveItem.UseColumnTextForButtonValue = true;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -941,6 +950,7 @@
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(622, 44);
             this.tableLayoutPanel1.TabIndex = 441;
             // 
@@ -963,21 +973,51 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(622, 44);
             this.tableLayoutPanel2.TabIndex = 442;
             // 
+            // QtyTxtBox
+            // 
+            this.QtyTxtBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.QtyTxtBox.Animated = true;
+            this.QtyTxtBox.AutoRoundedCorners = true;
+            this.QtyTxtBox.BorderRadius = 17;
+            this.QtyTxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.QtyTxtBox.DefaultText = "";
+            this.QtyTxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.QtyTxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.QtyTxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.QtyTxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.QtyTxtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.QtyTxtBox.Font = new System.Drawing.Font("Cairo", 9F);
+            this.QtyTxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.QtyTxtBox.IconRight = ((System.Drawing.Image)(resources.GetObject("QtyTxtBox.IconRight")));
+            this.QtyTxtBox.IconRightOffset = new System.Drawing.Point(3, 0);
+            this.QtyTxtBox.Location = new System.Drawing.Point(189, 431);
+            this.QtyTxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.QtyTxtBox.Name = "QtyTxtBox";
+            this.QtyTxtBox.PasswordChar = '\0';
+            this.QtyTxtBox.PlaceholderText = "الكميات";
+            this.QtyTxtBox.ReadOnly = true;
+            this.QtyTxtBox.SelectedText = "";
+            this.QtyTxtBox.Size = new System.Drawing.Size(599, 36);
+            this.QtyTxtBox.TabIndex = 443;
+            this.QtyTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // InspectionUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Controls.Add(this.Show_Search_Settings_Btn);
             this.Controls.Add(this.Spread_Panel_Btn);
             this.Controls.Add(this.SiticonePanel1);
+            this.Controls.Add(this.DGV_Search);
+            this.Controls.Add(this.QtyTxtBox);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.DGV_Search);
             this.Controls.Add(this.ClientLocationTxtBox);
             this.Controls.Add(this.ClientIdTxtBox);
             this.Controls.Add(this.ClientPhoneTxtBox);
             this.Controls.Add(this.IdTextBox);
             this.Logoimage = ((System.Drawing.Image)(resources.GetObject("$this.Logoimage")));
-            this.LogoLabel = "التوصيف";
+            this.LogoLabel = "تحويل";
             this.MasterUCLock = false;
             this.Name = "InspectionUC";
             this.Size = new System.Drawing.Size(820, 546);
@@ -985,9 +1025,10 @@
             this.Controls.SetChildIndex(this.ClientPhoneTxtBox, 0);
             this.Controls.SetChildIndex(this.ClientIdTxtBox, 0);
             this.Controls.SetChildIndex(this.ClientLocationTxtBox, 0);
-            this.Controls.SetChildIndex(this.DGV_Search, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
+            this.Controls.SetChildIndex(this.QtyTxtBox, 0);
+            this.Controls.SetChildIndex(this.DGV_Search, 0);
             this.Controls.SetChildIndex(this.SiticonePanel1, 0);
             this.Controls.SetChildIndex(this.Spread_Panel_Btn, 0);
             this.Controls.SetChildIndex(this.Show_Search_Settings_Btn, 0);
@@ -1016,7 +1057,6 @@
         private System.Windows.Forms.Label Label14;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton Search_Items_Btn;
         private System.Windows.Forms.Panel panel2;
-        internal Guna.UI2.WinForms.Guna2DataGridView DGV_Search;
         internal Guna.UI2.WinForms.Guna2Elipse Eli2;
         internal Guna.UI2.WinForms.Guna2ComboBox ClientTypeComboBox;
         internal Guna.UI2.WinForms.Guna2ComboBox UnitTypeComboBox;
@@ -1029,6 +1069,10 @@
         internal Guna.UI2.WinForms.Guna2TextBox ClientIdTxtBox;
         internal Guna.UI2.WinForms.Guna2TextBox ClientLocationTxtBox;
         internal Guna.UI2.WinForms.Guna2TextBox IdTextBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        internal Guna.UI2.WinForms.Guna2TextBox QtyTxtBox;
+        internal Guna.UI2.WinForms.Guna2DataGridView DGV_Search;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
@@ -1037,11 +1081,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaximumPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceType;
         private System.Windows.Forms.DataGridViewButtonColumn RemoveItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

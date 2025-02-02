@@ -16,14 +16,14 @@ namespace ColorOasisSystem.GUI.HelpingProgram
         {
             // This call is required by the designer.
             InitializeComponent();
-            BackColor = Properties.Settings.Default.BG_Color;
+            BackColor = Properties.Settings.Default.BGColor;
             // Add any initialization after the InitializeComponent() call.
         }
         public CMessageBox(string messageLbl = "", string trueText = "نعم", string falseText = "لا")
         {
             // This call is required by the designer.
             InitializeComponent();
-            BackColor = Properties.Settings.Default.BG_Color;
+            BackColor = Properties.Settings.Default.BGColor;
             Yes_Btn.Text = trueText;
             No_Btn.Text = falseText;
             Message_Lbl.Text = messageLbl;

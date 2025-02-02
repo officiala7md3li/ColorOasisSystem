@@ -24,17 +24,57 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<List<Quotation>> GetAll()
         {
-            List<Quotation> Quotations = await DB.Quotations.Where(quote=> quote.IsDeleted==false).AsNoTracking().ToListAsync();
+            List<Quotation> Quotations = await DB.Quotations.Where(quote=> quote.IsDeleted==false&& quote.IsValid == true).ToListAsync();
             return Quotations;
         }
         public async Task<Quotation> GetById(int id)
         {
-            Quotation Quotation = await DB.Quotations.Where(quote => quote.IsDeleted == false && quote.Id==id).FirstOrDefaultAsync();
+            Quotation Quotation = await DB.Quotations.Where(quote => quote.IsDeleted == false && quote.Id==id && quote.IsValid == true).FirstOrDefaultAsync();
             if (Quotation != null)
             {
                 return Quotation;
             }
             return null;
+        }
+        public async Task<int> GetbySourceId(int sourceId)
+        {
+            if (sourceId > 0)
+            {
+                if (await IsEmpty())
+                {
+                    return 0;
+                }
+                var quoteId =await  DB.Quotations.Where(quote => quote.IsDeleted == false && quote.InspectionId == sourceId && quote.IsValid)?.FirstOrDefaultAsync();
+                return quoteId!=null? quoteId.Id:0;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+        public async Task<bool> CloseById(int id)
+        { 
+            Quotation quotation=await GetById(id);
+            if (quotation != null)
+            {
+                quotation.IsValid = false;
+                await DB.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+        public async Task<bool> Convert2InvoiceById(int id)
+        {
+            Quotation quotation = await GetById(id);
+            if (quotation != null)
+            {
+                quotation.IsPaid = true;
+                quotation.IsConverted = true;
+                await DB.SaveChangesAsync();
+                return true;
+            }
+            return false;
         }
         public async Task<bool> DeleteById(int id)
         {
@@ -45,7 +85,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                Quotation quotation = await DB.Quotations.AsNoTracking().Where(quote => quote.Id == id).FirstOrDefaultAsync();
+                Quotation quotation = await DB.Quotations.Where(quote => quote.Id == id && quote.IsValid == true).FirstOrDefaultAsync();
                 if (quotation != null)
                 {
                     quotation.IsDeleted = true;
@@ -66,10 +106,11 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<bool> Add(Quotation Item)
         {
-            if (await GetById(Item.Id) != null)
+            if (Item != null)
             {
                 DB.Quotations.AddOrUpdate(Item);
                 await DB.SaveChangesAsync();
+                return true;
             }
             return false;
         }

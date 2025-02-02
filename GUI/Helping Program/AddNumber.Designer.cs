@@ -134,6 +134,7 @@
             this.Item_Qty_TxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Item_Qty_TxtBox.TextChanged += new System.EventHandler(this.Item_Qty_TxtBox_TextChanged);
             this.Item_Qty_TxtBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Item_Qty_TxtBox_KeyDown);
+            this.Item_Qty_TxtBox.Validated += new System.EventHandler(this.Item_Qty_TxtBox_Validated);
             // 
             // Snackbar
             // 

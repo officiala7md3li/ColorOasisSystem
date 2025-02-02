@@ -22,7 +22,7 @@ namespace ColorOasisSystem.Entities
         }
         public async Task<List<Service>> GetAll()
         {
-            var services = await DB.Services.Where(client => client.IsDeleted == false).AsNoTracking().ToListAsync();
+            var services = await DB.Services.Where(client => client.IsDeleted == false).ToListAsync();
             return services;
         }
         public async Task<Service> GetById(int id)
@@ -56,6 +56,27 @@ namespace ColorOasisSystem.Entities
             }
             return null;
         }
+        public List<Service> SelectListOfServices(string ItemName, int ItemCategory, int ItemType, List<Service> service)
+        {
+            if (!String.IsNullOrEmpty(ItemName))
+            {
+                service = service.Where(s => s.Name == ItemName).ToList();
+            }
+            if (ItemCategory > -1)
+            {
+                service = service.Where(s => s.ServiceCategoryId == ItemCategory).ToList();
+            }
+            if (ItemType > -1)
+            {
+                service = service.Where(s => s.ServiceTypeId == ItemType).ToList();
+            }
+            var result = service.Take(20).ToList();
+            if (service != null)
+            {
+                return service;
+            }
+            return null;
+        }
         public async Task<bool> DeleteById(int id)
         {
             try
@@ -65,7 +86,7 @@ namespace ColorOasisSystem.Entities
                     return false;
                     throw new Exception("No Record in Database");
                 }
-                Service service = await DB.Services.AsNoTracking().Where(client => client.Id == id).FirstOrDefaultAsync();
+                Service service = await DB.Services.Where(client => client.Id == id).FirstOrDefaultAsync();
                 if (service != null)
                 {
                     service.IsDeleted = true;

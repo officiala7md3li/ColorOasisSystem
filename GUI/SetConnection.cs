@@ -58,6 +58,24 @@ namespace ColorOasisSystem.GUI
             // This call is required by the designer.
              InitializeComponent();
             // Add any initialization after the InitializeComponent() call.
+            Color color= Properties.Settings.Default.BGColor;
+            BackColor = color;
+            foreach (Control ctrl in SQL_Page.Controls)
+            {
+                if (ctrl is TabPage)
+                {
+                    TabPage TabCtrl = (TabPage)ctrl;
+                    TabCtrl.BackColor = color;
+                    TabCtrl.Refresh();
+                }
+            }
+            Win_Servername_TxtBox.Text = Properties.Settings.Default.Server_Name;
+            SQL_Servername_TxtBox.Text= Properties.Settings.Default.Server_Name;
+            SQL_DataBasename_TxtBox.Text= Properties.Settings.Default.DB_Name;
+            Win_DataBasename_TxtBox.Text= Properties.Settings.Default.DB_Name;
+            Username_TxtBox.Text=Properties.Settings.Default.SQL_login_Name;
+            Pass_txt.Text=Properties.Settings.Default.SQL_login_Password;
+            this.Refresh();
         }
 
         public string SQLloginPassword
