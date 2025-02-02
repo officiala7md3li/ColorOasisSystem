@@ -129,17 +129,17 @@ namespace ColorOasisSystem.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Windows.Forms.UserControl PermissionNeededUC {
-            get {
+        public global::System.Windows.Forms.UserControl PermissionNeededUC
+        {
+            get
+            {
                 return ((global::System.Windows.Forms.UserControl)(this["PermissionNeededUC"]));
             }
-            set {
+            set
+            {
                 this["PermissionNeededUC"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool EnableUC {
             get {
